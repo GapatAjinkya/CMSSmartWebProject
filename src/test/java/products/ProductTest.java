@@ -108,9 +108,5 @@ public class ProductTest {
 		}else {
 			logger.info("Department Search ");
 		}
-	    
-		
-		
-
 }
 }

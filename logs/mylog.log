@@ -1,0 +1,1041 @@
+[INFO ] 2023-06-28 17:53:11.553 [main] ProcessShipment - Transaction successful
+[INFO ] 2023-06-28 17:53:14.693 [main] ProcessShipment - clickOnprocessshipment successful
+[INFO ] 2023-06-28 17:53:14.694 [main] ProcessShipment - processshipment Explorer Window opened 
+[INFO ] 2023-06-28 17:53:25.393 [main] ProcessShipment - clickOnShipViaSearch successful
+[INFO ] 2023-06-28 17:53:28.583 [main] ProcessShipment - Sent Search for
+[INFO ] 2023-06-28 17:53:39.976 [main] ProcessShipment - Click on add Customer
+[INFO ] 2023-06-28 17:53:40.757 [main] ProcessShipment - SelectCustomerList
+[INFO ] 2023-06-28 17:53:45.534 [main] ProcessShipment - CustomerSearchOk 
+[INFO ] 2023-06-28 17:53:56.962 [main] ProcessShipment - Weight Entered
+[INFO ] 2023-06-28 17:53:57.230 [main] ProcessShipment - Shipbutton
+
+[INFO ] 2023-06-28 17:56:07.787 [main] Internationalshipment - Browser opend
+[INFO ] 2023-06-28 17:56:24.949 [main] Internationalshipment - Login successful
+[INFO ] 2023-06-28 17:57:08.677 [main] Internationalshipment - Clicked on shipviaSearch
+[INFO ] 2023-06-28 17:57:19.647 [main] Internationalshipment - shipvia is selected
+[INFO ] 2023-06-28 17:57:30.308 [main] Internationalshipment - Clicked on Customer
+[INFO ] 2023-06-28 17:57:51.291 [main] Internationalshipment - Customer Searched
+[INFO ] 2023-06-28 17:58:07.143 [main] Internationalshipment - Customer Added
+[INFO ] 2023-06-28 17:58:18.809 [main] Internationalshipment - Books input given 
+[INFO ] 2023-06-28 17:58:29.595 [main] Internationalshipment - Books Selected 
+[INFO ] 2023-06-28 17:59:10.549 [main] Internationalshipment - Details added
+[INFO ] 2023-06-28 17:59:20.558 [main] Internationalshipment - FTRE added
+[INFO ] 2023-06-28 17:59:23.755 [main] Internationalshipment - Termsofsale added
+[INFO ] 2023-06-28 17:59:30.664 [main] Internationalshipment - FedEx IOR Codes added
+[INFO ] 2023-06-28 17:59:36.878 [main] Internationalshipment - FedEx IOR Codes added
+[INFO ] 2023-06-28 17:59:46.251 [main] Internationalshipment - Manual Weight is fill 
+[INFO ] 2023-06-28 17:59:46.378 [main] Internationalshipment - International Shipment is Done
+[INFO ] 2023-06-29 14:35:52.502 [main] Internationalshipment - Browser opend
+[INFO ] 2023-06-29 14:36:18.402 [main] Internationalshipment - Login successful
+[INFO ] 2023-06-29 14:37:02.317 [main] Internationalshipment - Clicked on shipviaSearch
+[INFO ] 2023-06-29 14:37:13.415 [main] Internationalshipment - shipvia is selected
+[INFO ] 2023-06-29 14:37:24.078 [main] Internationalshipment - Clicked on Customer
+[INFO ] 2023-06-29 14:37:45.592 [main] Internationalshipment - Customer Searched
+[INFO ] 2023-07-05 10:21:30.020 [main] CustomerPS - Browser opend
+[INFO ] 2023-07-05 10:21:56.668 [main] CustomerPS - Clickon Configuration successful
+[INFO ] 2023-07-05 10:21:56.909 [main] CustomerPS -  SupportTables Windo Open  successful
+[INFO ] 2023-07-05 10:21:59.637 [main] CustomerPS -  Customers Windo Open  successful
+[INFO ] 2023-07-05 10:22:06.141 [main] CustomerPS -  Customers Windo Open  successful
+[INFO ] 2023-07-05 10:22:09.636 [main] CustomerPS -  Click on add Customer 
+[INFO ] 2023-07-05 10:22:21.288 [main] CustomerPS -  Customers Address  successful
+[INFO ] 2023-07-05 10:22:22.653 [main] CustomerPS -  New Customer Create successful
+[INFO ] 2023-07-05 10:23:02.584 [main] CustomerPS - Browser opend
+[INFO ] 2023-07-05 10:23:30.981 [main] CustomerPS - Clickon Configuration successful
+[INFO ] 2023-07-05 10:23:31.267 [main] CustomerPS -  SupportTables Windo Open  successful
+[INFO ] 2023-07-05 10:23:34.927 [main] CustomerPS -  Customers Windo Open  successful
+[INFO ] 2023-07-05 10:23:41.495 [main] CustomerPS -  Customers Windo Open  successful
+[INFO ] 2023-07-05 10:23:45.271 [main] CustomerPS -  Click on add Customer 
+[INFO ] 2023-07-05 10:23:57.719 [main] CustomerPS -  Customers Address  successful
+[INFO ] 2023-07-05 10:23:58.967 [main] CustomerPS -  New Customer Create successful
+[INFO ] 2023-07-05 10:23:59.492 [main] CustomerPS - click on Transaction 
+[INFO ] 2023-07-05 10:24:07.472 [main] CustomerPS - click on Process Shipment
+[INFO ] 2023-07-05 10:24:38.328 [main] CustomerPS - click on shipviaSearch 
+[INFO ] 2023-07-05 10:24:44.662 [main] CustomerPS - shipvia is selected
+[INFO ] 2023-07-05 10:24:45.788 [main] CustomerPS - Clicked on Customer
+[INFO ] 2023-07-05 10:24:55.185 [main] CustomerPS - Customer Searched
+[INFO ] 2023-07-05 10:25:04.442 [main] CustomerPS - Manual Weight is fill 
+[INFO ] 2023-07-05 10:25:04.687 [main] CustomerPS -  Shipment is Done
+[INFO ] 2023-07-21 09:35:59.692 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 09:36:16.002 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 09:36:21.163 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 09:36:28.789 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 09:36:39.153 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 09:36:49.222 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 09:36:49.695 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 09:36:55.149 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 09:37:05.535 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 09:37:11.084 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 09:37:11.504 [main] Task2 - Click on Special Services successful
+[INFO ] 2023-07-21 09:37:23.320 [main] Task2 - Click on ok successful
+[INFO ] 2023-07-21 09:37:23.442 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 09:37:24.644 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 09:37:50.435 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 09:38:01.305 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 09:38:06.780 [main] Task2 - Click on ok successful
+[INFO ] 2023-07-21 09:38:06.862 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 09:38:07.741 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 09:38:12.830 [main] Task2 - AutoPOD Added
+[INFO ] 2023-07-21 09:38:22.997 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 09:38:28.898 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 09:38:55.703 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 09:38:56.574 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 09:39:17.502 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 09:39:28.515 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 09:39:45.175 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 09:39:45.784 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 09:39:50.871 [main] Task2 - Dropoff done 
+[INFO ] 2023-07-21 09:40:11.648 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 09:40:22.503 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 09:40:34.455 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 09:40:35.039 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 09:40:40.174 [main] Task2 - RecipientShipAlert done 
+[INFO ] 2023-07-21 09:41:00.865 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 09:41:11.715 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 09:41:33.668 [main] Task2 - Click on ok successful
+[INFO ] 2023-07-21 09:41:45.333 [main] Task2 - Books input given 
+[INFO ] 2023-07-21 09:41:50.707 [main] Task2 - Books Selected 
+[INFO ] 2023-07-21 09:42:11.187 [main] Task2 - Details added
+[INFO ] 2023-07-21 09:42:11.358 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 09:42:12.119 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 09:42:17.209 [main] Task2 - HazardousMaterials 
+[INFO ] 2023-07-21 09:42:32.944 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 09:42:40.774 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 09:42:57.672 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 09:42:58.523 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 09:43:03.665 [main] Task2 - FedExInternationaControlledExport Done  
+[INFO ] 2023-07-21 09:43:24.559 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 09:43:32.523 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 09:43:49.125 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 09:43:49.742 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 09:43:54.824 [main] Task2 - COD Done  
+[INFO ] 2023-07-21 09:44:15.544 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 09:44:23.497 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 09:44:42.247 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 09:44:43.270 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 09:49:25.878 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 09:49:43.859 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 09:49:48.998 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 09:49:56.227 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 09:50:06.563 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 09:50:16.657 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 09:50:17.085 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 09:50:22.354 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 09:50:32.947 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 09:50:38.628 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 09:50:38.904 [main] Task2 - Click on Special Services successful
+[INFO ] 2023-07-21 09:50:50.266 [main] Task2 - Click on ok successful
+[INFO ] 2023-07-21 09:50:50.443 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 09:50:52.203 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 09:51:18.076 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 09:51:29.033 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 09:51:34.999 [main] Task2 - Click on ok successful
+[INFO ] 2023-07-21 09:51:35.107 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 09:51:36.219 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 09:51:41.299 [main] Task2 - AutoPOD Added
+[INFO ] 2023-07-21 09:51:49.942 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 09:51:56.056 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 09:52:23.152 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 09:52:23.772 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 09:52:44.717 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 09:52:55.552 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 09:53:12.108 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 09:53:13.013 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 09:53:18.136 [main] Task2 - Dropoff done 
+[INFO ] 2023-07-21 09:53:38.893 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 09:53:49.756 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 09:54:00.834 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 09:54:01.485 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 09:54:06.518 [main] Task2 - RecipientShipAlert done 
+[INFO ] 2023-07-21 09:54:27.260 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 09:54:38.143 [main] Task2 - Customer Added
+
+[INFO ] 2023-07-21 10:41:04.045 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 10:41:24.048 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 10:41:29.366 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 10:41:39.638 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 10:41:50.349 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 10:42:00.574 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 10:42:01.198 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 10:42:06.720 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 10:42:17.929 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 10:42:23.827 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 10:42:24.434 [main] Task2 - Click on Special Services successful
+[INFO ] 2023-07-21 10:42:35.876 [main] Task2 - Click on ok successful
+[INFO ] 2023-07-21 10:42:36.271 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 10:42:37.277 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 10:43:03.705 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 10:43:14.857 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 10:43:20.874 [main] Task2 - Click on ok successful
+[INFO ] 2023-07-21 10:43:21.322 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 10:43:43.602 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 10:43:48.744 [main] Task2 - AutoPOD Added
+[INFO ] 2023-07-21 10:44:00.097 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 10:44:06.250 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 10:44:34.717 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 10:44:35.553 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 10:44:57.269 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 10:45:08.377 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 10:45:25.299 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 10:45:26.102 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 10:45:31.236 [main] Task2 - Dropoff done 
+[INFO ] 2023-07-21 10:46:09.974 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 10:46:21.256 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 10:46:33.905 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-21 10:46:35.013 [main] Task2 - Click on Rate 
+[INFO ] 2023-07-21 10:46:40.158 [main] Task2 - RecipientShipAlert done 
+[INFO ] 2023-07-21 12:04:45.388 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 12:11:47.754 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 12:12:05.690 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 12:12:10.844 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 12:12:18.770 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 12:12:29.037 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 12:12:39.199 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 12:12:39.642 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 12:12:44.900 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 12:12:55.243 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 12:13:00.808 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 12:16:06.490 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 12:16:21.537 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 12:16:26.659 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 12:16:34.690 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 12:16:45.966 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 12:16:56.074 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 12:16:56.538 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 12:17:01.802 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 12:17:12.213 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 12:17:17.724 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 12:17:17.963 [main] Task2 - Click on Special Services successful
+[INFO ] 2023-07-21 12:31:02.374 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 12:31:17.783 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 12:31:22.930 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 12:31:30.101 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 12:31:40.323 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 12:31:50.429 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 12:31:50.853 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 12:31:56.063 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 12:32:06.488 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 12:32:12.028 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 12:32:12.362 [main] Task2 - Click on Special Services successful
+[INFO ] 2023-07-21 13:22:17.492 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 13:22:35.597 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 13:22:40.751 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 13:22:49.111 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 13:22:59.479 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 13:23:09.591 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 13:23:10.131 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 13:23:15.389 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 13:23:25.730 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 13:23:31.256 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 13:23:31.565 [main] Task2 - Click on Special Services successful
+[INFO ] 2023-07-21 13:24:58.579 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 13:25:16.298 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 13:25:21.395 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 13:25:28.811 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 13:25:39.092 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 13:25:49.214 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 13:25:49.623 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 13:25:54.887 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 13:26:05.313 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 13:26:10.907 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 13:26:11.187 [main] Task2 - Click on Special Services successful
+[INFO ] 2023-07-21 13:26:36.902 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 13:26:47.523 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 13:27:52.925 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 13:28:11.083 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 13:28:16.216 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 13:28:23.806 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 13:28:34.083 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 13:28:44.146 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 13:28:44.647 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 13:28:49.892 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 13:29:00.329 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 13:29:05.806 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 13:29:06.058 [main] Task2 - Click on Special Services successful
+[INFO ] 2023-07-21 13:29:31.839 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 13:29:42.406 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 13:34:19.013 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 13:34:35.031 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 13:34:40.171 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 13:34:47.308 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 13:34:57.557 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 13:35:07.611 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 13:35:08.008 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 13:35:13.265 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 13:35:23.683 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 13:35:29.282 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 13:35:29.577 [main] Task2 - Click on Special Services successful
+[INFO ] 2023-07-21 13:35:55.421 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 13:36:05.983 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 13:39:52.826 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 13:40:08.404 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 13:40:13.505 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 13:40:20.968 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 13:40:31.296 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 13:40:41.476 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 13:40:41.962 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 13:40:47.200 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 13:40:57.564 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 13:41:03.407 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 13:41:04.137 [main] Task2 - Click on Special Services successful
+[INFO ] 2023-07-21 13:41:30.747 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 13:41:41.421 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 14:44:30.160 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 14:44:31.472 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 14:44:36.657 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 14:48:11.460 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 14:49:03.777 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 14:49:09.008 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 14:50:53.921 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 14:51:11.904 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 14:51:17.147 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 14:51:26.121 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 14:51:36.860 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 14:51:47.039 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 14:51:47.600 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 14:51:53.157 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 14:52:03.908 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 14:52:09.671 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 14:52:10.387 [main] Task2 - Click on Special Services successful
+[INFO ] 2023-07-21 14:52:36.968 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 14:52:47.802 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 15:07:02.970 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 15:07:09.706 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 15:12:49.054 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 15:13:16.228 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 15:13:21.543 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 15:13:46.514 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 15:14:06.983 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 15:14:17.190 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 15:14:17.881 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 15:14:23.502 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 15:14:34.331 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 15:14:40.280 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 15:14:40.940 [main] Task2 - Click on Special Services successful
+[INFO ] 2023-07-21 15:15:07.553 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 15:15:18.297 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 15:58:18.833 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 15:58:37.502 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 15:58:42.655 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 15:58:51.426 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 15:59:01.715 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 15:59:11.837 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 15:59:12.310 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 15:59:17.583 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 15:59:27.987 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 15:59:33.487 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 15:59:33.796 [main] Task2 - Click on Special Services successful
+[INFO ] 2023-07-21 16:01:50.844 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 16:02:06.494 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 16:02:11.627 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 16:02:19.038 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 16:02:29.319 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 16:02:39.417 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 16:02:39.785 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 16:02:45.076 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 16:02:55.477 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 16:03:01.021 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 16:03:01.303 [main] Task2 - Click on Special Services successful
+[INFO ] 2023-07-21 16:03:34.006 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 16:03:49.786 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 16:03:54.858 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 16:04:02.029 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 16:04:12.363 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 16:04:22.444 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 16:04:22.807 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 16:04:28.027 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 16:04:38.671 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 16:04:44.400 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 16:04:44.741 [main] Task2 - Click on Special Services successful
+[INFO ] 2023-07-21 16:11:09.681 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 16:11:26.087 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 16:11:31.192 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 16:11:38.534 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 16:11:48.833 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 16:11:58.954 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 16:11:59.388 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 16:12:04.645 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 16:12:15.075 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 16:12:20.659 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 16:16:52.208 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 16:17:07.814 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 16:17:12.959 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 16:17:20.245 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 16:17:30.517 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 16:17:40.577 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 16:17:41.026 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 16:17:46.280 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 16:17:56.672 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 16:18:02.245 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 16:22:35.345 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 16:22:51.911 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 16:22:57.051 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 16:23:04.272 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 16:23:14.792 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 16:23:24.903 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 16:23:25.347 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 16:23:30.614 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 16:23:41.042 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 16:23:46.664 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 16:26:41.147 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 16:26:57.229 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 16:27:02.368 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 16:27:09.815 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 16:27:20.084 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 16:27:30.188 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 16:27:30.648 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 16:27:35.921 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 16:27:46.338 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 16:27:51.874 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 17:11:25.777 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 17:11:41.525 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 17:11:46.647 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 17:11:54.199 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 17:12:04.463 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 17:12:14.585 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 17:12:15.091 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 17:12:20.341 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 17:12:30.721 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 17:12:36.283 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 17:18:07.984 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 17:18:23.320 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 17:18:28.426 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 17:18:35.787 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 17:18:46.457 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 17:18:56.666 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 17:18:57.175 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 17:19:02.723 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 17:19:13.578 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 17:19:19.393 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 17:44:44.984 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 17:45:02.214 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 17:45:07.398 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 17:45:15.790 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 17:45:26.423 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 17:45:36.578 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 17:45:37.206 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 17:45:42.784 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 17:45:53.488 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 17:45:59.404 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 17:48:17.453 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 17:48:35.482 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 17:48:40.666 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 17:48:48.733 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 17:48:59.442 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 17:49:09.602 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 17:49:10.341 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 17:49:15.876 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 17:49:26.577 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 17:49:32.685 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 17:52:36.385 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 17:52:58.098 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 17:53:03.281 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 17:53:11.772 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 17:53:22.466 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 17:53:32.611 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 17:53:33.129 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 17:53:38.663 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 17:53:49.441 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 17:53:55.215 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 17:55:07.239 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 17:55:31.093 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 17:55:36.274 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 17:55:44.163 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 17:55:54.846 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 17:56:05.003 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 17:56:05.598 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 17:56:11.315 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 17:56:22.116 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 17:56:28.145 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 18:00:11.239 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 18:00:28.474 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 18:00:33.672 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 18:02:39.410 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 18:02:56.487 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 18:03:01.737 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 18:03:10.491 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 18:03:21.134 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 18:03:31.317 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 18:03:31.961 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 18:03:37.490 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 18:03:48.356 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 18:03:54.086 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 18:07:16.444 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 18:07:33.588 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 18:07:38.813 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 18:07:46.707 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 18:07:57.241 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 18:08:07.423 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 18:08:07.939 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 18:08:13.492 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 18:08:24.207 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 18:08:30.016 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 18:10:03.672 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 18:10:22.109 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 18:10:27.350 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 18:10:49.232 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 18:10:59.881 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 18:11:10.054 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 18:11:10.666 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 18:11:16.224 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 18:11:26.994 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 18:11:32.692 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 18:17:26.180 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 18:17:44.176 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 18:17:49.352 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 18:17:57.191 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 18:18:08.016 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 18:18:18.262 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 18:18:18.821 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 18:18:24.409 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 18:18:35.412 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 18:18:41.203 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 18:26:39.368 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 18:26:58.565 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 18:27:03.758 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 18:27:11.532 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 18:27:22.166 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 18:27:32.335 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 18:27:32.965 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 18:27:38.540 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 18:27:49.317 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 18:27:55.053 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 18:28:27.471 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 18:28:38.198 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 18:39:04.291 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 18:39:22.412 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 18:39:27.559 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 18:40:37.904 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 18:40:56.167 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 18:41:01.450 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 18:41:09.474 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 18:41:29.083 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 18:41:39.246 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 18:41:39.793 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 18:41:45.364 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 18:41:56.181 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 18:42:01.902 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 18:59:44.255 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 19:00:03.467 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 19:00:08.604 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 19:00:45.906 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 19:00:55.548 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 19:01:00.693 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 19:01:07.405 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 19:01:52.802 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 19:02:08.652 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 19:02:13.812 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 19:02:21.070 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 19:02:31.322 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 19:02:41.424 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 19:02:41.828 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 19:02:47.096 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 19:02:57.531 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 19:03:03.108 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 19:07:30.374 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 19:07:45.655 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 19:07:50.786 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 19:07:59.410 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 19:08:09.474 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 19:08:38.666 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 19:08:54.754 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 19:08:59.936 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 19:09:07.220 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 19:09:17.488 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 19:09:27.634 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 19:09:28.182 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 19:09:33.616 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 19:09:44.017 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 19:09:49.513 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 19:10:55.828 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 19:11:11.620 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 19:11:16.765 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 19:11:25.258 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 19:11:35.626 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 19:11:45.738 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 19:11:46.242 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 19:11:51.499 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 19:12:01.928 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 19:12:07.489 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 19:12:33.639 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 19:12:44.190 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 19:19:08.829 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 19:19:25.873 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 19:19:31.023 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 19:19:38.158 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 19:19:48.421 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 19:19:58.519 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 19:19:59.018 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 19:20:04.300 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 19:20:14.729 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 19:20:20.305 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 19:20:46.527 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 19:20:57.081 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 19:31:30.889 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 19:31:50.000 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 19:31:55.186 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 19:32:02.623 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 19:32:12.969 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 19:32:23.084 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 19:32:23.142 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 19:32:58.206 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 19:33:16.042 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 19:33:21.191 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 19:33:43.065 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 19:33:53.358 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 19:34:03.474 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 19:34:03.879 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 19:34:09.134 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 19:34:19.568 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 19:34:25.169 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 19:34:51.386 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 19:35:23.735 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 19:41:34.776 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 19:41:50.041 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 19:41:55.166 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 19:42:02.417 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 19:42:12.737 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 19:42:22.858 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 19:42:23.290 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 19:42:28.527 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 19:42:38.960 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 19:42:44.528 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 19:43:10.705 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 19:43:21.231 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 19:44:58.385 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 19:45:13.664 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 19:45:18.807 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 19:45:26.068 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 19:45:36.362 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 19:45:46.459 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 19:45:46.915 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 19:45:52.180 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 19:46:02.548 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 19:46:08.121 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 19:46:34.299 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 19:46:44.878 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 20:00:50.493 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 20:01:06.320 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 20:01:11.463 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 20:01:18.680 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 20:01:28.961 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 20:01:39.095 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 20:01:39.490 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 20:01:44.761 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 20:01:55.180 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 20:02:00.729 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 20:02:27.161 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 20:02:37.802 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 20:12:27.628 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 20:12:46.563 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 20:12:51.697 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 20:12:58.874 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 20:13:09.101 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 20:13:19.256 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 20:13:19.744 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 20:13:25.062 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 20:13:35.511 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 20:13:41.054 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 20:14:07.417 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 20:14:18.008 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 20:18:00.121 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 20:18:16.446 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 20:18:21.518 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 20:18:28.554 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 20:18:38.856 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 20:18:48.947 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 20:18:49.370 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 20:18:54.822 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 20:19:05.180 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 20:19:11.480 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 20:19:38.816 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 20:19:49.468 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 20:23:48.230 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 20:24:08.270 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 20:24:13.525 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 20:24:22.482 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 20:24:33.054 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 20:24:43.199 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 20:24:43.745 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 20:24:49.389 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 20:25:00.136 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 20:25:05.919 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 20:25:24.117 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 20:25:43.095 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 20:25:48.289 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 20:25:56.310 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 20:26:06.969 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 20:26:17.127 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 20:26:17.722 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 20:26:23.322 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 20:26:34.129 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 20:26:39.959 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 20:27:07.429 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 20:27:18.174 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 20:36:55.214 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 20:37:17.196 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 20:37:22.407 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 20:37:30.315 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 20:37:40.925 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 20:37:51.095 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 20:38:11.569 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 20:38:17.090 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-21 20:38:27.961 [main] Task2 - Customer Searched
+[INFO ] 2023-07-21 20:38:33.648 [main] Task2 - Customer Added
+[INFO ] 2023-07-21 20:39:02.415 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 20:39:20.465 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 20:39:25.706 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 20:39:33.982 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 20:39:44.657 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 20:39:54.837 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 20:40:25.537 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-21 20:40:38.335 [main] Task2 - Browser opend
+[INFO ] 2023-07-21 20:41:00.350 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-21 20:41:05.630 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-21 20:41:13.601 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-21 20:41:25.007 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-21 20:41:35.215 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-21 20:41:35.399 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-22 00:05:13.995 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 00:05:33.194 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 00:05:38.291 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 00:06:09.750 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 00:06:35.097 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 00:06:40.212 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 00:07:26.918 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 00:08:05.200 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 00:08:10.371 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 00:09:09.165 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 00:09:41.475 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 00:09:46.710 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 00:09:59.614 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 00:10:10.684 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 00:10:20.892 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-22 00:10:21.072 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-22 00:12:13.895 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 00:12:39.492 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 00:12:44.774 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 00:12:58.184 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 00:13:08.354 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 00:14:53.413 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 00:15:19.556 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 00:15:24.787 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 00:15:38.270 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 00:15:49.062 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 00:15:59.207 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-22 00:15:59.750 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-22 00:16:05.216 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-22 00:16:20.932 [main] Task2 - Customer Searched
+[INFO ] 2023-07-22 00:16:26.676 [main] Task2 - Customer Added
+[INFO ] 2023-07-22 00:17:47.256 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 00:18:07.010 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 00:18:12.286 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 00:18:25.401 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 00:19:38.918 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 00:19:58.604 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 00:20:44.665 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 00:21:08.847 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 00:21:30.992 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 00:21:36.232 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 00:21:49.037 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 00:21:59.677 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 00:22:09.854 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-22 00:22:10.354 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-22 00:22:15.922 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-22 00:22:31.826 [main] Task2 - Customer Searched
+[INFO ] 2023-07-22 00:23:08.236 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 00:23:31.556 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 00:23:36.719 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 00:23:44.837 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 00:23:54.975 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 00:24:50.765 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 00:25:12.229 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 00:25:17.465 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 00:25:30.324 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 00:25:40.830 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 00:25:51.044 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-22 00:25:51.198 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-22 00:27:08.583 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 00:27:34.323 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 00:27:39.629 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 00:27:57.460 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 00:28:10.097 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 00:30:39.308 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 00:30:58.175 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 09:29:51.553 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 09:31:03.910 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 09:31:09.070 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 09:31:22.436 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 09:31:32.899 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 09:31:43.095 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-22 09:31:43.626 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-22 09:31:53.991 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-22 09:32:14.374 [main] Task2 - Customer Searched
+[INFO ] 2023-07-22 10:58:35.500 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 10:59:19.952 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 10:59:51.170 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 11:00:14.131 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 11:00:19.351 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 11:00:32.939 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 11:00:43.093 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 11:02:34.629 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 11:03:00.594 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 11:03:05.820 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 11:03:18.828 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 11:03:29.340 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 11:03:39.533 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-22 11:03:40.071 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-22 11:03:50.630 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-22 11:04:11.452 [main] Task2 - Customer Searched
+[INFO ] 2023-07-22 11:06:02.855 [main] Task2 - Customer Added
+[INFO ] 2023-07-22 11:06:35.966 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 11:06:56.844 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 11:07:02.066 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 11:07:29.010 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 11:07:39.723 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 11:07:49.942 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-22 11:07:50.452 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-22 11:08:01.014 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-22 11:08:21.883 [main] Task2 - Customer Searched
+[INFO ] 2023-07-22 11:08:32.639 [main] Task2 - Customer Added
+[INFO ] 2023-07-22 11:12:48.860 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 11:13:08.677 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 11:13:13.881 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 11:13:26.576 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 11:13:38.037 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 11:13:48.199 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-22 11:13:48.744 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-22 11:13:59.171 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-22 11:14:19.901 [main] Task2 - Customer Searched
+[INFO ] 2023-07-22 11:14:30.599 [main] Task2 - Customer Added
+[INFO ] 2023-07-22 11:17:02.534 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 11:17:24.863 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 11:17:30.119 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 11:17:42.968 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 11:17:53.474 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 11:18:03.645 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-22 11:18:04.172 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-22 11:18:14.693 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-22 11:18:35.467 [main] Task2 - Customer Searched
+[INFO ] 2023-07-22 11:18:46.233 [main] Task2 - Customer Added
+[INFO ] 2023-07-22 11:23:16.426 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 11:23:38.159 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 11:23:43.430 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 11:23:51.452 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 11:24:01.593 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 11:25:06.390 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 11:25:26.989 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 11:25:32.196 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 11:25:41.037 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 11:25:51.179 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 11:27:14.312 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 11:27:35.439 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 11:27:40.665 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 11:27:48.608 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 11:27:59.399 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 11:28:09.622 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-22 11:28:10.114 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-22 11:28:15.661 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-22 11:28:26.427 [main] Task2 - Customer Searched
+[INFO ] 2023-07-22 11:28:32.062 [main] Task2 - Customer Added
+[INFO ] 2023-07-22 11:28:59.312 [main] Task2 - Customer Searched
+[INFO ] 2023-07-22 11:29:09.999 [main] Task2 - Customer Added
+[INFO ] 2023-07-22 11:35:50.726 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 11:36:12.387 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 11:36:17.607 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 11:36:25.486 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 11:36:36.180 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 11:36:46.363 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-22 11:36:46.886 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-22 11:36:52.324 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-22 11:37:03.120 [main] Task2 - Customer Searched
+[INFO ] 2023-07-22 11:37:08.868 [main] Task2 - Customer Added
+[INFO ] 2023-07-22 11:37:26.089 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 11:37:47.719 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 11:37:52.938 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 11:38:00.697 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 11:38:11.226 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 11:38:21.387 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-22 11:38:21.507 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-22 11:39:15.422 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 11:39:38.537 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 11:39:43.756 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 11:39:51.934 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 11:40:02.431 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 11:40:12.577 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-22 11:40:13.101 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-22 11:40:18.579 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-22 11:40:29.347 [main] Task2 - Customer Searched
+[INFO ] 2023-07-22 11:40:35.097 [main] Task2 - Customer Added
+[INFO ] 2023-07-22 11:40:52.689 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 11:41:14.547 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 11:41:19.770 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 11:41:28.023 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 11:41:38.596 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 11:41:48.814 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-22 11:41:48.973 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-22 11:42:39.547 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 11:42:59.545 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-22 11:43:04.740 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-22 11:43:12.706 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-22 11:43:23.359 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-22 11:43:33.528 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-22 11:43:34.070 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-22 11:43:39.777 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-22 11:43:50.604 [main] Task2 - Customer Searched
+[INFO ] 2023-07-22 11:43:56.308 [main] Task2 - Customer Added
+[INFO ] 2023-07-22 20:02:44.384 [main] Task2 - Browser opend
+[INFO ] 2023-07-22 20:03:42.701 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-23 09:09:04.829 [main] Task2 - Browser opend
+[INFO ] 2023-07-23 09:09:53.481 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-23 13:01:25.283 [main] Task2 - Browser opend
+[INFO ] 2023-07-23 13:02:18.748 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-23 13:02:39.775 [main] Task2 - Browser opend
+[INFO ] 2023-07-23 13:03:04.026 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-23 13:03:09.241 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-23 13:03:22.234 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-23 13:03:32.942 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-23 13:03:43.148 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-23 13:03:43.707 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-23 13:03:54.489 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-23 13:04:15.295 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:04:25.997 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:06:37.709 [main] Task2 - Browser opend
+[INFO ] 2023-07-23 13:06:58.815 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-23 13:07:04.018 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-23 13:07:12.021 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-23 13:07:22.547 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-23 13:07:32.703 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-23 13:07:33.192 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-23 13:07:38.734 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-23 13:07:49.384 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:07:55.076 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:08:00.713 [main] Task2 - ***
+[INFO ] 2023-07-23 13:08:21.972 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:08:32.645 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:08:33.117 [main] Task2 - click  btnSpecialServices
+[INFO ] 2023-07-23 13:14:52.474 [main] Task2 - Browser opend
+[INFO ] 2023-07-23 13:15:20.194 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-23 13:15:25.406 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-23 13:15:34.848 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-23 13:15:45.006 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-23 13:19:59.720 [main] Task2 - Browser opend
+[INFO ] 2023-07-23 13:20:24.960 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-23 13:20:30.171 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-23 13:20:38.057 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-23 13:20:49.593 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-23 13:20:59.768 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-23 13:21:00.310 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-23 13:21:05.914 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-23 13:21:16.643 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:21:22.446 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:21:28.151 [main] Task2 - ***
+[INFO ] 2023-07-23 13:21:49.816 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:22:00.561 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:22:01.154 [main] Task2 - click  btnSpecialServices
+[ERROR] 2023-07-23 13:22:06.200 [main] Task2 - StaleElementReferenceException occurred. Trying to recover...
+[INFO ] 2023-07-23 13:22:06.227 [main] Task2 - ***
+[INFO ] 2023-07-23 13:22:27.632 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:22:38.341 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:22:38.914 [main] Task2 - click  btnSpecialServices
+[ERROR] 2023-07-23 13:22:43.945 [main] Task2 - StaleElementReferenceException occurred. Trying to recover...
+[INFO ] 2023-07-23 13:22:43.976 [main] Task2 - ***
+[INFO ] 2023-07-23 13:23:05.575 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:23:16.560 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:23:17.222 [main] Task2 - click  btnSpecialServices
+[ERROR] 2023-07-23 13:23:22.253 [main] Task2 - StaleElementReferenceException occurred. Trying to recover...
+[INFO ] 2023-07-23 13:23:22.281 [main] Task2 - ***
+[INFO ] 2023-07-23 13:23:43.665 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:23:54.413 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:23:54.993 [main] Task2 - click  btnSpecialServices
+[ERROR] 2023-07-23 13:24:00.019 [main] Task2 - StaleElementReferenceException occurred. Trying to recover...
+[INFO ] 2023-07-23 13:24:00.053 [main] Task2 - ***
+[INFO ] 2023-07-23 13:24:21.727 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:24:32.416 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:24:33.030 [main] Task2 - click  btnSpecialServices
+[ERROR] 2023-07-23 13:24:38.053 [main] Task2 - StaleElementReferenceException occurred. Trying to recover...
+[INFO ] 2023-07-23 13:24:38.084 [main] Task2 - ***
+[INFO ] 2023-07-23 13:24:59.718 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:25:10.514 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:25:11.064 [main] Task2 - click  btnSpecialServices
+[ERROR] 2023-07-23 13:25:16.091 [main] Task2 - StaleElementReferenceException occurred. Trying to recover...
+[INFO ] 2023-07-23 13:25:16.117 [main] Task2 - ***
+[INFO ] 2023-07-23 13:25:37.378 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:25:47.874 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:25:48.107 [main] Task2 - click  btnSpecialServices
+[ERROR] 2023-07-23 13:25:53.127 [main] Task2 - StaleElementReferenceException occurred. Trying to recover...
+[INFO ] 2023-07-23 13:25:53.141 [main] Task2 - ***
+[INFO ] 2023-07-23 13:26:13.918 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:26:24.408 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:26:24.670 [main] Task2 - click  btnSpecialServices
+[ERROR] 2023-07-23 13:26:29.692 [main] Task2 - StaleElementReferenceException occurred. Trying to recover...
+[INFO ] 2023-07-23 13:26:29.703 [main] Task2 - ***
+[INFO ] 2023-07-23 13:26:50.398 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:27:00.877 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:27:01.113 [main] Task2 - click  btnSpecialServices
+[ERROR] 2023-07-23 13:27:06.133 [main] Task2 - StaleElementReferenceException occurred. Trying to recover...
+[INFO ] 2023-07-23 13:27:06.154 [main] Task2 - ***
+[INFO ] 2023-07-23 13:27:26.927 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:27:37.411 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:27:37.774 [main] Task2 - click  btnSpecialServices
+[ERROR] 2023-07-23 13:27:42.800 [main] Task2 - StaleElementReferenceException occurred. Trying to recover...
+[INFO ] 2023-07-23 13:27:42.818 [main] Task2 - ***
+[INFO ] 2023-07-23 13:28:03.521 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:28:14.029 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:28:14.263 [main] Task2 - click  btnSpecialServices
+[ERROR] 2023-07-23 13:28:19.277 [main] Task2 - StaleElementReferenceException occurred. Trying to recover...
+[INFO ] 2023-07-23 13:28:19.289 [main] Task2 - ***
+[INFO ] 2023-07-23 13:28:40.271 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:28:50.890 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:28:51.251 [main] Task2 - click  btnSpecialServices
+[ERROR] 2023-07-23 13:28:56.261 [main] Task2 - StaleElementReferenceException occurred. Trying to recover...
+[INFO ] 2023-07-23 13:28:56.272 [main] Task2 - ***
+[INFO ] 2023-07-23 13:29:16.957 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:29:27.438 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:29:27.716 [main] Task2 - click  btnSpecialServices
+[ERROR] 2023-07-23 13:29:32.737 [main] Task2 - StaleElementReferenceException occurred. Trying to recover...
+[INFO ] 2023-07-23 13:29:32.756 [main] Task2 - ***
+[INFO ] 2023-07-23 13:29:53.698 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:30:06.940 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:30:07.211 [main] Task2 - click  btnSpecialServices
+[ERROR] 2023-07-23 13:30:12.232 [main] Task2 - StaleElementReferenceException occurred. Trying to recover...
+[INFO ] 2023-07-23 13:30:12.243 [main] Task2 - ***
+[INFO ] 2023-07-23 13:30:32.953 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:30:43.445 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:30:43.674 [main] Task2 - click  btnSpecialServices
+[ERROR] 2023-07-23 13:30:48.685 [main] Task2 - StaleElementReferenceException occurred. Trying to recover...
+[INFO ] 2023-07-23 13:30:48.695 [main] Task2 - ***
+[INFO ] 2023-07-23 13:31:09.582 [main] Task2 - Customer Searched
+[INFO ] 2023-07-23 13:32:57.932 [main] Task2 - Customer Added
+[INFO ] 2023-07-23 13:32:58.174 [main] Task2 - click  btnSpecialServices
+[ERROR] 2023-07-23 13:33:03.194 [main] Task2 - StaleElementReferenceException occurred. Trying to recover...
+[INFO ] 2023-07-24 10:10:58.434 [main] Task2 - Browser opend
+[INFO ] 2023-07-24 10:11:16.378 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-07-24 10:11:21.551 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-07-24 10:11:33.544 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-07-24 10:11:43.790 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-07-24 10:11:53.894 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-07-24 10:11:54.264 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-07-24 10:12:04.547 [main] Task2 - Clicked on Customer
+[INFO ] 2023-07-24 10:12:24.980 [main] Task2 - Customer Searched
+[INFO ] 2023-07-24 10:12:35.544 [main] Task2 - Customer Added
+[INFO ] 2023-07-24 10:13:06.673 [main] Task2 - Customer Searched
+[INFO ] 2023-07-24 10:13:17.218 [main] Task2 - Customer Added
+[INFO ] 2023-07-24 10:13:17.359 [main] Task2 - Manual Weight is fill 
+[INFO ] 2023-07-24 10:13:18.049 [main] Task2 - Click on Rate 
+[INFO ] 2023-08-04 07:56:50.122 [main] Task2 - Browser opend
+[INFO ] 2023-08-04 07:56:51.872 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-08-04 07:57:25.462 [main] Task2 - Browser opend
+[INFO ] 2023-08-04 07:57:41.179 [main] Task2 -  Opening Process Shipment Menu
+[INFO ] 2023-08-04 07:57:46.314 [main] Task2 -  Click on Transaction Menu Successful
+[INFO ] 2023-08-04 07:57:53.554 [main] Task2 -  Click on Process Shipment Menu Successful
+[INFO ] 2023-08-04 07:58:03.828 [main] Task2 - Clicked on shipviaSearch
+[INFO ] 2023-08-04 07:58:13.908 [main] Task2 - shipviaSearch Enter Value Successful
+[INFO ] 2023-08-04 07:58:14.340 [main] Task2 - Click on Ship Via ok search  Successful
+[INFO ] 2023-08-04 07:58:19.625 [main] Task2 - Clicked on Customer
+[INFO ] 2023-08-04 07:58:29.970 [main] Task2 - Customer Searched
+[INFO ] 2023-08-04 07:58:35.451 [main] Task2 - Customer Added
+[INFO ] 2023-08-04 07:58:35.736 [main] Task2 - Click on Special Services successful
+[INFO ] 2023-08-11 14:45:28.172 [main] DisableBestway - Browser opend
+[INFO ] 2023-08-11 14:45:49.784 [main] DisableBestway - Clickon Configuration successful
+[INFO ] 2023-08-11 14:45:54.896 [main] DisableBestway - Click on Carriers successful
+[INFO ] 2023-08-11 14:46:18.756 [main] DisableBestway - Enabled Bestway via Record 

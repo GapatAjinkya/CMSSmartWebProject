@@ -14,7 +14,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -27,20 +29,19 @@ public class CreateNewProducts {
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("CreateNewProducts");
 	
-	@BeforeMethod
+	@BeforeClass
 	public void setup() throws InterruptedException {
-
 		ChromeOptions options = new ChromeOptions();
 		WebDriverManager.chromedriver().setup();
 		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
 		options.addArguments("--remote-allow-origins=*");
 		driver = new ChromeDriver(options);
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-
+		wait = new WebDriverWait(driver, 60);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete';"));
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);
@@ -49,11 +50,9 @@ public class CreateNewProducts {
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
 		password.sendKeys("Nilesh@123");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
-
 		WebElement ok = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
 		ok.click();
-
 		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";
 		String actualTitle = driver.getTitle();
 		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
@@ -61,7 +60,7 @@ public class CreateNewProducts {
 		Thread.sleep(10000);
 	}
 
-	@AfterMethod
+	@AfterClass
 	public void teardown() throws InterruptedException {
 
 //		Thread.sleep(10000);
@@ -88,6 +87,7 @@ public class CreateNewProducts {
 		wait.until(ExpectedConditions.visibilityOf(products));
 		wait.until(ExpectedConditions.elementToBeClickable(products));
 		products.click();
+		
 		logger.info(" products Windo Open  successful");
 		Thread.sleep(3000);
 		WebElement okclick=driver.findElement(By.xpath("//button[@onclick='onProductSearchFormOkClick()']"));

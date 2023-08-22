@@ -33,6 +33,7 @@ public class ProductsCode {
 		okproduct();
 		captureError();
 	}
+	
 	@Test(priority = 1)
 	public void codetest() throws InterruptedException {
 		code("asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?/1");

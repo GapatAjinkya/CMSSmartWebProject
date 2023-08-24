@@ -121,8 +121,6 @@ public class TPBAadd {
 		
 		WebElement ThirdPartiesAdd = driver.findElement(By.id("ThirdPartiesAdd"));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ThirdPartiesAdd")));
-		wait.until(ExpectedConditions.visibilityOf(ThirdPartiesAdd));
-		wait.until(ExpectedConditions.elementToBeClickable(ThirdPartiesAdd));
 		ThirdPartiesAdd.click();
 		
 		logger.info("Click on add button successful");

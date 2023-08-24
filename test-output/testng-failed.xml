@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="productsNegative.ProductsCode">
+      <class name="thirdpartyaccounts.TPACityStateZip">
         <methods>
-          <include name="ProductCodeTest"/>
+          <include name="setup"/>
+          <include name="Testcity"/>
         </methods>
-      </class> <!-- productsNegative.ProductsCode -->
+      </class> <!-- thirdpartyaccounts.TPACityStateZip -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

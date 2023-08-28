@@ -34,13 +34,30 @@ public class TPACityStateZip {
 		Zip("94016");
 		okTPA();
 		captureError();
-		
 		City("");
 		okTPA();
 		captureError();
 	}
-	public void TestState() {
-		
+	@Test(priority = 1)
+	public void TestState() throws InterruptedException {
+		City("san francisco");
+		State("aasvadjwodvbwbvuwbvibdviwbvoeubvuadobvoboqbvqvquovB");
+		Zip("94016");
+		okTPA();
+		captureError();
+		State("");
+		okTPA();
+		captureError();
+	}
+	@Test(priority = 2)
+	public void TestZIP() throws InterruptedException {
+		State("california");
+		Zip("94016");
+		okTPA();
+		captureError();
+		Zip("");
+		okTPA();
+		captureError();
 	}
 	public void City(String city) throws InterruptedException {
 		Thread.sleep(3000);
@@ -49,13 +66,13 @@ public class TPACityStateZip {
 		addcity.sendKeys(city);
 	}
 	public void State(String states) throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		WebElement addstate=wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtAddState")));
 		addstate.clear();
 		addstate.sendKeys(states);
 	}
 	public void Zip(String zip) throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		WebElement ZipAdd= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtAddZip")));
 		ZipAdd.clear();
 		ZipAdd.sendKeys(zip);
@@ -115,8 +132,7 @@ public void add() throws InterruptedException {
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(desiredText);
 		logger.info(" Country  successful");
-		
-		//
+	
 		String ContactName="jon";  //TPtxtContact
 		String EmailAddress="cms@gmail.com";//TPtxtEmail
 		String Phone="1234567890";//TPtxtAddPhone
@@ -134,7 +150,8 @@ public void add() throws InterruptedException {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtFax"))).sendKeys(fax);
         logger.info("add Phone successful ");
  
-	}public void okTPA() {
+	}public void okTPA() throws InterruptedException {
+		Thread.sleep(5000);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='OkClickThirdPartiesForm()']"))).click();
 	}
 	public void captureError() throws InterruptedException {

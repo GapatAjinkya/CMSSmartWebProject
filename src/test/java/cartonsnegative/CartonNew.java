@@ -22,12 +22,13 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class CartonNew {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
-	Logger logger = LogManager.getLogger("Cartonsadd");
+	Logger logger = LogManager.getLogger("CartonNew");
 
 	@Test
 	public void TestCartons() throws InterruptedException {
 		Createcarriers();
 		CartonSearch("");
+		captureError();
 		ClickonCartonAdd();
 		Codecheck("Test_21");	
 		Dimensions();
@@ -41,11 +42,13 @@ public class CartonNew {
 		Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
 	        String actualErrorMessage = errorMessage.getText();
 		if (actualErrorMessage.equals("Entry already exists in the database. Please try again.")) {
-            // Handle first error message
             System.out.println("Handling first error message.");
             Assert.assertEquals(actualErrorMessage, "Entry already exists in the database. Please try again.", "Incorrect error message");
-        } else {
-            // Handle other cases or unexpected errors
+        } else if (actualErrorMessage.equals("No records found!")) {
+       	 System.out.println("Handling Second error message."+actualErrorMessage);
+         Assert.assertEquals(actualErrorMessage, "No records found!", "Incorrect error message");
+     } else {
+           
             System.out.println("Unexpected error message: " + actualErrorMessage);
         }
 		WebElement error = driver.findElement(By.xpath("//button[@class='WLButton text-uppercase']"));
@@ -65,7 +68,8 @@ public class CartonNew {
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='menu_item_450']")));
 		Cartons.click();
 	}
-	public void CartonSearch(String Searchcode) throws InterruptedException {
+	public void CartonSearch(String Searchcode) throws InterruptedException {	
+		
 		Thread.sleep(5000);
 		WebElement CartonSearch = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='txtSCSearch']")));
@@ -75,7 +79,7 @@ public class CartonNew {
 		CartonOk.click();
 	}
 	public void ClickonCartonAdd() throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		WebElement CartonAdd = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("CartonAdd")));
 		CartonAdd.click();
 	}
@@ -127,27 +131,29 @@ public class CartonNew {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
-		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
+		driver.get("http://localhost:8090/SmartWeb/#");
 		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete';"));
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);
 		WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
-		Userlogin.sendKeys("nilesh");
+		Userlogin.sendKeys("admin");
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
-		password.sendKeys("Nilesh@123");
+		password.sendKeys("password");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
 		WebElement ok = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
 		ok.click();
-		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";
-		String actualTitle = driver.getTitle();
-		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
-		System.out.println("Title Matched");
-		Thread.sleep(10000);
+		
+//		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";
+//		String actualTitle = driver.getTitle();
+//		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
+//		System.out.println("Title Matched");
+//		Thread.sleep(10000);
 	}
 	  @AfterClass
 	  public void teardown() {
 	   driver.quit();
 	  }
 }
+

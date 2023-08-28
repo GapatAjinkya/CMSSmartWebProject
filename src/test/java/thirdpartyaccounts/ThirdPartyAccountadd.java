@@ -41,6 +41,7 @@ public class ThirdPartyAccountadd {
 	}
 	@Test(priority = 2)
 	public void CodeCheck() throws InterruptedException {
+		
 		Code("asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?/1");
 		okTPA();
 		captureError();
@@ -97,7 +98,7 @@ public class ThirdPartyAccountadd {
 		String states="california";                                                                                        
 		String zip="94016";
 		String desiredText ="UNITED STATES";
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		
 		
 		WebElement addaddress=wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtAddress1")));
@@ -135,21 +136,24 @@ public class ThirdPartyAccountadd {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtFax"))).sendKeys(fax);
         logger.info("add Phone successful ");
 	}
-	public void okTPA() {
+	public void okTPA() throws InterruptedException {
+		Thread.sleep(4000);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='OkClickThirdPartiesForm()']"))).click();
 	}
 	public void Code(String customercode) throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		WebElement addcode=wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtXRef")));
 		addcode.clear();
 		addcode.sendKeys(customercode);
 	}
-	public void add() {
+	public void add() throws InterruptedException {
+		Thread.sleep(5000);
 		WebElement ThirdPartiesAdd = driver.findElement(By.id("ThirdPartiesAdd"));
 		ThirdPartiesAdd.click();
 		logger.info("Click on add button successful");
 	}
 	public void SearchTest(String code) throws InterruptedException {
+		Thread.sleep(5000);
 		WebElement Search = driver.findElement(By.xpath("//input[@id='txtTPSearch']"));
 		Search.sendKeys(code);
 		Thread.sleep(3000);
@@ -220,9 +224,9 @@ public class ThirdPartyAccountadd {
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);
 		WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
-		Userlogin.sendKeys("nilesh");
+		Userlogin.sendKeys("admin");
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
-		password.sendKeys("Nilesh@123");
+		password.sendKeys("password");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
 		WebElement ok = wait	
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));

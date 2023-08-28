@@ -21,9 +21,6 @@ public class ProductSearch {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("ProductsCode");
-	
-	
-	
 	@Test
 	public void ProductSearchTest() throws InterruptedException {
 		productWindo();

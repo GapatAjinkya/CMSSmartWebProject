@@ -125,12 +125,11 @@ public class ShipViaLoad extends BaseClass {
 		return this;
 	}
 	public ShipViaLoad clickOnUserGroup() throws InterruptedException {
-		
+		Thread.sleep(3000);
 		WebElement usergroup = driver.findElement(By.xpath("//Select[@id='ddlUserGroup']"));
 		Select Vavg = new Select(usergroup);
 		Vavg.selectByValue("45"); // VA_UG
 
-		logger.info("Login successful");
 		return this;
 	}
 

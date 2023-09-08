@@ -3,12 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="viewshipmenttaskNegative.Vsbuttoncheck">
+      <class name="manifestexplorernegative.ManifestExplorer">
         <methods>
+          <include name="FutureManifestTest"/>
+          <include name="testcarriers"/>
+          <include name="ActiveManifestTest"/>
           <include name="setup"/>
-          <include name="ButtonsTest"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- viewshipmenttaskNegative.Vsbuttoncheck -->
+      </class> <!-- manifestexplorernegative.ManifestExplorer -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -89,6 +89,20 @@ public class Vsbuttoncheck {
 		Assert.assertTrue(dataStatus, "Expected 'No matching records found' text not found.");
 		driver.findElement(By.id("cmdCancel")).click();
 	}
+	public void captureError() throws InterruptedException {
+		Thread.sleep(5000);
+		WebElement errorMessage = driver.findElement(By.xpath("//*[@id=\"jconfirm-box26219\"]/div/div[2]"));
+		Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
+		String actualErrorMessage = errorMessage.getText();
+		if (actualErrorMessage.equals("An active manifest cannot be created for a date in the past. Please try again.")) {
+			System.out.println("Handling error message." + actualErrorMessage);
+			Assert.assertEquals(actualErrorMessage, "An active manifest cannot be created for a date in the past. Please try again.", "Incorrect error message");
+		}  else {
+			System.out.println("Unexpected error message: " + actualErrorMessage);
+		}
+		WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
+		error.click();
+	}
 	@BeforeClass
 	public void setup() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();

@@ -20,7 +20,6 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ManifestExplorer {
-
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("ManifestExplorer");

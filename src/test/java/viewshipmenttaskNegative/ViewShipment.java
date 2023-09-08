@@ -2,7 +2,6 @@ package viewshipmenttaskNegative;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -14,8 +13,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
+
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -57,6 +57,25 @@ public class ViewShipment {
 		ok();
 		ShipmentsTable();
 	}
+	@Test(priority = 4,dataProvider = "package")
+	public void packagetypeTest(String visibleText) throws InterruptedException {
+		OpenPs();
+		PackageType(visibleText);
+		ok();
+		ShipmentsTable();
+	}
+	@DataProvider(name="package")
+	public Object[][] getdata(){
+		
+		Object[][] data= {{"On Hold"},{"Return"},{"Shipped"},{"Voided"}};	
+		return data;
+	}
+	public void PackageType(String visibleText) {
+		
+		WebElement dropdown = driver.findElement(By.id("cmbPackType"));
+		Select select = new Select(dropdown);
+		 select.selectByVisibleText(visibleText);
+	}
 	public void Listoffbuttons() {
 		List<WebElement> buttons = driver.findElements(By.xpath("//*[@id='mainContaint']/div[1]/div/div[1]/div//button"));
 
@@ -67,8 +86,6 @@ public class ViewShipment {
 		        System.out.println("Button '" + button.getText() + "' is disabled.");
 		    }
 		}
-
-
 	}
 public void ShipmentId(String id) {
 	
@@ -130,7 +147,6 @@ public void ShipmentId(String id) {
 		Assert.assertTrue(dataStatus, "Expected 'No matching records found' text not found.");
 		driver.findElement(By.id("cmdCancel")).click();
 	}
-
 	public void selectDate(String targetMonth, String targetDay) throws InterruptedException {
 
 		Thread.sleep(5000);
@@ -147,8 +163,7 @@ public void ShipmentId(String id) {
 				break;
 			}
 		}
-		Thread.sleep(3000);
-		
+		Thread.sleep(3000);	
 	}
 public void ok() {
 	driver.findElement(By.id("SearchCriteriaOkClick")).click();
@@ -161,7 +176,7 @@ public void ok() {
 		driver.findElement(By.id("menu_item_23")).click(); // To click on VS
 		Thread.sleep(3000);
 	}
-
+	
 	@BeforeClass
 	public void setup() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();

@@ -86,6 +86,7 @@ public void CheckcodeBlank() throws InterruptedException {
         } else {
             // Handle other cases or unexpected errors
             System.out.println("Unexpected error message: " + actualErrorMessage);
+            
         }
 		
 			WebElement error=driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));

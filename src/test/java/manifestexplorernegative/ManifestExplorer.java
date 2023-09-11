@@ -1,4 +1,5 @@
 package manifestexplorernegative;
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -176,16 +177,9 @@ public class ManifestExplorer {
 		WebElement error = driver.findElement(By.xpath("//button[@type='button'][contains(.,'ok')]"));
 		error.click();
 	}
-
-	@DataProvider(name = "errorMessages")
-	public Object[][] errorMessages() {
-		return new Object[][] { { "An active manifest cannot be created for a date in the past. Please try again." },
-				{ "Date has to be in the future. Please try again." } };
-	}
-
 	public void capture(String errorMessageText) throws InterruptedException {
 		// Wait for the error message to be displayed
-		WebDriverWait wait = new WebDriverWait(driver, 10); // Adjust the timeout as needed
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		WebElement errorMessage = wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'error-message')]")));
 		Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
@@ -212,8 +206,7 @@ public class ManifestExplorer {
 		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
 		options.addArguments("--remote-allow-origins=*");
 		driver = new ChromeDriver(options);
-		wait = new WebDriverWait(driver, 60);
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://localhost:8090/SmartWeb/#");

@@ -31,12 +31,11 @@ public class Nextprevious {
 		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
 		options.addArguments("--remote-allow-origins=*");
 		driver = new ChromeDriver(options);
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		 wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);

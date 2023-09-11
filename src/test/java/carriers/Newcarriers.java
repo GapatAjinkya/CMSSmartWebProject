@@ -35,7 +35,7 @@ public class Newcarriers {
 		options.addArguments("--remote-allow-origins=*");
 		driver = new ChromeDriver(options);
 
-		wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://localhost:8090/SmartWeb/#");

@@ -27,7 +27,7 @@ public class SearchCustomer {
     options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
     options.addArguments("--remote-allow-origins=*");
     WebDriver driver = new ChromeDriver(options);
-    WebDriverWait wait = new WebDriverWait(driver, 10);
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	logger.info("Browser opend");
 	driver.manage().window().maximize();
 	driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");

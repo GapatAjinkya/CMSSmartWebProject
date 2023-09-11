@@ -65,7 +65,7 @@ public class ProcessReturnTest {
 		returns.click();                                                  // To Click on processReturns
 		
 		logger.info("processReturns window opned ");
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("PRtxtReturnMethod")));
 		WebElement Rmethod=driver.findElement(By.xpath("//select[@id='PRtxtReturnMethod']"));

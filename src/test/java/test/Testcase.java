@@ -1,4 +1,5 @@
 package test;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import org.openqa.selenium.By;
@@ -26,7 +27,7 @@ public class Testcase {
 		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
 		options.addArguments("--remote-allow-origins=*");
 		driver = new ChromeDriver(options);
-		wait = new WebDriverWait(driver, 90);
+		 wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		// logger.info("Browser opend");
 		System.out.println("Browser opend");
 		driver.manage().window().maximize();

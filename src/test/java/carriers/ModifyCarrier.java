@@ -34,7 +34,7 @@ public class ModifyCarrier {
 		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
 		options.addArguments("--remote-allow-origins=*");
 		driver = new ChromeDriver(options);
-		wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
 		logger.info("Browser opend");
 		driver.manage().window().maximize();

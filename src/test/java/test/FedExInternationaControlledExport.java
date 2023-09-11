@@ -1,5 +1,7 @@
 package test;
 
+import java.time.Duration;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -30,7 +32,7 @@ public class FedExInternationaControlledExport {
 	options.addArguments("--remote-allow-origins=*");
 	driver = new ChromeDriver(options);
 	
-	 wait = new WebDriverWait(driver, 20);
+	 wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	logger.info("Browser opend");
 	driver.manage().window().maximize();
 	driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");

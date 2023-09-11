@@ -28,8 +28,6 @@ public class Search {
 		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
 		options.addArguments("--remote-allow-origins=*");
 		driver = new ChromeDriver(options);
-		wait = new WebDriverWait(driver, 60);
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		// logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");

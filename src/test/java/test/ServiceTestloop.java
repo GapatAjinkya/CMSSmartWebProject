@@ -1,5 +1,6 @@
 package test;
 
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -31,7 +32,7 @@ public class ServiceTestloop {
 		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
 		options.addArguments("--remote-allow-origins=*");
 		driver = new ChromeDriver(options);
-		wait = new WebDriverWait(driver, 20);
+		 wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		// logger.info("Browser opend");
 		System.out.println("Browser opend");
 		driver.manage().window().maximize();

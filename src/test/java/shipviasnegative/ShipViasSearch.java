@@ -1,4 +1,5 @@
 package shipviasnegative;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -66,8 +67,7 @@ public class ShipViasSearch {
 		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
 		options.addArguments("--remote-allow-origins=*");
 		driver = new ChromeDriver(options);
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		wait = new WebDriverWait(driver, 30);
+		 wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");

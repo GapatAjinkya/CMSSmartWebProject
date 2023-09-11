@@ -31,7 +31,7 @@ public class checkNextandPreviousbutton {
 		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
 		options.addArguments("--remote-allow-origins=*");
 		driver = new ChromeDriver(options);
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		 wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
 		logger.info("Browser opend");
 		driver.manage().window().maximize();

@@ -49,7 +49,6 @@ public class BaseClass {
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 	
-		WebDriverWait wait = new WebDriverWait(driver, 10);
 		System.out.println(prop.getProperty("url"));
 		driver.get(prop.getProperty("url"));
 		
@@ -58,8 +57,8 @@ public class BaseClass {
 
 	public void waitForVisibilityWait(WebElement e) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
-		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOf(e));
 	}catch(Exception ex) {
 		 System.out.println("An error occurred: " + ex.getMessage());
@@ -67,8 +66,8 @@ public class BaseClass {
 	}
 	public void elementToBeClickable(WebElement e) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
-		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(e));
 	}catch(Exception ex) {
 		 System.out.println("******An error occurred******: " + ex.getMessage());
@@ -104,8 +103,8 @@ public class BaseClass {
 	}
 
 	public void acceptAlert(WebElement e) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 		System.out.println("alert -----" + driver.switchTo().alert().getText());
 		alert.accept();

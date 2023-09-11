@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="manifestexplorernegative.ManifestExplorer">
+      <class name="archivedmanifestnegative.ArchivedManifest">
         <methods>
-          <include name="FutureManifestTest"/>
-          <include name="testcarriers"/>
-          <include name="ActiveManifestTest"/>
           <include name="setup"/>
-          <include name="teardown"/>
+          <include name="TestAMDateTO"/>
+          <include name="TestAMDateFrom"/>
         </methods>
-      </class> <!-- manifestexplorernegative.ManifestExplorer -->
+      </class> <!-- archivedmanifestnegative.ArchivedManifest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

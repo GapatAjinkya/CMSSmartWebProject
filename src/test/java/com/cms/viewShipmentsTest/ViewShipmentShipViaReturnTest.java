@@ -28,7 +28,7 @@ public class ViewShipmentShipViaReturnTest extends BaseClass {
 	public void viewShipmentTest() throws IOException, Exception {
 
 		login = new Login(driver);
-		
+
 		login.LoginPage();
 		shipViaLoad = new ShipViaLoad(driver);
 		shipViaLoad.clickOnTransaction();

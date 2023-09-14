@@ -1,7 +1,6 @@
 package processreturnNTest;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,7 +23,7 @@ public class ProcessReturnNegative2 {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("ProcessReturnNegative");
-	
+
 	@Test(priority = 0, dataProvider = "Logindata")
 	public void TestReturn(String shipViaCode, String customerCode,String Weight) throws InterruptedException {
 	    OpenPs();
@@ -36,10 +35,10 @@ public class ProcessReturnNegative2 {
 	     process();
 	     captureError();
 	    }
-	
+
 	@DataProvider(name="Logindata")
 	public Object[][] getdata(){
-		
+
 		Object[][] data= {{"UPSGround","AdminVA","0"},
 			            	{"UPSGround","AdminVA","1"},
 			        	};
@@ -48,7 +47,7 @@ public class ProcessReturnNegative2 {
 	public void process() {
 		driver.findElement(By.id("btnShipClickPR")).click();
 	}
-	
+
 	public void ShipVia(String ShipViaCode) throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement shipviaSearch = driver.findElement(By.xpath("//*[@onclick=\"btnSearch_PS()\"]")); // Search the //																							// Shipvias list
@@ -90,18 +89,18 @@ public class ProcessReturnNegative2 {
 		WebElement List = driver.findElement(By.id("selCutomerList"));
 		Select CustomerList = new Select(List);
 		CustomerList.selectByValue("1"); // To select Global
-		
+
 		driver.findElement(By.xpath("//button[@onclick='onCustomerSearchOkClick()']")).click(); // click on ok
 		Thread.sleep(5000);
 		logger.info("Customer Searched");
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//td[contains(text(),'"+Customer+"')]")).click();
 		WebElement Customerok= driver.findElement(By.id("addressformOk"));
-		Customerok.click();          // Click on OK 
+		Customerok.click();          // Click on OK
 		Thread.sleep(5000);
 		logger.info("Customer Added");
 	}
-	
+
 	public void captureError() throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement errorMessage = wait
@@ -127,8 +126,8 @@ public class ProcessReturnNegative2 {
 		}
 		WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
 		error.click();
-	}	
-	
+	}
+
 	@BeforeClass
 	public void setup() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();

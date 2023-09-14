@@ -2,7 +2,6 @@ package archivedmanifesttest;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,7 +23,7 @@ public class Reprint {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	 Logger logger = LogManager.getLogger("PLDTransmit");
-	 
+
 	@Test(priority = 0)
 	public void testcase() throws InterruptedException {
 		openAM();
@@ -34,17 +33,17 @@ public class Reprint {
 		logger.info("TestCase Pass");
 	}
 	public void Reprinttest() {
-		
+
 		WebElement Reprintbutton =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='AMEReprint']")));
 		Reprintbutton.click();
-		
+
 	}
 	public void ShipcodeAm(String shipcode) throws InterruptedException {
 		Thread.sleep(5000);
 		List<WebElement> alldata = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@id='tblArchivedManifestList']//tr//td[1]")));
 		boolean dataStatus = false;
 		for (WebElement ele : alldata) {
-			String value = ele.getText();		
+			String value = ele.getText();
 			if (value.equals(shipcode))
 			{
 				System.out.println(value);
@@ -56,13 +55,13 @@ public class Reprint {
 		if (dataStatus) {
 			Thread.sleep(5000);
 			WebElement code =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='tblArchivedManifestList']//td[contains(text(), '" + shipcode + "')]")));
-			code.click();	
-			
+			code.click();
+
 		} else {
 		    System.out.println("Code not found");
-		}	
-		logger.info("Customer Code Found Selected ");		
-	}	
+		}
+		logger.info("Customer Code Found Selected ");
+	}
 	@BeforeClass
 	public void setup() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();

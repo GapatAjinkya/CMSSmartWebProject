@@ -1,7 +1,6 @@
 package bestwayvias;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,11 +18,11 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DisableBestway {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("DisableBestway");
-	
+
 	@Test
 	public void Enable() throws InterruptedException {
 		OpenBestWay();
@@ -32,8 +31,8 @@ public class DisableBestway {
 		Disablebestway();
 		Okbutton();
 	}
-	
-	public void Disablebestway() throws InterruptedException {			
+
+	public void Disablebestway() throws InterruptedException {
 			Thread.sleep(3000);
 			WebElement checkbox = driver.findElement(By.xpath("//input[@id='chkDisableBestwayBWF']"));
 			boolean isChecked = checkbox.isSelected();
@@ -46,7 +45,7 @@ public class DisableBestway {
 		            // Check the checkbox
 		            checkbox.click();
 		            logger.info("Enabled Bestway via Record ");
-		        }			
+		        }
 	}
 	public void editbutton() throws InterruptedException {
 		Thread.sleep(5000);
@@ -64,13 +63,13 @@ public class DisableBestway {
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='BWSFOkClick()']")));
 		ok.click();
 		Thread.sleep(5000);
-		
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(
 				By.xpath("//table[@id='BestWayList']//td[1][contains(text(), '" + bestwaycode + "')]"))).click();
-	 
+
 		}
-	
-	public void OpenBestWay() throws InterruptedException 
+
+	public void OpenBestWay() throws InterruptedException
 	{
 		WebElement Configuration =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_4")));
 		wait.until(ExpectedConditions.elementToBeClickable(Configuration));
@@ -88,7 +87,7 @@ public class DisableBestway {
 
 	}
 public void Okbutton() throws InterruptedException {
-		
+
 		WebElement okbutton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='OkClickBWF']")));
 		okbutton.click();
 		Thread.sleep(3000);

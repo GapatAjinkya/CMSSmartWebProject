@@ -1,14 +1,9 @@
 package test;
 
 import java.time.Duration;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -101,9 +96,9 @@ public class ServiceTestloop {
 		wait.until(ExpectedConditions.visibilityOf(ok));
 		wait.until(ExpectedConditions.elementToBeClickable(ok));
 		ok.click();
-		
-//----------------------------------------------------------------------------------------------------------	
-		
+
+//----------------------------------------------------------------------------------------------------------
+
 		  By checkBoxLocator = By.xpath("//input[@type='checkbox' and contains(@id,'BOX')]");
 		 // Replace this with the number of checkboxes you want to select in each iteration
         int numberOfCheckBoxesToSelect = 2;
@@ -117,7 +112,7 @@ public class ServiceTestloop {
     		wait.until(ExpectedConditions.elementToBeClickable(customer));
     		customer.click();
     	//	logger.info("Clicked on Customer");
-    		 System.out.println("Clicked on Customer");	
+    		 System.out.println("Clicked on Customer");
     		// To Customer Search Criteria
     		Thread.sleep(5000);
     		WebElement searchcustomer = driver.findElement(By.id("txtSCSearch")); // searchcustomer
@@ -129,7 +124,7 @@ public class ServiceTestloop {
     		driver.findElement(By.xpath("//button[@onclick='onCustomerSearchOkClick()']")).click(); // click on ok
     		Thread.sleep(5000);
     	//	logger.info("Customer Searched");
-    		 System.out.println("Customer Searched");	
+    		 System.out.println("Customer Searched");
     	 wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='tblCustomerList']//td[1][contains(text(), 'CMS')]"))).click();
     		WebElement Customerok = driver.findElement(By.id("addressformOk"));
     		wait.until(ExpectedConditions.elementToBeClickable(Customerok));
@@ -137,7 +132,7 @@ public class ServiceTestloop {
     		Thread.sleep(5000);
     	//	logger.info("Customer Added");
     		 System.out.println("Customer Added");
-    		 
+
 
             // Select the service button
     		 WebElement buttonSpecialServices = driver.findElement(By.id("btnSpecialServices"));
@@ -156,23 +151,23 @@ public class ServiceTestloop {
             WebElement okclick = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='btnOk']")));
 			okclick.click();
-            
-			 
+
+
 			driver.findElement(By.xpath("//input[@id='txtManual']")).sendKeys("1.00");
 		//	logger.info("Manual Weight is fill ");
-			 System.out.println("Manual Weight is fill ");	
+			 System.out.println("Manual Weight is fill ");
 			driver.findElement(By.id("cmdRate")).click();
 
 //			logger.info("Click on Rate ");
-			 System.out.println("Click on Rate");			
+			 System.out.println("Click on Rate");
 			Thread.sleep(5000);
 			driver.findElement(By.id("btnShipClick")).click(); // Click on ship
             // Wait for the next iteration (you may need to add an explicit wait here)
 			Thread.sleep(5000);
-        }	
+        }
 }
 }
-		
-		
-		
-	
+
+
+
+

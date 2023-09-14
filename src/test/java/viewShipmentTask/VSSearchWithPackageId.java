@@ -37,6 +37,6 @@ public class VSSearchWithPackageId extends BaseClass{
 		shipViaLoad.clickOnSearchCriteriaOk();
 		shipViaLoad.clickOnSelectShipment();
 		shipViaLoad.clickOncmdOk();
-		
+
 }
 }

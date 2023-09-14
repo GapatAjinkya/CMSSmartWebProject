@@ -2,7 +2,6 @@ package thirdpartybillingaccounts;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,7 +11,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -91,27 +89,27 @@ public class TPBAmodify {
 		tpba.click();
 		Thread.sleep(6000);
 		logger.info("Click on Third Party Billing Accounts successful");
-		
-		
+
+
 		WebElement Search = driver.findElement(By.xpath("//input[@id='txtTPSearch']"));
-		Search.sendKeys("AccountTest1");         // 
-		
+		Search.sendKeys("AccountTest1");         //
+
 		driver.findElement(By.xpath("//button[@onclick='ThirdPartiesSearchOkClick()']")).click();// ok buttton
 		Thread.sleep(8000);
 		WebElement selectproduct = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//tr[@data-index='0']")));
 		selectproduct.click();
-		
+
 		Thread.sleep(5000);
 		WebElement editbutton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='ThirdPartiesEdit']")));
 		editbutton.click();
 		Thread.sleep(5000);
-		//To edit the information 
+		//To edit the information
 		String Criteria = "code";
 		String code = "TestAG1";
 		String Customer = "";
 		String CustomerAccount = "";
-		
-		
+
+
 		if (Criteria.equalsIgnoreCase("code")) {
 			Thread.sleep(3000);
 			WebElement Code = driver.findElement(By.xpath("//input[@id='TPtxtXRef']"));
@@ -148,7 +146,7 @@ public class TPBAmodify {
 			List<WebElement> alldata = driver.findElements(By.xpath("//table[@id='ThirdPartiesList']//td"));
 
 			boolean dataStatus = false;
-			
+
 			for (WebElement ele : alldata) {
 				String value = ele.getText();
 				if (value.equals(code)) // we can change compare string
@@ -161,10 +159,10 @@ public class TPBAmodify {
 			Assert.assertTrue(dataStatus, "customercode is not found ");
 			logger.info(" edit  With  " + Criteria + "  successful");
 		}
-	
+
 	@Test(priority = 1)
 	public void deleteAccount() throws InterruptedException {
-	
+
 		WebElement Configuration = driver.findElement(By.id("menu_item_4"));
 		wait.until(ExpectedConditions.visibilityOf(Configuration));
 		wait.until(ExpectedConditions.elementToBeClickable(Configuration));
@@ -186,26 +184,26 @@ public class TPBAmodify {
 		tpba.click();
 		Thread.sleep(6000);
 		logger.info("Click on Third Party Billing Accounts successful");
-		
-		
+
+
 		WebElement Search = driver.findElement(By.xpath("//input[@id='txtTPSearch']"));
 		Search.sendKeys("TestAG1");         //To delete the account
-	
+
 		driver.findElement(By.xpath("//button[@onclick='ThirdPartiesSearchOkClick()']")).click();// ok buttton
 		Thread.sleep(8000);
 		logger.info("Search successful");
-		
+
 		WebElement selectproduct = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//tr[@data-index='0']")));
 		selectproduct.click();
 		Thread.sleep(5000);
 		logger.info("Select  successful");
 		WebElement delete = driver.findElement(By.id("ThirdPartiesDelete"));
 		delete.click();
-		
+
 		Thread.sleep(5000);
 		driver.findElement(By.id("btnConfirmBoxOk")).click();
 		Thread.sleep(5000);
-		
+
 		List<WebElement> alldata = driver.findElements(By.xpath("//table[@id='ThirdPartiesList']//td"));
 
 		boolean dataStatus = false;

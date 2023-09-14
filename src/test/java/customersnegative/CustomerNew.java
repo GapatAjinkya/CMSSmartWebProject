@@ -1,7 +1,6 @@
 package customersnegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,11 +20,11 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class CustomerNew {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("CustomerNew");
-	
+
     @Test
 	public void TestCustomer() throws InterruptedException {
     	CreateCustomers();
@@ -42,7 +41,7 @@ public class CustomerNew {
 		CustomerCode.clear();
 		CustomerCode.sendKeys(CCode);
 	}
-	public void customerdetails() throws InterruptedException {	
+	public void customerdetails() throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement Comp = driver.findElement(By.id("CFtxtName"));
 		wait.until(ExpectedConditions.elementToBeClickable(Comp));
@@ -55,13 +54,13 @@ public class CustomerNew {
 		driver.findElement(By.id("CFtxtAddress3")).sendKeys("9010 Lorton Station Blvd Ste 200");
 		driver.findElement(By.id("CFtxtAddCity")).sendKeys("Lorton");
 		driver.findElement(By.id("CFtxtAddState")).sendKeys("VA");
-		driver.findElement(By.id("CFtxtAddZip")).sendKeys("22079");	
+		driver.findElement(By.id("CFtxtAddZip")).sendKeys("22079");
 		String desiredText ="UNITED STATES";
 		WebElement dropdown = driver.findElement(By.id("CFtxtCountry"));
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(desiredText);
 		logger.info(" Customers Address  successful");
-		
+
 		driver.findElement(By.id("CFtxtAddPhone")).sendKeys("555-555-5555");
 		driver.findElement(By.id("CFtxtFax")).sendKeys("555");
 		driver.findElement(By.id("CFtxtEmail")).sendKeys("test@gamil.com");

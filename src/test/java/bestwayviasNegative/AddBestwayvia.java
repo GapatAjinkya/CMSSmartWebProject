@@ -1,12 +1,10 @@
 package bestwayviasNegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -36,10 +34,10 @@ public class AddBestwayvia {
 	}
 
 	public void captureError() throws InterruptedException {
-		
+
 		Thread.sleep(5000);
 		WebElement errorMessage = wait
-				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='errorMsg']")));	
+				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='errorMsg']")));
 		 logger.error("Expected error message -" + errorMessage);
 		Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
 		String expectedErrorMessage = "Duplicate BestWay within selected Org/Site Group is enabled. Please disable it to add new BestWay.";
@@ -51,7 +49,7 @@ public class AddBestwayvia {
 	}
 
 	public void CreateBestWay() throws InterruptedException {
-		
+
 		WebElement Configuration = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_4")));
 		wait.until(ExpectedConditions.elementToBeClickable(Configuration));
 		Configuration.click();

@@ -1,7 +1,6 @@
 package processhipmentnegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -143,7 +142,7 @@ public class InternationalShipmentTestnegative {
 	}
 
 	public void Po(String ponumber) {
-	
+
 		WebElement po = driver.findElement(By.id("txtPO"));
 		po.sendKeys(ponumber);
 	}

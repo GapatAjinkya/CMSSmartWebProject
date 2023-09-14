@@ -1,7 +1,6 @@
 package bestwayvias;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,16 +20,16 @@ public class DeleteBestway {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("DeleteBestway");
-	
+
 	@Test
-	public void Enable() throws InterruptedException {		
+	public void Enable() throws InterruptedException {
 		OpenBestWay();
 		SearchBestWayCode("TestBestway");
 		delete();
-		Okbutton();		
+		Okbutton();
 	}
 	public void delete() throws InterruptedException {
-		
+
 		WebElement deleteButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='BestWayDelete']")));
 		deleteButton.click();
 		Thread.sleep(5000);
@@ -47,12 +46,12 @@ public class DeleteBestway {
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='BWSFOkClick()']")));
 		ok.click();
 		Thread.sleep(5000);
-		
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(
 				By.xpath("//table[@id='BestWayList']//td[1][contains(text(), '" + bestwaycode + "')]"))).click();
-	 
+
 		}
-	public void OpenBestWay() throws InterruptedException 
+	public void OpenBestWay() throws InterruptedException
 	{
 		WebElement Configuration =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_4")));
 		wait.until(ExpectedConditions.elementToBeClickable(Configuration));
@@ -69,7 +68,7 @@ public class DeleteBestway {
 		bestWayVias.click();
 	}
 public void Okbutton() throws InterruptedException {
-		
+
 		WebElement okbutton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='OkClickBWF']")));
 		okbutton.click();
 		Thread.sleep(3000);

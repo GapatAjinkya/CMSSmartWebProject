@@ -1,7 +1,6 @@
 package cartonsnegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,7 +30,7 @@ public class CartonNew {
 		CartonSearch("");
 		captureError();
 		ClickonCartonAdd();
-		Codecheck("Test_21");	
+		Codecheck("Test_21");
 		Dimensions();
 		CartonOk();
 		captureError();
@@ -49,7 +48,7 @@ public class CartonNew {
        	 System.out.println("Handling Second error message."+actualErrorMessage);
          Assert.assertEquals(actualErrorMessage, "No records found!", "Incorrect error message");
      } else {
-           
+
             System.out.println("Unexpected error message: " + actualErrorMessage);
         }
 		WebElement error = driver.findElement(By.xpath("//button[@class='WLButton text-uppercase']"));
@@ -69,8 +68,8 @@ public class CartonNew {
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='menu_item_450']")));
 		Cartons.click();
 	}
-	public void CartonSearch(String Searchcode) throws InterruptedException {	
-		
+	public void CartonSearch(String Searchcode) throws InterruptedException {
+
 		Thread.sleep(5000);
 		WebElement CartonSearch = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='txtSCSearch']")));
@@ -96,7 +95,7 @@ public class CartonNew {
 		Thread.sleep(5000);
 		WebElement Length = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("CF_txtLength")));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].value = '14';", Length);	
+		js.executeScript("arguments[0].value = '14';", Length);
 		WebElement Width = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("CF_txtWidth")));
 		JavascriptExecutor jsWidth = (JavascriptExecutor) driver;
 		jsWidth.executeScript("arguments[0].value = '14';", Width);
@@ -107,7 +106,7 @@ public class CartonNew {
 		JavascriptExecutor jsWeight = (JavascriptExecutor) driver;
 		jsWeight.executeScript("arguments[0].value = '147';", Weight);
 		WebElement CF_txtUom = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("CF_txtUom")));
-		CF_txtUom.sendKeys("CM");	
+		CF_txtUom.sendKeys("CM");
 	}
 	public void CartonOk() throws InterruptedException {
 		Thread.sleep(5000);
@@ -119,8 +118,8 @@ public class CartonNew {
 		WebElement Cancel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='btnSearchCancel']")));
 		Cancel.click();
 	}
-	
-	
+
+
 	@BeforeClass
 	public void setup() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();
@@ -144,7 +143,7 @@ public class CartonNew {
 		WebElement ok = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
 		ok.click();
-		
+
 //		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";
 //		String actualTitle = driver.getTitle();
 //		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";

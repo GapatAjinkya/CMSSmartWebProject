@@ -1,7 +1,6 @@
 package customersnegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -63,7 +62,7 @@ public class ContactTest {
 		AddCustomer.click();
 		logger.info(" Click on add Customer ");
 	}
-	public void customerdetails() throws InterruptedException {	
+	public void customerdetails() throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement CustomerCode = driver.findElement(By.id("CFtxtXRef"));
 		wait.until(ExpectedConditions.elementToBeClickable(CustomerCode));
@@ -72,24 +71,24 @@ public class ContactTest {
 		WebElement Comp = driver.findElement(By.id("CFtxtName"));
 		wait.until(ExpectedConditions.elementToBeClickable(Comp));
 		Comp.sendKeys("CMS");
-		
+
 		WebElement Contact = driver.findElement(By.id("CFtxtContact"));
 		wait.until(ExpectedConditions.elementToBeClickable(Contact));
 		Contact.sendKeys("aasvadjwodvbwbvuwbvibdviwbvoeubvuadobvoboqbvqvquovb");
-		
+
 		driver.findElement(By.id("CFtxtAddress1")).sendKeys("Testing1");
 		driver.findElement(By.id("CFtxtAddress2")).sendKeys("Testing1");
 		driver.findElement(By.id("CFtxtAddress3")).sendKeys("Testing1");
 		driver.findElement(By.id("CFtxtAddCity")).sendKeys("Toronto");
 		driver.findElement(By.id("CFtxtAddState")).sendKeys("Ontario");
 		driver.findElement(By.id("CFtxtAddZip")).sendKeys("23456");
-		
+
 		String desiredText ="UNITED STATES";
 		WebElement dropdown = driver.findElement(By.id("CFtxtCountry"));
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(desiredText);
 		logger.info(" Customers Address  successful");
-		
+
 		driver.findElement(By.id("CFtxtAddPhone")).sendKeys("8600");
 		driver.findElement(By.id("CFtxtFax")).sendKeys("555");
 		driver.findElement(By.id("CFtxtEmail")).sendKeys("test@gamil.com");
@@ -112,7 +111,7 @@ public class ContactTest {
 		WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
 		error.click();
 	}
-	
+
 	@BeforeClass
 	public void setup() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();
@@ -148,5 +147,5 @@ public class ContactTest {
 		Thread.sleep(5000);
 	driver.quit();
 
-	}		
+	}
 }

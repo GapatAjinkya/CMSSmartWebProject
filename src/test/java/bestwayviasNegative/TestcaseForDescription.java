@@ -1,17 +1,12 @@
 package bestwayviasNegative;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -54,13 +49,13 @@ public class TestcaseForDescription {
 		WebElement error=driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
 	    error.click();
 	}
-	public void Description(String Description) throws InterruptedException {	
+	public void Description(String Description) throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement txtCodeBWF = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.id("txtCodeBWF")));
 		txtCodeBWF.sendKeys("asdf2@%.?/1asdf2@%.?");
 		Thread.sleep(5000);
-		
+
 		WebElement Des = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtDescriptionBWF")));
 		Des.sendKeys(Description);
 	}
@@ -94,7 +89,7 @@ public class TestcaseForDescription {
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='BWSFOkClick()']")));
 		ok.click();
 		Thread.sleep(10000);
-		
+
 		WebElement add = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='BestWayAdd']")));
 		add.click();
@@ -110,7 +105,7 @@ public class TestcaseForDescription {
 		String expectedErrorMessage = "Value should be 50 characters long. Please try again.";
 		String actualErrorMessage = errorMessage.getText();
 		Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Incorrect error message");
-		
+
 		WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
 		error.click();
 	}
@@ -142,9 +137,9 @@ public class TestcaseForDescription {
 		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
 		System.out.println("Title Matched");
 		Thread.sleep(10000);
-	}		
+	}
 	@AfterClass
 	public void teardown() {
-		driver.quit();	
+		driver.quit();
 	}
 }

@@ -1,6 +1,7 @@
 package carriers;
 import java.time.Duration;
 import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Testcase {
@@ -28,13 +30,13 @@ public class Testcase {
 		driver = new ChromeDriver(options);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	//	logger.info("Browser opend");
-       System.out.println("Browser opend");		
+       System.out.println("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_1"))).click();// To click on LocalConfig Menu 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_1"))).click();// To click on LocalConfig Menu
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_15"))).click(); // To click on Login Tab
 		Thread.sleep(3000);
-		
+
 		WebElement Userlogin = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtLPUserLogin"))); // Userlogin))
 		Userlogin.sendKeys("nilesh");
 		WebElement password = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtLPPassword"))); // password
@@ -71,7 +73,7 @@ public class Testcase {
 		 System.out.println("Click on Process Shipment Menu Successful");
 		// Select the Shipvia
 		 Thread.sleep(5000);
-		 
+
 		WebElement shipviaSearch = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(@onclick,'btnSearch_PS()')]"))); // Search																													// the
 		wait.until(ExpectedConditions.elementToBeClickable(shipviaSearch));
 		shipviaSearch.click();
@@ -90,17 +92,17 @@ public class Testcase {
 		wait.until(ExpectedConditions.elementToBeClickable(ok));
 		ok.click();
 	//	logger.info("Click on Ship Via ok search  Successful");
-		 System.out.println("Click on Ship Via ok search  Successful");	
+		 System.out.println("Click on Ship Via ok search  Successful");
 
 		Thread.sleep(5000);
 
 		// -------------------------------------------------------
-		
+
 		WebElement customer = driver.findElement(By.xpath("//button[@onclick='AddressesClick()']"));
 		wait.until(ExpectedConditions.elementToBeClickable(customer));
 		customer.click();
 	//	logger.info("Clicked on Customer");
-		 System.out.println("Clicked on Customer");	
+		 System.out.println("Clicked on Customer");
 		// To Customer Search Criteria
 		Thread.sleep(5000);
 
@@ -114,37 +116,37 @@ public class Testcase {
 		driver.findElement(By.xpath("//button[@onclick='onCustomerSearchOkClick()']")).click(); // click on ok
 		Thread.sleep(5000);
 	//	logger.info("Customer Searched");
-		 System.out.println("Customer Searched");	
-		 
+		 System.out.println("Customer Searched");
+
 	 wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='tblCustomerList']//td[1][contains(text(), 'CMS')]"))).click();
-		
+
 		WebElement Customerok = driver.findElement(By.id("addressformOk"));
 		wait.until(ExpectedConditions.elementToBeClickable(Customerok));
 		Customerok.click(); // Click on OK
 		Thread.sleep(5000);
 	//	logger.info("Customer Added");
-		 System.out.println("Customer Added");	
-		 
+		 System.out.println("Customer Added");
+
 		WebElement buttonSpecialServices = driver.findElement(By.id("btnSpecialServices"));
 		wait.until(ExpectedConditions.visibilityOf(buttonSpecialServices));
 		wait.until(ExpectedConditions.elementToBeClickable(buttonSpecialServices));
 		buttonSpecialServices.click();
 		Thread.sleep(5000);
-		
+
 		List<WebElement> checkboxes = driver
 				.findElements(By.xpath("//input[@type='checkbox' and contains(@id,'BOX')]"));
-		
+
 		for (int i = 0; i < checkboxes.size(); i++) {
-			
+
 			try {
-				WebElement checkbox = (WebElement) checkboxes.get(i);
+				WebElement checkbox = checkboxes.get(i);
 				// Check if the checkbox is selected
-				if (!checkbox.isSelected()) 
-				{	
+				if (!checkbox.isSelected())
+				{
 					 checkbox.click();
-					System.out.println("// Select the checkbox" + checkbox);				
+					System.out.println("// Select the checkbox" + checkbox);
 				System.out.println(i);
-				
+
 				WebElement okclick = wait
 						.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='btnOk']")));
 				okclick.click();
@@ -162,32 +164,32 @@ public class Testcase {
 				okcustomer.click();
 				Thread.sleep(5000);
 		//		logger.info("Customer Searched");
-				 System.out.println("Customer Searched");	
+				 System.out.println("Customer Searched");
 				Thread.sleep(5000);
 				WebElement selectcustomer=driver.findElement(By.xpath("//table[@id='tblCustomerList']//td[1][contains(text(), 'CMS')]"));
 				selectcustomer.click();
 				driver.findElement(By.id("addressformOk")).click(); // Click on OK
 				Thread.sleep(5000);
 			//	logger.info("Customer Added");
-				 System.out.println("Customer Added");	
-				 
+				 System.out.println("Customer Added");
+
 				driver.findElement(By.xpath("//input[@id='txtManual']")).sendKeys("1.00");
 			//	logger.info("Manual Weight is fill ");
-				 System.out.println("Manual Weight is fill ");	
+				 System.out.println("Manual Weight is fill ");
 				driver.findElement(By.id("cmdRate")).click();
 
 //				logger.info("Click on Rate ");
-				 System.out.println("Click on Rate");			
+				 System.out.println("Click on Rate");
 				Thread.sleep(5000);
 				driver.findElement(By.id("btnShipClick")).click(); // Click on ship
-				
+
 
 				driver.findElement(By.id("btnSpecialServices")).click();
 		//		logger.info("click  btnSpecialServices");
 				System.out.println("click  btnSpecialServices");
 				Thread.sleep(5000);
 				checkbox.click();
-		//		logger.info("click  checkbox");		
+		//		logger.info("click  checkbox");
 				System.out.println("click  checkbox");
 			}
 			}
@@ -200,6 +202,6 @@ public class Testcase {
 				checkboxes = driver.findElements(By.xpath("//input[@type='checkbox' and contains(@id,'BOX')]"));
 			}
 
-		
+
 	}
 }}

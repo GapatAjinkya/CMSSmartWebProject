@@ -3,7 +3,6 @@ package archivedmanifesttest;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -56,13 +55,13 @@ public class TestAM {
 
 @Test
 public void openAM() throws InterruptedException {
-	Thread.sleep(5000); 
+	Thread.sleep(5000);
 	WebElement transaction = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("menu_item_2")));
 	wait.until(ExpectedConditions.elementToBeClickable(transaction)).click();
 	// logger.info("Click on Transaction Menu Successful");
 	Thread.sleep(5000);
 	WebElement ArchivedManifests = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("menu_item_25")));
-	wait.until(ExpectedConditions.elementToBeClickable(ArchivedManifests)).click();	
+	wait.until(ExpectedConditions.elementToBeClickable(ArchivedManifests)).click();
 }
 @Test(priority =1)
 public void selectcarrier() throws InterruptedException {
@@ -71,7 +70,7 @@ public void selectcarrier() throws InterruptedException {
 	Select dropdown = new Select(Carrier);
 	dropdown.selectByVisibleText(carriername);
 	//logger.info(" selectcarriers successful");
-	
+
 }
 @Test(priority = 2)
 private void Searchwithdate() throws InterruptedException {

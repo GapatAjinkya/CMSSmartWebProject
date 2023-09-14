@@ -1,7 +1,6 @@
 package departmentsnegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,8 +21,8 @@ public class DepartmentCodeDescription {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("DepartmentCodeDescription");
-	
-	
+
+
 	@Test(priority = 0)
 	public void TestCode() throws InterruptedException {
 		departments();
@@ -32,23 +31,23 @@ public class DepartmentCodeDescription {
 		Depcode("asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?/1");
 		DepDescription("aasvadjwodvbwbvuwbvibdviwbvoeubvuadobvoboqbvqvquov");
 		okbutton();
-		captureError();	
+		captureError();
 	}
-	
+
 	@Test(priority = 1)
 	public void TestCodeBlanck() throws InterruptedException {
 		Depcode("");
 		okbutton();
 		captureError();
 	}
-	
+
 	@Test(priority = 2)
 	public void TestDescription() throws InterruptedException {
 		Depcode("aasvadjwodvbwbvuwbvibdviwbvoeubvuadobvoboqbvqvquo");
 		DepDescription("aasvadjwodvbwbvuwbvibdviwbvoeubvuadobvoboqbvqvquovBaasvadjwodvbwbvuwbvibdviwbvoeubvuadobvoboqbvqvquov");
 		okbutton();
 		captureError();
-		
+
 	}
 	@Test(priority = 3)
 	public void TestDescriptionBlanck() throws InterruptedException {
@@ -59,13 +58,13 @@ public class DepartmentCodeDescription {
 	}
 	public void Depcode(String code) throws InterruptedException {
 		Thread.sleep(4000);
-		WebElement DepartmentCode = driver.findElement(By.id("DFtxtCode"));       
+		WebElement DepartmentCode = driver.findElement(By.id("DFtxtCode"));
 		DepartmentCode.clear();
 		DepartmentCode.sendKeys(code);
 	}
 	public void DepDescription(String Description) throws InterruptedException {
 		Thread.sleep(4000);
-		WebElement Descriptiontxt = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("DFtxtDescription")));  
+		WebElement Descriptiontxt = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("DFtxtDescription")));
 		Descriptiontxt.clear();
 		Descriptiontxt.sendKeys(Description);
 	}
@@ -79,7 +78,7 @@ public class DepartmentCodeDescription {
 		okButton.click();
 	}
 	public void search(String code) throws InterruptedException {
-		WebElement Search = driver.findElement(By.xpath("//input[@id='txtCSTDeptSearch']"));           
+		WebElement Search = driver.findElement(By.xpath("//input[@id='txtCSTDeptSearch']"));
 		Search.sendKeys(code);
 		driver.findElement(By.xpath("//button[@onclick='onDepatmentSearchPrivateOkClick()']")).click();// ok buttton
 		Thread.sleep(5000);
@@ -104,7 +103,7 @@ public class DepartmentCodeDescription {
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@id='errorMsg']")));
 		Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
 	        String actualErrorMessage = errorMessage.getText();
-	       
+
 		if (actualErrorMessage.equals("Value should be less than 50 characters. Please try again.")) {
             System.out.println("Handling first error message."+actualErrorMessage);
             Assert.assertEquals(actualErrorMessage, "Value should be less than 50 characters. Please try again.", "Incorrect error message");
@@ -140,7 +139,7 @@ public class DepartmentCodeDescription {
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
 		password.sendKeys("Nilesh@123");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
-		WebElement ok = wait	
+		WebElement ok = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
 		ok.click();
 		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";

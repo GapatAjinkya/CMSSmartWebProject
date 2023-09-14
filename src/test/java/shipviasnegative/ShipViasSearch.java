@@ -1,6 +1,6 @@
 package shipviasnegative;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 public class ShipViasSearch {
 	public static WebDriver driver;
@@ -20,21 +21,21 @@ public class ShipViasSearch {
 	Logger logger = LogManager.getLogger("ShipViasSearch");
 	@Test
 	public void ShipviaSearch() throws InterruptedException {
-		Shipvia();	
+		Shipvia();
 		search("ABC");
 		SearchNegative();
 	}
 	public void SearchNegative() throws InterruptedException  {
 		Thread.sleep(10000);
 			WebElement errorMessage = wait
-					.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='errorMsg']")));	
+					.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='errorMsg']")));
 			Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
 			String expectedErrorMessage = "No records found!";
 			String actualErrorMessage = errorMessage.getText();
-			logger.error("Expected error message -" + actualErrorMessage);	
+			logger.error("Expected error message -" + actualErrorMessage);
 			Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Incorrect error message");
 			WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
-			error.click();		
+			error.click();
 		}
 	public void Shipvia() throws InterruptedException {
 		Thread.sleep(10000);
@@ -48,13 +49,13 @@ public class ShipViasSearch {
 		logger.info("Click on carriers successful");
 		WebElement ShipVias = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='menu_item_441']")));
 		ShipVias.click();
-		logger.info("Click on ShipVias successful");	
+		logger.info("Click on ShipVias successful");
 	}
-	public void search(String shipviacode) throws InterruptedException {	
+	public void search(String shipviacode) throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement ShipViasSearh = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtSearchSVSF")));
 		ShipViasSearh.sendKeys(shipviacode);
-		logger.info("Search  ShipVias successful");	
+		logger.info("Search  ShipVias successful");
 		WebElement ok = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@onclick='SVSFOkClick()']")));
 		ok.click();
 		logger.info("ok Click  successful");

@@ -14,14 +14,14 @@ import com.cms.Base.BaseClass;
 
 
 public class ProcessReturn extends BaseClass{
-	
+
 	public ProcessReturn(WebDriver rdriver) {
-		
+
 		driver=rdriver;
 		PageFactory.initElements(rdriver, this);
 	}
 	Logger logger = LogManager.getLogger("ProcessReturn");
-	
+
 	@FindBy(id = "menu_item_2")
 	private WebElement Transaction;
 	public ProcessReturn clickOnTransaction() throws InterruptedException  {
@@ -76,12 +76,12 @@ public class ProcessReturn extends BaseClass{
 		}
 		logger.info("Click on ok ");
 		return this;
-		
+
 	}
 	@FindBy(id = "PRIWLDatePicker")
 	private WebElement Datepicker;
 	public ProcessReturn SelectDate() throws InterruptedException {
-		
+
 		Thread.sleep(3000);
 		WebElement element = driver.findElement(By.id("PRIWLDatePicker"));
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
@@ -90,7 +90,7 @@ public class ProcessReturn extends BaseClass{
 		return this;
 	}
 //----------------------------------------------------------------------------
-	
+
 	@FindBy(id = "PRbtnCustomerSearch")
 	private WebElement PRbtnCustomerSearch;
 	public ProcessReturn Clickoncustomer() throws InterruptedException {
@@ -121,7 +121,7 @@ public class ProcessReturn extends BaseClass{
 		Thread.sleep(5000);
 		WebElement List = driver.findElement(By.id("selCutomerList"));
 		Select CustomerList = new Select(List);
-		CustomerList.selectByValue("1"); // To select Global  
+		CustomerList.selectByValue("1"); // To select Global
 		logger.info(" selCutomerList  successful");
 		return this;
 	}
@@ -133,7 +133,7 @@ public class ProcessReturn extends BaseClass{
 		logger.info(" CustomerSearchOkClick  successful");
 		return this;
 	}
-	
+
 	@FindBy(xpath = "//tr[@data-index='0']")
 	private WebElement selectcustomer;
 	public ProcessReturn selectcustomerfromlist() throws InterruptedException {
@@ -141,7 +141,7 @@ public class ProcessReturn extends BaseClass{
 		click(selectcustomer);
 		logger.info(" selectcustomer  successful");
 		return this;
-		
+
 	}
 	@FindBy(id = "addressformOk")
 	private WebElement okcustomer;
@@ -149,7 +149,7 @@ public class ProcessReturn extends BaseClass{
 		Thread.sleep(5000);
 		click(okcustomer);
 		logger.info(" ClickonOKcustomer  successful");
-		return this;	
+		return this;
 	}
 	@FindBy(xpath  = "//button[@id='btnShipClickPR']")
 	private WebElement processReturn;
@@ -157,8 +157,8 @@ public class ProcessReturn extends BaseClass{
 		Thread.sleep(5000);
 		click(processReturn);
 		logger.info(" processReturn  successful");
-		return this;	
+		return this;
 	}
-	
+
 
 }

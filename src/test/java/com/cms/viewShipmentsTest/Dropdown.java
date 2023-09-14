@@ -3,10 +3,7 @@ package com.cms.viewShipmentsTest;
 import java.io.IOException;
 import java.lang.reflect.Method;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -36,12 +33,12 @@ public class Dropdown extends BaseClass{
 		shipViaLoad = new ShipViaLoad(driver);
 		shipViaLoad.clickOnTransaction();
 		shipViaLoad.clickOnViewShipment();
-		
+
 		shipViaLoad.clickOnShipViaLoad();
 		shipViaLoad.clickOnUserGroup();
 		shipViaLoad.clickOnSelectGroupOkClick();
-		
-		
-		
+
+
+
 }
 }

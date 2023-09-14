@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Tireloss {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("Tireloss");
@@ -131,7 +131,7 @@ public class Tireloss {
 
 		WebElement Tireloss = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX11")));
 		Tireloss.click();
-		
+
 
 		driver.findElement(By.xpath("//*[@id='btnOk']")).click();
 		Thread.sleep(5000);

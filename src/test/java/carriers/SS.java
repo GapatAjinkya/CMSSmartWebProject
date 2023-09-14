@@ -59,7 +59,7 @@ public class SS {
 		openProcessShipmentMenu();
 		searchAndSelectShipVia("FEXTest4");
 		addCustomer("CMS");
-		
+
 		String[] specialServices = { "COD", "Hold At Location","FedEx Delivery Signature Options"};
 		int s = specialServices.length;
 		System.out.println(s);
@@ -72,7 +72,7 @@ public class SS {
 			} else {
 				loopSatisfied = false;
 			}
-			if (loopSatisfied == false) {
+			if (!loopSatisfied) {
 				addCustomer("CMS");
 			}
 			k++;
@@ -154,7 +154,7 @@ public class SS {
 		ship.click();
 	}
 	private void selectSpecialService(String service) throws InterruptedException {
-		
+
 		WebElement buttonSpecialServices = driver.findElement(By.id("btnSpecialServices"));
 		wait.until(ExpectedConditions.elementToBeClickable(buttonSpecialServices)).click();
 		// logger.info("Click on Special Services successful");
@@ -208,23 +208,23 @@ public class SS {
 			// logger.info("Click on ok successful");
 			// logger.info("AutoPOD Selected");
 			Thread.sleep(5000);
-			
+
 			EnterWeight();
 			clickRate();
 			Clickship();
 			Thread.sleep(5000);
-			
+
 			 try {
 				    WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
-				 
+
 				    if (error.isDisplayed()) {
-				    	
+
 				        error.click();
 				    }
 				} catch (NoSuchElementException e) {
 				    System.out.println("Error element not found: " + e.getMessage());
 				}
-			 
+
 		} else if (service.equalsIgnoreCase("Drop Off Flag")) {
 			WebElement Dropoff = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX4")));
 			Dropoff.click();

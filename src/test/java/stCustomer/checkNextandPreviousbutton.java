@@ -2,6 +2,7 @@ package stCustomer;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -66,26 +67,26 @@ public class checkNextandPreviousbutton {
 
 	@Test
 	public void checkbutton() throws InterruptedException {
-		
+
 		WebElement Configuration = driver.findElement(By.id("menu_item_4"));
 		wait.until(ExpectedConditions.visibilityOf(Configuration));
 		wait.until(ExpectedConditions.elementToBeClickable(Configuration));
 		Configuration.click();
 		Thread.sleep(5000);
 		logger.info("Clickon Configuration successful");
-		
+
 		WebElement SupportTables = driver.findElement(By.cssSelector("#menu_item_45"));
 		wait.until(ExpectedConditions.visibilityOf(SupportTables));
 		wait.until(ExpectedConditions.elementToBeClickable(SupportTables));
 		SupportTables.click();
 		logger.info(" SupportTables Windo Open  successful");
-		
+
 		WebElement Customers = driver.findElement(By.xpath("//a[@id='menu_item_451']"));
 		wait.until(ExpectedConditions.visibilityOf(Customers));
 		wait.until(ExpectedConditions.elementToBeClickable(Customers));
 		Customers.click();
 		logger.info(" Customers Windo Open  successful");
-			
+
 		Thread.sleep(6000);
 		WebElement CustomerOkClick = driver.findElement(By.xpath("//button[@onclick='onCustomerSearchPrivateOkClick()']"));
 		wait.until(ExpectedConditions.visibilityOf(CustomerOkClick));
@@ -96,9 +97,9 @@ public class checkNextandPreviousbutton {
 		String check = "Previous"; // to specify the next or previous value
 		WebElement buttonNext = driver.findElement(By.xpath("//button[@id='CSTCustNext']"));
 		WebElement buttonPrevious = driver.findElement(By.xpath("//button[@id='CSTCustPrevious']"));
-		
+
 		   assert buttonNext.isEnabled() && buttonPrevious.isEnabled() : "Initial state is incorrect.";
-		
+
 		if (check.equals("Next")) {
 			boolean nextEnabled = buttonNext.isEnabled();
 			if (nextEnabled) {

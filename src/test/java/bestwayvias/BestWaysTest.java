@@ -1,6 +1,5 @@
 package bestwayvias;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -57,7 +56,7 @@ public class BestWaysTest {
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='BWSFOkClick()']")));
 		ok.click();
 		Thread.sleep(10000);
-		WebElement error = driver.findElement(By.id("btnErrorBoxOk"));	
+		WebElement error = driver.findElement(By.id("btnErrorBoxOk"));
 		if (error.isDisplayed()) {
 			WebElement error1 = driver.findElement(By.id("errorMsg"));
 			String text = error1.getText();
@@ -69,8 +68,8 @@ public class BestWaysTest {
 		 else {
             Assert.fail("The Code is Present");
         }
-    } 
-	public void newbestway(String bestwaycode,String Description,String org) throws InterruptedException {	
+    }
+	public void newbestway(String bestwaycode,String Description,String org) throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement add = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='BestWayAdd']")));
@@ -82,21 +81,21 @@ public class BestWaysTest {
 		WebElement Des = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.id("txtDescriptionBWF")));
 		Des.sendKeys(Description);
-		
+
 		WebElement OrgSiteGroup = driver.findElement(By.id("cmbGroupBWF"));
 		Select select = new Select(OrgSiteGroup);
 		select.selectByVisibleText(org);
-	
+
 		String[] shipvia = { "DHL_PRo12_DX", "ProUPS1_GND","LTLNR_WL_100","FMD-DHLPPGround",""};
 		for (String value : shipvia) {
 	        WebElement checkbox = driver.findElement(By.xpath("//u[contains(.,'" + value + "')]//preceding::td[1]"));
 	       checkbox.click();
 	       Thread.sleep(5000);
-	    }    
+	    }
 	}
 	public void Showall() {
 		WebElement ShowAllBWF = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='ShowAllBWF']")));
-		ShowAllBWF.click();	
+		ShowAllBWF.click();
 	}
 public void Okbutton() throws InterruptedException {
 	Thread.sleep(3000);

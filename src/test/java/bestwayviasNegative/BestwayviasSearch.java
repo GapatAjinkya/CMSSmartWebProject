@@ -1,10 +1,7 @@
 package bestwayviasNegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -32,7 +28,7 @@ public class BestwayviasSearch {
 		SearchBestWayCodeNegative("TestAG6");
 	}
 	public void SearchBestWayCodeNegative(String bestwaycode) throws InterruptedException {
-		
+
 	    Thread.sleep(5000);
 	    WebElement bestWayVias = wait
 	            .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='txtSearchBWSF']")));
@@ -40,7 +36,7 @@ public class BestwayviasSearch {
 	    WebElement ok = wait
 	            .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='BWSFOkClick()']")));
 	    ok.click();
-	    Thread.sleep(10000);  
+	    Thread.sleep(10000);
 	    try {
 	        WebElement error = driver.findElement(By.id("btnErrorBoxOk"));
 	        if (error.isDisplayed()) {
@@ -51,7 +47,7 @@ public class BestwayviasSearch {
 	          //  logger.info("This Code is Not present as expected");
 	        }
 	    } catch (NoSuchElementException e) {
-	
+
 	     //   logger.error("Expected error message was not displayed.");
 	        Assert.fail("Expected error message was not displayed.");
 	    }
@@ -99,12 +95,12 @@ public class BestwayviasSearch {
 		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
 		System.out.println("Title Matched");
 		Thread.sleep(10000);
-	}	
+	}
 
 	@AfterClass
 	public void teardown() {
 		driver.quit();
-		
+
 	}
-	
+
 }

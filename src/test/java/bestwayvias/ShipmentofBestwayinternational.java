@@ -2,7 +2,6 @@ package bestwayvias;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,19 +20,19 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ShipmentofBestwayinternational {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("BestWaysTest");
 	String bestwaycode = "TestAGIn";
-	
+
 	@Test
 	public void bestwaynew() throws InterruptedException {
 		CreateBestWay();
 		SearchBestWayCode("TestAGIn");
 		newbestway("TestAGIn","international","VA_UG -- Virginia User Group");
 		Showall();
-		Okbutton();	
+		Okbutton();
 	}
 	@Test(dependsOnMethods = {"bestwaynew"})
 	public void Doshipment() throws InterruptedException {
@@ -44,7 +43,7 @@ public class ShipmentofBestwayinternational {
 		Rate();
 		ShipViasthatqualifiedforrating();
 		ShipButton();
-			
+
 	}
 	public void CreateBestWay() throws InterruptedException {
 		WebElement Configuration =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='menu_item_4']")));
@@ -71,7 +70,7 @@ public class ShipmentofBestwayinternational {
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='BWSFOkClick()']")));
 		ok.click();
 		Thread.sleep(10000);
-		WebElement error = driver.findElement(By.id("btnErrorBoxOk"));	
+		WebElement error = driver.findElement(By.id("btnErrorBoxOk"));
 		if (error.isDisplayed()) {
 			WebElement error1 = driver.findElement(By.id("errorMsg"));
 			String text = error1.getText();
@@ -83,8 +82,8 @@ public class ShipmentofBestwayinternational {
 		 else {
             Assert.fail("The Code is Present");
         }
-    } 
-	public void newbestway(String bestwaycode,String Description,String org) throws InterruptedException {	
+    }
+	public void newbestway(String bestwaycode,String Description,String org) throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement add = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='BestWayAdd']")));
@@ -96,21 +95,21 @@ public class ShipmentofBestwayinternational {
 		WebElement Des = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.id("txtDescriptionBWF")));
 		Des.sendKeys(Description);
-		
+
 		WebElement OrgSiteGroup = driver.findElement(By.id("cmbGroupBWF"));
 		Select select = new Select(OrgSiteGroup);
 		select.selectByVisibleText(org);
-	
+
 		String[] shipvia = { "DHL_PRo12_DX", "ProUPS1_GND","LTLNR_WL_100","FMD-DHLPPGround",""};
 		for (String value : shipvia) {
 	        WebElement checkbox = driver.findElement(By.xpath("//u[contains(.,'" + value + "')]//preceding::td[1]"));
 	       checkbox.click();
 	       Thread.sleep(5000);
-	    }    
+	    }
 	}
 	public void Showall() {
 		WebElement ShowSelected = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='ShowAllBWF']")));
-		ShowSelected.click();	
+		ShowSelected.click();
 	}
 	public void Okbutton() throws InterruptedException {
 		Thread.sleep(3000);
@@ -125,7 +124,7 @@ public class ShipmentofBestwayinternational {
 		WebElement ProcessS = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("menu_item_21")));
 		ProcessS.click();
 		Thread.sleep(15000);
-		
+
 		WebElement shipviaSearch = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@onclick='btnSearch_PS()']")));
 		shipviaSearch.click();
@@ -181,11 +180,11 @@ public class ShipmentofBestwayinternational {
 		Thread.sleep(5000);
 		// logger.info("Customer Added");
 	}
-	
-	
+
+
 	public void addDetails(String product) throws InterruptedException {
 
-        // To Add Details 
+        // To Add Details
 		WebElement Details= driver.findElement(By.id("btnDetails"));
 		Details.click();       // Details Button
 		Thread.sleep(5000);
@@ -194,16 +193,16 @@ public class ShipmentofBestwayinternational {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//input[@value=\"Code\"]")).click();
 		WebElement Productname= driver.findElement(By.id("txtProductSearch"));
-		Productname.sendKeys(product); 
+		Productname.sendKeys(product);
 		logger.info("Books input given ");
-		
+
 		driver.findElement(By.id("btnPOk")).click();   // Click on oK
 		Thread.sleep(10000);
 	    WebElement Books= driver.findElement(By.xpath("//td[contains(text(),'"+product+"')]"));
 	    Books.click();
 		logger.info("Books Selected ");
-	   
-	 
+
+
 		Thread.sleep(10000);
 	    driver.findElement(By.id("btnProductOk")).click();
 		Thread.sleep(10000);
@@ -214,10 +213,10 @@ public class ShipmentofBestwayinternational {
 		logger.info("Details added");
 	}
 	public void ShipViasthatqualifiedforrating() {
-		
+
 		List<WebElement> Svqfr = driver.findElements(By.xpath("//table[@id='tblBestWayRatesList']//tr//td[1]"));
-		
-		for (WebElement ele : Svqfr) 
+
+		for (WebElement ele : Svqfr)
 		{
 			String value = ele.getText();
 			logger.info("ShipVias that qualified for rating:- "+value);
@@ -226,10 +225,10 @@ public class ShipmentofBestwayinternational {
 	}
 		WebElement ok = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='btnOk_BestWayRatesForm']")));
 		ok.click();
-		
+
 	List<WebElement> not = driver.findElements(By.xpath("//table[@id='tblBWRErrorList']//tr//td[1]"));
-	
-	for (WebElement elenot : not) 
+
+	for (WebElement elenot : not)
 	{
 		String value = elenot.getText();
 		logger.info("ShipVias that Not qualified for rating:- "+value);
@@ -237,12 +236,12 @@ public class ShipmentofBestwayinternational {
 }
 
 public void ShipButton() {
-		
+
 		WebElement SB = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='btnShipClick']")));
 		SB.click();
 	}
-	
-//---------------------------	
+
+//---------------------------
 	@BeforeClass
 	public void setup() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();

@@ -17,10 +17,10 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Common {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
-	
+
 	Logger logger = LogManager.getLogger("SpecialServicess");
 
 	@Test()
@@ -58,9 +58,9 @@ public class Common {
 
 }
 	@Test
-	public void testTwo() throws InterruptedException 
+	public void testTwo() throws InterruptedException
 	{
-		
+
 		String shipviacode = "FEXTest4";
 
 		logger.info(" Opening Process Shipment Menu");
@@ -102,7 +102,7 @@ public class Common {
 		logger.info("Click on Ship Via ok search  Successful");
 
 		Thread.sleep(5000);
-		
+
 
 		WebElement customer = driver.findElement(By.xpath("//button[@onclick='AddressesClick()']"));
 		customer.click();
@@ -126,32 +126,32 @@ public class Common {
 		Customerok.click(); // Click on OK
 		Thread.sleep(5000);
 		logger.info("Customer Added");
-		
+
 	}
 	@Test
 	public void SelectSpecialService() throws InterruptedException {
-		
-		
+
+
 		WebElement buttonSpecialServices = driver.findElement(By.id("btnSpecialServices"));
 		wait.until(ExpectedConditions.visibilityOf(buttonSpecialServices));
 		wait.until(ExpectedConditions.elementToBeClickable(buttonSpecialServices));
 		buttonSpecialServices.click();
 		logger.info("Click on Special Services successful");
 	}
-	
+
 	@Test
-	public void Click1() throws InterruptedException 
+	public void Click1() throws InterruptedException
 	{
-		
+
 		WebElement NonStandardContainer = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX0")));
 		NonStandardContainer.click();
 
-//---------------------------------------------------------			
+//---------------------------------------------------------
 		Thread.sleep(10000);
 		WebElement okbutton = driver.findElement(By.xpath("//*[@id='btnOk']"));
 		okbutton.click();
 		logger.info("Click on ok successful");
-		
-		
+
+
 	}
 }

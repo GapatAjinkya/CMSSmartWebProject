@@ -2,6 +2,7 @@ package billoflading;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -14,19 +15,18 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class RateBol {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("BillofLading");
 	String CustomerCode = "	TestBOL";
 	String Carriers = "LTLR_WL -- LTL Rated WorldLink";//Search Carrier
-	
+
 @BeforeClass
 	public void setup() throws InterruptedException {
 
@@ -57,27 +57,27 @@ public class RateBol {
 		Thread.sleep(10000);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 }
-	
+
 	@Test(priority =0)
 	public void SelectBOLcustomer() throws InterruptedException
-	{		
+	{
 		WebElement Transaction= wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_2"))); 	// To click on Transaction
 		wait.until(ExpectedConditions.elementToBeClickable(Transaction));
 		Transaction.click();
 		WebElement BOL= wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_26"))); 	// To click on Transaction
 		wait.until(ExpectedConditions.elementToBeClickable(BOL));
-		BOL.click();		
+		BOL.click();
 		WebElement dropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//select[@id='BOLddlCarriers']")));
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(Carriers);
 		logger.info("Carriers Selected ");
-		
-//--------------------------		
-	
+
+//--------------------------
+
 		List<WebElement> alldata = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@id='ELtblBOLExplorerList']//tr//td[2]")));
 		boolean dataStatus = false;
 		for (WebElement ele : alldata) {
-			String value = ele.getText();		
+			String value = ele.getText();
 			if (value.equals(CustomerCode))
 			{
 				System.out.println(value);
@@ -86,29 +86,29 @@ public class RateBol {
 			}
 		}
 		Assert.assertTrue(dataStatus, "CustomerCode not found");
-		if (dataStatus) 
+		if (dataStatus)
 		{
 			Thread.sleep(5000);
 			WebElement Customercode =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='ELtblBOLExplorerList']//td[contains(text(), '" + CustomerCode + "')]")));
-			Customercode.click();			
+			Customercode.click();
 		} else {
 		    System.out.println("CustomerCode not found");
-		}	
-		logger.info("Customer Code Found Selected ");        
+		}
+		logger.info("Customer Code Found Selected ");
 }
 	@Test (priority = 1)
 	public void rate() throws InterruptedException {
-		
+
 		WebElement BOLRateBOL= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='BOLRateBOL']")));
 	    wait.until(ExpectedConditions.elementToBeClickable(BOLRateBOL));
 	    BOLRateBOL.click();
-	    
+
 		Thread.sleep(5000);
 		WebElement OkButtonRateBOL= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='OkButtonRateBOL']")));
         wait.until(ExpectedConditions.elementToBeClickable(OkButtonRateBOL));
         OkButtonRateBOL.click();
-		
+
 	}
-	
-	
+
+
 	}

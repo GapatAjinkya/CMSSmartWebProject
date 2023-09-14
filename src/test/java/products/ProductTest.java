@@ -1,7 +1,6 @@
 package products;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,11 +18,11 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ProductTest {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("CreateNewProducts");
-	
+
 	@BeforeMethod
 	public void setup() throws InterruptedException {
 
@@ -63,38 +62,38 @@ public class ProductTest {
 	Thread.sleep(30000);
 	driver.close();
 	}
-	
+
 	@Test(priority = 1)
 	public void newproduct() throws InterruptedException {
-		
+
 		WebElement Configuration = driver.findElement(By.id("menu_item_4"));
 		wait.until(ExpectedConditions.visibilityOf(Configuration));
 		wait.until(ExpectedConditions.elementToBeClickable(Configuration));
 		Configuration.click();
 		Thread.sleep(5000);
 		logger.info("Clickon Configuration successful");
-		
+
 		WebElement SupportTables = driver.findElement(By.cssSelector("#menu_item_45"));
 		wait.until(ExpectedConditions.visibilityOf(SupportTables));
 		wait.until(ExpectedConditions.elementToBeClickable(SupportTables));
 		SupportTables.click();
 		logger.info(" SupportTables Windo Open  successful");
-		
+
 		WebElement products=driver.findElement(By.xpath("//a[@id='menu_item_455']"));
 		wait.until(ExpectedConditions.visibilityOf(products));
 		wait.until(ExpectedConditions.elementToBeClickable(products));
 		products.click();
 		logger.info(" products Windo Open  successful");
 		Thread.sleep(3000);
-		
-		
+
+
 	    WebElement Search=driver.findElement(By.xpath("//input[@id='txtCSTProdSearch']"));
 	    Search.sendKeys("abcd");
 	    driver.findElement(By.xpath("//button[@onclick='onProductSearchFormOkClick()']")).click();
-	    
+
 	    WebElement error=driver.findElement(By.id("btnErrorBoxOk"));
         boolean errortab=driver.findElement(By.id("btnErrorBoxOk")).isDisplayed();
-		
+
 		if(errortab)
 		{
 			WebElement errorText=driver.findElement(By.id("errorMsg"));

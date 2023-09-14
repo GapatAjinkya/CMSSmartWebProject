@@ -12,17 +12,18 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 public class SpecialServices {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	public static  boolean loopSatisfied = false;
 
 	//Logger logger = LogManager.getLogger("SpecialServicess");
 	@BeforeClass
-	public void setup() throws InterruptedException 
-	{	
+	public void setup() throws InterruptedException
+	{
 		ChromeOptions options = new ChromeOptions();
 		WebDriverManager.chromedriver().setup();
 		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
@@ -50,16 +51,16 @@ public class SpecialServices {
 		Thread.sleep(10000);
 	}
 	@Test
-	public void shipVia() throws InterruptedException {	
-		
+	public void shipVia() throws InterruptedException {
+
 		openProcessShipmentMenu();
 		searchAndSelectShipVia("FEXTest4");
-		addCustomer("CMS");			
-		
+		addCustomer("CMS");
+
 		String[] specialServices = {"Auto POD","Tireloss",};
 		int count=specialServices.length;
-		int k = 1;		    
-	  for (String service : specialServices) 
+		int k = 1;
+	  for (String service : specialServices)
 	    {
 	        selectSpecialService(service);
 	        if(k==count)
@@ -68,14 +69,14 @@ public class SpecialServices {
 	        }else {
 	        	loopSatisfied= false;
 	        }
-	        if(loopSatisfied==false) {
-	        	addCustomer("CMS");			
+	        if(!loopSatisfied) {
+	        	addCustomer("CMS");
 	        }
 	        k++;
 	    }
 	}
-	private void openProcessShipmentMenu() throws InterruptedException 
-	{	
+	private void openProcessShipmentMenu() throws InterruptedException
+	{
 	//	logger.info("Opening Process Shipment Menu");
 		Thread.sleep(5000);
 		WebElement transaction = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("menu_item_2")));
@@ -102,14 +103,14 @@ public class SpecialServices {
 		ok.click();
 	//	logger.info("Click on Ship Via ok search Successful");
 		Thread.sleep(5000);
-		
+
 	}
 	private void addCustomer(String customerName) throws InterruptedException
-	{	
+	{
 		WebElement customer = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@onclick='AddressesClick()']")));
 		wait.until(ExpectedConditions.elementToBeClickable(customer));
 		customer.click();
-	//	logger.info("Clicked on Customer");	
+	//	logger.info("Clicked on Customer");
 		Thread.sleep(5000);
 		WebElement searchCustomer = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtSCSearch"))); // searchcustomer
 		searchCustomer.sendKeys(customerName);
@@ -127,13 +128,13 @@ public class SpecialServices {
 		//logger.info("Customer Added");
 	}
 	private void EnterWeight() throws InterruptedException
-	{	
+	{
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='txtManual']"))).sendKeys("1.00");
-	//	logger.info("Manual Weight is fill ");	
+	//	logger.info("Manual Weight is fill ");
 	}
-	private void clickRate() throws InterruptedException {		
+	private void clickRate() throws InterruptedException {
 	WebElement Rate=wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cmdRate")));
-	wait.until(ExpectedConditions.elementToBeClickable(Rate));	
+	wait.until(ExpectedConditions.elementToBeClickable(Rate));
 	Rate.click();
 		//logger.info("Click on Rate ");
 	}
@@ -141,8 +142,8 @@ public class SpecialServices {
     {
 	Thread.sleep(5000);
 	WebElement ship=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='btnShipClick']")));
-	wait.until(ExpectedConditions.elementToBeClickable(ship));	
-	ship.click();				
+	wait.until(ExpectedConditions.elementToBeClickable(ship));
+	ship.click();
 	}
 	private void selectSpecialService(String service) throws InterruptedException
 	{
@@ -153,8 +154,8 @@ public class SpecialServices {
 //	                .until(ExpectedConditions.elementToBeClickable(By.id(service)));
 //	        serviceElement.click();
 		Thread.sleep(5000);
-		
-		if (service.equalsIgnoreCase("Hold At Location")) 
+
+		if (service.equalsIgnoreCase("Hold At Location"))
 		{
 			WebElement HoldAtLocation = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX2")));
 			HoldAtLocation.click();
@@ -180,9 +181,9 @@ public class SpecialServices {
 			EnterWeight();
 			clickRate();
 			Clickship();
-			
+
 		} else if (service.equalsIgnoreCase("Non Standard Container"))
-		{		
+		{
 			WebElement NonStandardContainer = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX0")));
 			NonStandardContainer.click();
 			Thread.sleep(5000);
@@ -193,7 +194,7 @@ public class SpecialServices {
 			EnterWeight();
 			clickRate();
 			Clickship();
-		} else if (service.equalsIgnoreCase("Auto POD")) 
+		} else if (service.equalsIgnoreCase("Auto POD"))
 		{
 			WebElement AutoPOD = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX1")));
 			AutoPOD.click();
@@ -204,7 +205,7 @@ public class SpecialServices {
 			EnterWeight();
 			clickRate();
 			Clickship();
-		} else if (service.equalsIgnoreCase("Drop Off Flag")) 
+		} else if (service.equalsIgnoreCase("Drop Off Flag"))
 		{
 			WebElement Dropoff = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX4")));
 			Dropoff.click();
@@ -223,7 +224,7 @@ public class SpecialServices {
 			EnterWeight();
 			clickRate();
 			Clickship();
-		} else if (service.equalsIgnoreCase("Hazardous Materials")) 
+		} else if (service.equalsIgnoreCase("Hazardous Materials"))
 		{
 			WebElement HazardousMaterials = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX6")));
 			HazardousMaterials.click();
@@ -259,12 +260,12 @@ public class SpecialServices {
 			Thread.sleep(10000);
 			driver.findElement(By.xpath("//*[@id='btnPdOk']")).click();
 			Thread.sleep(10000);
-		//	logger.info("Details added");	
+		//	logger.info("Details added");
 			EnterWeight();
 			clickRate();
 			Clickship();
 		} else if (service.equalsIgnoreCase("FedEx International Controlled Export"))
-		{		
+		{
 			WebElement FedExInternationaControlledExport = wait
 					.until(ExpectedConditions.elementToBeClickable(By.id("BOX7")));
 			FedExInternationaControlledExport.click();
@@ -275,12 +276,12 @@ public class SpecialServices {
 			EnterWeight();
 			clickRate();
 			Clickship();
-		} else if (service.equalsIgnoreCase("COD")) 
+		} else if (service.equalsIgnoreCase("COD"))
 		{
 			WebElement COD = wait
 					.until(ExpectedConditions.elementToBeClickable(By.id("BOX8")));
 			COD.click();
-			
+
 			WebElement cod = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("SL8")));
 			Select codselect = new Select(cod);
 			codselect.selectByVisibleText("Cash");
@@ -299,51 +300,51 @@ public class SpecialServices {
 			 WebElement CompanyNameCOD=	 wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtCompanyNameCOD")));
 			 CompanyNameCOD.clear();
 			 Thread.sleep(5000);
-			 CompanyNameCOD.sendKeys("CMS GlobalSoft Org Name"); 
+			 CompanyNameCOD.sendKeys("CMS GlobalSoft Org Name");
 			 WebElement ContactNameCOD=	 wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtContactNameCOD")));
 			 ContactNameCOD.clear();
-		
-			 ContactNameCOD.sendKeys("Professional Services Org Contact"); 
+
+			 ContactNameCOD.sendKeys("Professional Services Org Contact");
 			 WebElement Address1COD=wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtAddress1COD")));
 			 Address1COD.clear();
-			
+
 			 Address1COD.sendKeys("1751 THOMPSON ST");
 			 WebElement CityCOD=wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtCityCOD")));
 			 CityCOD.clear();
 
-			 CityCOD.sendKeys("AURORA");  
+			 CityCOD.sendKeys("AURORA");
 			 WebElement StateCOD=wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtStateCOD")));
 			 StateCOD.clear();
-		
-			 StateCOD.sendKeys("OH"); 	 
+
+			 StateCOD.sendKeys("OH");
 		 WebElement ZipCOD=wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtZipCOD")));
 			 ZipCOD.clear();
 			 Thread.sleep(5000);
-			 ZipCOD.sendKeys("44202"); 		 
+			 ZipCOD.sendKeys("44202");
 			 WebElement CountryCOD =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtCountryCOD")));
 				Select countrysC = new Select(CountryCOD);
 				countrysC.selectByVisibleText("UNITED STATES");
 				 WebElement PhoneCOD=wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtPhoneCOD")));
 				 PhoneCOD.clear();
 				 Thread.sleep(5000);
-				 PhoneCOD.sendKeys("7034558292");		 
-				 WebElement Save= wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btncodAddressDataModalOk")));		 
+				 PhoneCOD.sendKeys("7034558292");
+				 WebElement Save= wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btncodAddressDataModalOk")));
 				 wait.until(ExpectedConditions.elementToBeClickable(Save));
-				 Save.click();		 
-			 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='btnOk']"))).click(); 
+				 Save.click();
+			 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='btnOk']"))).click();
 			EnterWeight();
 			clickRate();
 			Clickship();
-			
+
 		} else if (service.equalsIgnoreCase("FedEx ShipAlert")) {
-			
+
 			WebElement FedExShipAlert = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX9")));
 			FedExShipAlert.click();
 			driver.findElement(By.xpath("//*[@id='button3']")).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("chkShipperShipAlert"))).click();
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("btnShipAlertOk"))).click();
 			driver.findElement(By.xpath("//*[@id='btnOk']")).click();
-		
+
 			JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 			 jsExecutor.executeScript("window.scrollBy(0, 1000);");
 				Thread.sleep(5000);
@@ -369,7 +370,7 @@ public class SpecialServices {
 			EnterWeight();
 			clickRate();
 			Clickship();
-		} else if (service.equalsIgnoreCase("Tireloss")) {	
+		} else if (service.equalsIgnoreCase("Tireloss")) {
 			WebElement Tireloss = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX11")));
 			Tireloss.click();
 			driver.findElement(By.xpath("//*[@id='btnOk']")).click();
@@ -378,7 +379,7 @@ public class SpecialServices {
 			EnterWeight();
 			clickRate();
 			Clickship();
-		} else if (service.equalsIgnoreCase("FedEx Delivery Signature Options")) 
+		} else if (service.equalsIgnoreCase("FedEx Delivery Signature Options"))
 		{
 			WebElement FedExDeliverySignatureOptions = wait
 					.until(ExpectedConditions.elementToBeClickable(By.id("BOX12")));
@@ -413,13 +414,13 @@ public class SpecialServices {
 			WebElement Ecod = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX14")));
 			Ecod.click();
 			driver.findElement(By.xpath("//*[@id='btnOk']")).click();
-		
+
 		//	logger.info("Ecod Selected");
 			EnterWeight();
 			clickRate();
 			Clickship();
 		} else if (service.equalsIgnoreCase("Declared Value/Third Party Insurance")) {
-			
+
 			Thread.sleep(3000);
 			WebElement DeclaredValueThirdPartyInsurance = wait
 					.until(ExpectedConditions.elementToBeClickable(By.id("BOX15")));
@@ -433,8 +434,8 @@ public class SpecialServices {
 			EnterWeight();
 			clickRate();
 			Clickship();
-	
+
 		}
 	}
-	
+
 }

@@ -1,21 +1,23 @@
 package com.cms.processreturnTest;
 import java.io.IOException;
 import java.lang.reflect.Method;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import com.cms.Base.BaseClass;
 import com.cms.pages.Login;
 import com.cms.processreturn.ProcessReturn;
 
 public class ProcessRTest extends BaseClass{
-	
+
 	public static WebDriver driver;
 	public static Login login;
 	public static ProcessReturn pr;
-	
+
 	@BeforeMethod
 	public void beforeMethod(Method m) throws Exception {
 
@@ -42,9 +44,9 @@ public class ProcessRTest extends BaseClass{
 		pr.ClickonCustomerSearchOkClick();
 		pr.selectcustomerfromlist();
 		pr.ClickonOKcustomer();
-		
-		
-		
-		
+
+
+
+
 }
 }

@@ -2,7 +2,6 @@ package shipviasnegative;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,12 +21,12 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ShipViasnew {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("CarriersSearch");
-	
-	
+
+
 	@Test
 	public void TeatShipvia() throws InterruptedException {
 		Shipvia();
@@ -37,7 +36,7 @@ public class ShipViasnew {
 		captureError();
 	}
 	public void newshipvia() throws InterruptedException {
-		
+
 		String shipviacode = "FEX_Test1_GN1";
 		String ShipviaDescription = "Ground";
 		String ShipviaService = "GN -- Ground®";
@@ -49,7 +48,7 @@ public class ShipViasnew {
 		ca.selectByVisibleText(Carriercode);
 
 		Thread.sleep(5000);
-//To select service 	
+//To select service
 
 		WebElement ShipviaServicet = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cmbServiceSVF")));
 		Select SS = new Select(ShipviaServicet);
@@ -60,7 +59,7 @@ public class ShipViasnew {
 		Select pay = new Select(payment);
 		pay.selectByVisibleText("Shipper");
 		logger.info("select Payment  successful");
-//To select bill	
+//To select bill
 		WebElement bill = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cmbBillDutyTaxToSVF")));
 		Select billselect = new Select(bill);
 		billselect.selectByVisibleText("Recipient");
@@ -78,10 +77,10 @@ public class ShipViasnew {
 		Dis.sendKeys(ShipviaDescription);
 		Thread.sleep(5000);
 		logger.info("Send Discription  successful");
-		
+
 		List<WebElement> checkboxes = driver.findElements(By.xpath("//table[@id='xmlTableSVF']//tr"));
 		String desiredText = "Alcohol";
-	
+
 		for (WebElement checkbox : checkboxes) {
 		    String checkboxText = checkbox.getText();
 		    if (checkboxText.equals(desiredText)) {
@@ -93,7 +92,7 @@ public class ShipViasnew {
 		            System.out.println("Checkbox is not displayed.");
 		        }
 		    }
-		}		
+		}
 		Thread.sleep(5000);
 		wait
 		.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='OkClickSVF']"))).click();
@@ -130,13 +129,13 @@ public class ShipViasnew {
 		Thread.sleep(3000);
 		WebElement ShipVias = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='menu_item_441']")));
 		ShipVias.click();
-		logger.info("Click on ShipVias successful");	
+		logger.info("Click on ShipVias successful");
 	}
-	public void search(String shipviacode) throws InterruptedException {	
+	public void search(String shipviacode) throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement ShipViasSearh = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtSearchSVSF")));
 		ShipViasSearh.sendKeys(shipviacode);
-		logger.info("Search  ShipVias successful");	
+		logger.info("Search  ShipVias successful");
 		WebElement ok = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@onclick='SVSFOkClick()']")));
 		ok.click();
 		logger.info("ok Click  successful");
@@ -171,7 +170,7 @@ public class ShipViasnew {
 		System.out.println("Title Matched");
 		Thread.sleep(10000);
 	}
-	
+
 	@AfterClass
 	public void teardown() {
 		driver.quit();

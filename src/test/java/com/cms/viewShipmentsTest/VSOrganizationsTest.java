@@ -28,12 +28,12 @@ public class VSOrganizationsTest extends BaseClass{
 
 		login = new Login(driver);
 		login.LoginPage();
-		
+
 		shipViaLoad = new ShipViaLoad(driver);
 		shipViaLoad.clickOnTransaction();
 		shipViaLoad.clickOnViewShipment();
 		shipViaLoad.datepickfrom();
-		shipViaLoad.clickOnOrganizationsLoad();	
-		
+		shipViaLoad.clickOnOrganizationsLoad();
+
 }
 }

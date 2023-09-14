@@ -1,7 +1,6 @@
 package shipviasnegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,16 +22,16 @@ public class ShipViasDescription {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("ShipViasDescription");
-	
+
 	@Test
 	public void ShipviaDescriptionTest() throws InterruptedException {
-		Shipvia();	
+		Shipvia();
 		search("");
 		addshipvia();
 		CheckDescription("asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?/1");
 		captureError();
 	}
-	
+
 	@Test(dependsOnMethods = "ShipviaDescriptionTest")
 public void CheckcodeBlank() throws InterruptedException {
 		Thread.sleep(8000);
@@ -56,21 +55,21 @@ public void CheckcodeBlank() throws InterruptedException {
 		logger.info("Click on add ShipVias successful");
 	}
 	public void CheckDescription(String Description) throws InterruptedException {
-		
+
 		WebElement Shipviacode = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtCodeSVF")));
 		Shipviacode.clear();
 		Shipviacode.sendKeys("asdfghjkloiuytrewqas");
 		Thread.sleep(5000);
 		logger.info("Send ship viacode  successful");
-		
+
 		WebElement Dis = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtDescriptionSVF")));
 		Dis.clear();
 		Dis.sendKeys(Description);
 		Thread.sleep(5000);
-		logger.info("Send Discription  successful");		
+		logger.info("Send Discription  successful");
 		driver.findElement(By.id("OkClickSVF")).click();
 	}
-	public void captureError() throws InterruptedException {	
+	public void captureError() throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement errorMessage = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@id='errorMsg']")));
@@ -88,11 +87,11 @@ public void CheckcodeBlank() throws InterruptedException {
             // Handle other cases or unexpected errors
             System.out.println("Unexpected error message: " + actualErrorMessage);
         }
-		
+
 			WebElement error=driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
-		    error.click();      
+		    error.click();
 	}
-	
+
 	public void Shipvia() throws InterruptedException {
 		Thread.sleep(10000);
 		WebElement Configuration = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='menu_item_4']")));
@@ -106,13 +105,13 @@ public void CheckcodeBlank() throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement ShipVias = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='menu_item_441']")));
 		ShipVias.click();
-		logger.info("Click on ShipVias successful");	
+		logger.info("Click on ShipVias successful");
 	}
-	public void search(String shipviacode) throws InterruptedException {	
+	public void search(String shipviacode) throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement ShipViasSearh = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtSearchSVSF")));
 		ShipViasSearh.sendKeys(shipviacode);
-		logger.info("Search  ShipVias successful");	
+		logger.info("Search  ShipVias successful");
 		WebElement ok = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@onclick='SVSFOkClick()']")));
 		ok.click();
 		logger.info("ok Click  successful");
@@ -147,7 +146,7 @@ public void CheckcodeBlank() throws InterruptedException {
 		System.out.println("Title Matched");
 		Thread.sleep(10000);
 	}
-	
+
 	@AfterClass
 	void teardown() throws InterruptedException {
 		Thread.sleep(10000);

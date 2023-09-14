@@ -1,6 +1,5 @@
 package departmentsnegative;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,7 +23,7 @@ public class DepartmentAdd {
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("Departments");
 
-	
+
 	@Test
 public void checkexisting () throws InterruptedException {
 		newDepartments("Department5","Test Department");
@@ -63,7 +62,7 @@ public void checkexisting () throws InterruptedException {
 		addbutton.click();
 		logger.info("Click on add button successful");
 		Thread.sleep(3000);
-	
+
 		WebElement codeDepartment = driver.findElement(By.id("DFtxtCode"));
 		wait.until(ExpectedConditions.visibilityOf(codeDepartment));
 		wait.until(ExpectedConditions.elementToBeClickable(codeDepartment));

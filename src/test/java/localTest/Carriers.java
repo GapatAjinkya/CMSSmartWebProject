@@ -1,7 +1,6 @@
 package localTest;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -124,7 +123,7 @@ public class Carriers {
 			} else {
 				logger.info("Test case passed: No error message displayed.");
 			}
-		
+
 	}
 	@Test(priority = 0)
 	private void searchdepartment() throws InterruptedException {
@@ -174,7 +173,7 @@ public class Carriers {
 
 		driver.findElement(By.xpath("//button[@onclick='onDepatmentSearchPrivateOkClick()']")).click();
 		Thread.sleep(3000);
-		
+
 		 WebElement error = driver.findElement(By.id("btnErrorBoxOk"));
 		boolean isErrorMessageDisplayed = driver.findElement(By.id("btnErrorBoxOk")).isDisplayed();
 		if (isErrorMessageDisplayed) {

@@ -2,6 +2,7 @@ package test;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -95,21 +96,21 @@ public class Testcase {
 		ok.click();
 
 		// ----------------------------------------------------------------------------------------------------------
-       
-		
+
+
 		By checkBoxLocator = By.xpath("//input[@type='checkbox' and contains(@id,'BOX')]");
 		int numberOfIterations = 16;
 		// creating an Empty Integer List
-		List<Integer> arr = new ArrayList<Integer>(3);
+		List<Integer> arr = new ArrayList<>(3);
 		arr.add(2);
 //		arr.add(8);
 //		arr.add(11);
-		for (int i = 0; i < numberOfIterations; i++) 
+		for (int i = 0; i < numberOfIterations; i++)
 		{
 			if (arr.contains(i))
 			{
 				// Select the customer
-				
+
 				WebElement customer =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@onclick='AddressesClick()']")));
 				wait.until(ExpectedConditions.elementToBeClickable(customer));
 				customer.click();
@@ -120,11 +121,11 @@ public class Testcase {
 				WebElement searchcustomer = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtSCSearch"))); // searchcustomer
 				wait.until(ExpectedConditions.visibilityOf(searchcustomer));
 				searchcustomer.sendKeys("CMS");
-				
+
 				WebElement List = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("selCutomerList")));
 				Select CustomerList = new Select(List);
 				CustomerList.selectByValue("1"); // To select Global
-				
+
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@onclick='onCustomerSearchOkClick()']"))).click(); // click on ok
 				Thread.sleep(5000);
 				// logger.info("Customer Searched");
@@ -134,7 +135,7 @@ public class Testcase {
 				WebElement Customerok = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("addressformOk")));
 				wait.until(ExpectedConditions.elementToBeClickable(Customerok));
 				Customerok.click(); // Click on OK
-				
+
 				Thread.sleep(5000);
 				// logger.info("Customer Added");
 				System.out.println("Customer Added");
@@ -152,16 +153,16 @@ public class Testcase {
 					WebElement checkbox = checkboxes.get(i);
 					checkboxes.get(i).click();
 					    String checkboxText = checkbox.getText();
-					 
+
 					System.out.println("-----------===----------" + i+checkboxText);
-					
+
 				}
 
 				if(i==2) {
-					
+
 					driver.findElement(By.xpath("//input[@onclick='ShowFedExWSHoldAtLocationAddress();']")).click(); // address
 					Thread.sleep(3000);
-					
+
 			/*		 wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='btnfedexholdAtLocationAddressDataModalOk']"))).click();
 			     // modify
 					Thread.sleep(3000);
@@ -173,16 +174,16 @@ public class Testcase {
 					driver.findElement(By.id("txtStateHoldFedex")).sendKeys("va");
 					driver.findElement(By.id("txtZipHoldFedex")).sendKeys("22079");
 					Thread.sleep(3000);
-					
+
 					WebElement country =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtCountryFedexHold")));
 					Select countrys = new Select(country);
-					countrys.selectByVisibleText("UNITED STATES");	
+					countrys.selectByVisibleText("UNITED STATES");
 					 wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnfedexholdAtLocationAddressDataModalOk"))).click();
 					*/
 					Thread.sleep(3000);
 				}
-				
-				if(i==8) 
+
+				if(i==8)
 				{
 					WebElement cod = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("SL8")));
 					Select codselect = new Select(cod);
@@ -199,56 +200,56 @@ public class Testcase {
 					 wait.until(ExpectedConditions.elementToBeClickable(Address));
 					 Address.click();
 					 Thread.sleep(5000);
-					 
+
 					 driver.findElement(By.xpath("//button[@id='btncodAddressDataModalOk']")).click();
-					
-					 
+
+
 					 Thread.sleep(5000);
 					 WebElement CompanyNameCOD=	 wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtCompanyNameCOD")));
 					 CompanyNameCOD.clear();
 					 CompanyNameCOD.sendKeys("CMS GlobalSoft Org Name");
-					 
+
 					 WebElement ContactNameCOD=	 wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("CompanyNameCOD")));
 					 ContactNameCOD.clear();
 					 ContactNameCOD.sendKeys("Professional Services Org Contact");
-					 
+
 					 WebElement Address1COD=wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtAddress1COD")));
 					 Address1COD.clear();
 					 ContactNameCOD.sendKeys("1751 THOMPSON ST");
-					 
+
 					 WebElement CityCOD=wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtCityCOD")));
 					 CityCOD.clear();
-					 CityCOD.sendKeys("AURORA"); 
-					 
+					 CityCOD.sendKeys("AURORA");
+
 					 WebElement StateCOD=wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtStateCOD")));
 					 StateCOD.clear();
-					 StateCOD.sendKeys("OH"); 
-					 
+					 StateCOD.sendKeys("OH");
+
 					 WebElement ZipCOD=wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtZipCOD")));
 					 ZipCOD.clear();
-					 ZipCOD.sendKeys("44202"); 
-					 
+					 ZipCOD.sendKeys("44202");
+
 					 WebElement CountryCOD =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtCountryCOD")));
 						Select countrysC = new Select(CountryCOD);
 						countrysC.selectByVisibleText("UNITED STATES");
-					 
+
 						 WebElement PhoneCOD=wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtPhoneCOD")));
 						 PhoneCOD.clear();
 						 PhoneCOD.sendKeys("7034558292");
-						 
-						 WebElement Save= wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btncodAddressDataModalOk")));		 
+
+						 WebElement Save= wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btncodAddressDataModalOk")));
 						 wait.until(ExpectedConditions.elementToBeClickable(Save));
 						 Save.click();
 						 */
 				}
-				if(i==11) 
+				if(i==11)
 				{
 					WebElement Tirelossselect =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("SL11")));
 					Select countrys = new Select(Tirelossselect);
-					countrys.selectByVisibleText("Label Format 4X10.5");	
-				
+					countrys.selectByVisibleText("Label Format 4X10.5");
+
 				}
-				
+
 				WebElement okclick = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='btnOk']")));
 				okclick.click();
 				 wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='txtManual']"))).sendKeys("1.00");

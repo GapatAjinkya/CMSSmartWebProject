@@ -1,10 +1,9 @@
 package processhipmentnegative;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -40,7 +39,7 @@ public class ProcesShipment {
 		captureError();
 		Ship();
 		captureError();
-	}	
+	}
 	@Test(priority = 3)
 	public void TestManual() throws InterruptedException {
 		ShipVia("UPSGround");
@@ -51,7 +50,7 @@ public class ProcesShipment {
 		Ship();
 		captureError();
 	}
-	
+
 	public void Ship() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.id("btnShipClick")).click();
@@ -82,14 +81,14 @@ public class ProcesShipment {
 		WebElement List = driver.findElement(By.id("selCutomerList"));
 		Select CustomerList = new Select(List);
 		CustomerList.selectByValue("1"); // To select Global
-		
+
 		driver.findElement(By.xpath("//button[@onclick='onCustomerSearchOkClick()']")).click(); // click on ok
 		Thread.sleep(5000);
 		logger.info("Customer Searched");
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//td[contains(text(),'"+Customer+"')]")).click();
 		WebElement Customerok= driver.findElement(By.id("addressformOk"));
-		Customerok.click();          // Click on OK 
+		Customerok.click();          // Click on OK
 		Thread.sleep(5000);
 		logger.info("Customer Added");
 	}
@@ -103,9 +102,9 @@ public class ProcesShipment {
 		ShipviaSearchcode.click();
 		WebElement code=driver.findElement(By.id("txtSCSearchSS"));
 		code.sendKeys(ShipViaCode);
-		
+
 		driver.findElement(By.id("btnSearchOk_PS")).click();
-	
+
 	}
 	public void OpenPs() throws InterruptedException {
 		Thread.sleep(3000);
@@ -134,10 +133,10 @@ public class ProcesShipment {
 		else {
 			System.out.println("Unexpected error message: " + actualErrorMessage);
 		}
-		
+
 		WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
 		error.click();
-		
+
 	}
 
 	@BeforeClass

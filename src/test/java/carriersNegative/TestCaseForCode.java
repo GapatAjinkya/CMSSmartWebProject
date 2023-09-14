@@ -1,6 +1,6 @@
 package carriersNegative;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -15,6 +15,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestCaseForCode {
@@ -47,7 +48,7 @@ public class TestCaseForCode {
 		Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
 		String expectedErrorMessage = "CODE Field cannot be blank. Please try again.";
 		String actualErrorMessage = errorMessage.getText();
-		
+
 		Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Incorrect error message");
 		WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
 		error.click();
@@ -83,7 +84,7 @@ public class TestCaseForCode {
 		WebElement Des = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("CAF_txtDescription")));
 		Des.sendKeys("asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?/");
 	}
-	
+
 	public void CarrierAccount() throws InterruptedException {
 		WebElement Configuration = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_4")));
 		wait.until(ExpectedConditions.elementToBeClickable(Configuration));
@@ -105,7 +106,7 @@ public class TestCaseForCode {
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='CASFOkClick()']")));
 		ok.click();
 	}
-	
+
 	public void newcarriers() throws InterruptedException {
 	    String carriercode ="FEX_Test_A";
 		String Description = "FedEx US FSMS";
@@ -119,7 +120,7 @@ public class TestCaseForCode {
 		String contactname="CMS";
 		String Moduletype="BWTI_UPS.UPS";
 		String Services="Test";
-		
+
 		String Label="CMS";
 		String FsmsServer="23.254.204.198;2000";
 		String MPS="No";
@@ -130,13 +131,13 @@ public class TestCaseForCode {
 		select.selectByVisibleText(Type);
 		logger.info(" Type Select  successful");
 		Thread.sleep(3000);
-		
+
 		WebElement Server = driver.findElement(By.id("CAF_cmbServer"));
 		Select Servertype = new Select(Server);
 		Servertype.selectByVisibleText(ServerType);
 		logger.info(" Server Type Select  successful");
 		Thread.sleep(3000);
-		
+
 		WebElement code = driver.findElement(By.id("CAF_txtCode"));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("CAF_txtCode")));
 		code.clear();
@@ -148,7 +149,7 @@ public class TestCaseForCode {
 		Des.clear();
 		Des.sendKeys(Description);
 		logger.info("Description add  successful");
-		
+
 		WebElement account = driver.findElement(By.id("CAF_txtAccount"));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("CAF_txtAccount")));
 		account.sendKeys(Account);
@@ -165,33 +166,33 @@ public class TestCaseForCode {
 		organizationselect.selectByVisibleText(Organization);
 		logger.info(" organization  Select  successful");
 		Thread.sleep(3000);
-		
+
 		WebElement Name = driver.findElement(By.id("CAF_txtName"));
 		Name.sendKeys(contactname);
 		logger.info(" contact name  Select  successful");
 		Thread.sleep(3000);
-		
+
 		WebElement EOD = driver.findElement(By.id("CAF_cmbReports"));
 		Select EODreport = new Select(EOD);
 		EODreport.selectByVisibleText(EODReport);
 		logger.info(" EOD  Select  successful");
 		Thread.sleep(3000);
-		
+
 boolean cmbModule = driver.findElement(By.id("CAF_txtShipperCode")).isDisplayed();
 		 if (cmbModule)
-		 {	
+		 {
 			 WebElement cmbModuleS = driver.findElement(By.id("CAF_cmbModule"));
 				Select SelectM = new Select(cmbModuleS);
 				SelectM.selectByVisibleText(Moduletype);
 				logger.info(" Module type Select  successful");
 		 }
-				
+
 		WebElement Service = driver.findElement(By.id("CAF_txtServices1"));
 		Service.sendKeys(Services);
-		
+
 boolean Shipcode = driver.findElement(By.id("CAF_txtShipperCode")).isDisplayed();
 		 if (Shipcode)
-		 {	
+		 {
 			 WebElement ShipcodeSelect = driver.findElement(By.id("CAF_txtShipperCode"));
 				wait.until(ExpectedConditions.presenceOfElementLocated(By.id("CAF_txtShipperCode")));
 				ShipcodeSelect.sendKeys(Shippercode);
@@ -200,7 +201,7 @@ boolean Shipcode = driver.findElement(By.id("CAF_txtShipperCode")).isDisplayed()
 		logger.info(" Service Select  successful");
 		Thread.sleep(3000);
 		WebElement checkbox = driver.findElement(By.id("CAF_chkHoliday"));
-		if(checkbox.isSelected()) 
+		if(checkbox.isSelected())
 		{
 			logger.info(" checkbox is all ready Selected  ");
 		}else
@@ -209,9 +210,9 @@ boolean Shipcode = driver.findElement(By.id("CAF_txtShipperCode")).isDisplayed()
 			checkbox.click();
 		}
 		Thread.sleep(3000);
-		
+
 		//To Fedex
-		
+
  boolean lableSource = driver.findElement(By.id("CAF_cmbLabelType")).isDisplayed();
 		 if (lableSource)
 		 {
@@ -234,7 +235,7 @@ boolean SelectFsmsServer = driver.findElement(By.id("CAF_cmbFsmsServer")).isDisp
 		 }else {
 			 System.out.println("SelectFsmsServer present");
 		 }
-		
+
 boolean use = driver.findElement(By.id("CAF_cmbFsmsUseMPS")).isDisplayed();
 		 if (use)
 		 {
@@ -246,7 +247,7 @@ boolean use = driver.findElement(By.id("CAF_cmbFsmsUseMPS")).isDisplayed();
 		 }else {
 			 System.out.println("use not present");
 		 }
-			
+
 boolean Meteradd = driver.findElement(By.id("CAF_cmbFsmsUseMPS")).isDisplayed();
 		 if (Meteradd)
 		 {
@@ -259,12 +260,12 @@ boolean Meteradd = driver.findElement(By.id("CAF_cmbFsmsUseMPS")).isDisplayed();
 		 }
 		WebElement okclick = driver.findElement(By.xpath("//button[@onclick='CAF_OkClick()']"));
 		okclick.click();
-		logger.info(" Click on ok successful");	
+		logger.info(" Click on ok successful");
 
 	 Thread.sleep(10000);
 
 	}
-			
+
 	public void Okbutton() throws InterruptedException {
 		WebElement okbutton = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='CAF_OkClick()']")));
@@ -290,7 +291,7 @@ boolean Meteradd = driver.findElement(By.id("CAF_cmbFsmsUseMPS")).isDisplayed();
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
 		password.sendKeys("Nilesh@123");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
-		WebElement ok = wait	
+		WebElement ok = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
 		ok.click();
 		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";

@@ -1,7 +1,6 @@
 package processhipmentnegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,8 +22,8 @@ public class ProcesShipmentSWOS {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("ProcesShipment");
-	
-	
+
+
 	@Test(priority = 0)
 	public void TestSWOS() throws InterruptedException {
 		OpenPs();
@@ -76,9 +75,9 @@ public class ProcesShipmentSWOS {
 		ShipviaSearchcode.click();
 		WebElement code=driver.findElement(By.id("txtSCSearchSS"));
 		code.sendKeys(ShipViaCode);
-		
+
 		driver.findElement(By.id("btnSearchOk_PS")).click();
-	
+
 	}
 	public void addCustomer(String Customer) throws InterruptedException {
 		Thread.sleep(3000);
@@ -94,18 +93,18 @@ public class ProcesShipmentSWOS {
 		WebElement List = driver.findElement(By.id("selCutomerList"));
 		Select CustomerList = new Select(List);
 		CustomerList.selectByValue("1"); // To select Global
-		
+
 		driver.findElement(By.xpath("//button[@onclick='onCustomerSearchOkClick()']")).click(); // click on ok
 		Thread.sleep(5000);
 		logger.info("Customer Searched");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//td[contains(text(),'"+Customer+"')]")).click();
 		WebElement Customerok= driver.findElement(By.id("addressformOk"));
-		Customerok.click();          // Click on OK 
+		Customerok.click();          // Click on OK
 		Thread.sleep(2000);
 		logger.info("Customer Added");
 	}
-	
+
 	public void Ship() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.id("btnShipClick")).click();
@@ -143,7 +142,7 @@ public class ProcesShipmentSWOS {
 		else {
 			System.out.println("Unexpected error message: " + actualErrorMessage);
 		}
-		
+
 		WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
 		error.click();
 		Thread.sleep(3000);

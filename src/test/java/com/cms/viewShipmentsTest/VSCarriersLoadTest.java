@@ -30,11 +30,11 @@ public class VSCarriersLoadTest extends BaseClass{
 		shipViaLoad = new ShipViaLoad(driver);
 		shipViaLoad.clickOnTransaction();
 		shipViaLoad.clickOnViewShipment();
-		
+
 		shipViaLoad.clickOnCarriersLoadAccount();  // TO load Carriers
 		shipViaLoad.clickOnProship1();
-		shipViaLoad.clickOnSearchCriteriaOk();     // SearchCriteria OK button 
+		shipViaLoad.clickOnSearchCriteriaOk();     // SearchCriteria OK button
 		shipViaLoad.clickOnCarrier();
-		shipViaLoad.clickOncmdOk();                // Carriers OK	
+		shipViaLoad.clickOncmdOk();                // Carriers OK
 }
 }

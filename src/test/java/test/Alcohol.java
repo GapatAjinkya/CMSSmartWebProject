@@ -143,7 +143,7 @@ public class Alcohol {
 
 		logger.info("Click on Rate ");
 		Thread.sleep(5000);
-		
+
 			driver.findElement(By.id("btnShipClick")).click(); // Click on ship
 		}
 

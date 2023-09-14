@@ -2,18 +2,16 @@ package com.cms.viewshipment;
 
 import java.util.List;
 
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import org.openqa.selenium.support.ui.Select;
+
 import com.cms.Base.BaseClass;
 
 public class ShipViaLoad extends BaseClass {
@@ -72,13 +70,13 @@ public class ShipViaLoad extends BaseClass {
 
 	@FindBy(id = "txtInvoiceFrom")
 	private WebElement ShipmentIdFrom;
-	
+
 	@FindBy(xpath ="//input[@id='txtInvoiceTo']")
 	private WebElement ShipmentIdTO;
 
 	@FindBy(id = "txtPackageFrom")
 	private WebElement PackageIdFrom;
-	
+
 	@FindBy(id = "txtPackageTo")
 	private WebElement PackageIdTo;
 
@@ -87,10 +85,10 @@ public class ShipViaLoad extends BaseClass {
 
 	@FindBy(xpath= "//button[@id='SearchCriteriaOkClick']")
 	private WebElement SearchCriteriaOkClick;
-	
+
 	@FindBy(id = "txtCustomer")
 	private WebElement CustomerCompany;
-	
+
 	@FindBy(xpath = "//tr[@data-index='0']")
 	private WebElement SelectShipment;
 
@@ -149,7 +147,7 @@ public class ShipViaLoad extends BaseClass {
 		// click(cmbShipViaid);
 
 		logger.info("Select Shipvia successful");
-		
+
 		return this;
 	}
 	public ShipViaLoad clickOnSelectCarriers() throws InterruptedException { // to select shipvia-----------------------
@@ -191,7 +189,7 @@ public class ShipViaLoad extends BaseClass {
 
 		return this;
 	}
-	
+
 	public ShipViaLoad SvIdSelect() throws InterruptedException {
 
 		WebElement d = driver.findElement(By.id("tblShipmentList"));
@@ -201,14 +199,14 @@ public class ShipViaLoad extends BaseClass {
 
 		//shipvia.selectByVisibleText(prop.getProperty("shipviaload"));
 		// click(cmbShipViaid);
-          
+
 		logger.info("clickOnSelectShipviaLogin successful");
 		Thread.sleep(9000);
 		return this;
 	}
 
 	public ShipViaLoad clickOnSearchCriteriaOk() throws InterruptedException { // Click on ok on Search Criteria tab
-		
+
 		Thread.sleep(3000);
 		click(SearchCriteriaOkClick);
 		logger.info("clickOnSearchCriteriaOkClick successful");
@@ -285,7 +283,7 @@ public class ShipViaLoad extends BaseClass {
 	                break; // Break out of the loop once the option is selected
 	            }
 	        }
-		
+
 //		Thread.sleep(6000);
 //		WebElement usergroup = driver.findElement(By.id("cmbPackType"));
 //		Thread.sleep(5000);
@@ -351,8 +349,8 @@ public class ShipViaLoad extends BaseClass {
 		Thread.sleep(5000);
 		//driver.findElement(By.id("IWLDatePickerFrom")).click();
 		//driver.findElement(By.xpath("//td[text()='12']")).click(); // TO select the date
-		
-		
+
+
 		WebElement element=driver.findElement(By.id("IWLDatePickerFrom"));
 		JavascriptExecutor js= ((JavascriptExecutor)driver);
 		//String date=prop2.getProperty("Date");
@@ -362,18 +360,18 @@ public class ShipViaLoad extends BaseClass {
 //		while(true) {
 //			String m=driver.findElement(By.xpath("//th[@class='datepicker-years']")).getText();
 //			System.out.println(m);
-//		
+//
 //		if(m.equals(Monthyear)) {
-//			
+//
 //			break;
 //		}
 //		else {
 //			driver.findElement(By.xpath("//th[@class='next']")).click();
 //		}
-//		
-//		driver.findElement(By.xpath("//td[text()='12']")).click();  // TO select the date 
+//
+//		driver.findElement(By.xpath("//td[text()='12']")).click();  // TO select the date
 //		}
-			
+
 		return this;
 	}
 	public ShipViaLoad VSManifestedDate() throws InterruptedException {
@@ -409,7 +407,7 @@ public class ShipViaLoad extends BaseClass {
 		return this;
 	}
 	public ShipViaLoad checkmethod() {
-		
+
 		WebElement elementid= driver.findElement(By.id("VStxtInvoiceNumber"));
 	     String expetatedID=prop.getProperty("ShipmentIdFrom");
 		 String actualID = elementid.getText();

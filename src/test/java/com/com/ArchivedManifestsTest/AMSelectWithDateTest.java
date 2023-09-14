@@ -17,7 +17,7 @@ public class AMSelectWithDateTest extends BaseClass {
 
 	@BeforeMethod
 	public void beforeMethod(Method m) throws Exception {
-		
+
 		driver = setUp();
 		System.out.println("******* starting Test" + m.getName() + " *******");
 	}
@@ -29,12 +29,12 @@ public class AMSelectWithDateTest extends BaseClass {
 		am = new ArchivedManifests(driver);
 		am.clickOnTransaction();
 		am.clickonArchivedManifests();
-		am.selectcarriers();             //To select carriers 
+		am.selectcarriers();             //To select carriers
 		am.ClickonDateSearchButton();
 		am.Toselectdatefrom();
 		am.Selectcarrierfromtable("UPSVA_PS");
 		am.clickonView();
-		am.CarrierfromShipmentstable();	
+		am.CarrierfromShipmentstable();
 	}
-	
+
 }

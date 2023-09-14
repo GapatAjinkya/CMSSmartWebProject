@@ -1,7 +1,7 @@
 package departments;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -37,7 +37,7 @@ public class Taskdepartmentscheck {
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-		
+
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(5000);
@@ -87,14 +87,14 @@ public class Taskdepartmentscheck {
 		Departments.click();
 		Thread.sleep(8000);
 		logger.info("Click on Departments successful");
-		
+
 		WebElement Search = driver.findElement(By.xpath("//input[@id='txtCSTDeptSearch']"));
 		Search.sendKeys("asdsad");
 		Thread.sleep(8000);
-		
+
 		driver.findElement(By.xpath("//button[@onclick='onDepatmentSearchPrivateOkClick()']")).click();// ok buttton
 		Thread.sleep(6000);
-		
+
 		WebElement error=driver.findElement(By.id("btnErrorBoxOk"));
 		boolean errortab=driver.findElement(By.id("btnErrorBoxOk")).isDisplayed();
 		Thread.sleep(6000);
@@ -117,46 +117,46 @@ public class Taskdepartmentscheck {
 		wait.until(ExpectedConditions.elementToBeClickable(addbutton));
 		addbutton.click();
 		logger.info("Click on add button successful");
-		
+
 		String Departmentcode = "DepartmentBOl";
 		String DescriptionText = "Test Department for BOL";
 		Thread.sleep(5000);
-		
+
 		WebElement codeDepartment = driver.findElement(By.id("DFtxtCode"));
 		wait.until(ExpectedConditions.visibilityOf(codeDepartment));
 		wait.until(ExpectedConditions.elementToBeClickable(codeDepartment));
-		codeDepartment.sendKeys(Departmentcode);       //Department code 
+		codeDepartment.sendKeys(Departmentcode);       //Department code
 		logger.info("Code selected  successful");
 		Thread.sleep(5000);
-		
-		WebElement Description = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("DFtxtDescription")));;
+
+		WebElement Description = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("DFtxtDescription")));
 		wait.until(ExpectedConditions.visibilityOf(Description));
 		wait.until(ExpectedConditions.elementToBeClickable(Description));
 		Description.sendKeys(DescriptionText);     // Description
 		logger.info("Description Selected successful");
-	
+
 		Thread.sleep(5000);
 		WebElement clickok = driver.findElement(By.xpath("//button[@onclick='OkClickDepartmentForm()']"));
 		wait.until(ExpectedConditions.visibilityOf(clickok));
-		wait.until(ExpectedConditions.elementToBeClickable(clickok));	
+		wait.until(ExpectedConditions.elementToBeClickable(clickok));
 		clickok.click();
 
 		Thread.sleep(5000);
 		 boolean isButtonVisible = driver.findElement(By.id("btnErrorBoxOk")).isDisplayed();
-		 
+
 		 if (isButtonVisible)
 		 {
 			 WebElement text=driver.findElement(By.id("errorMsg"));
 			 String errortext=text.getText();
 			 WebElement button = driver.findElement(By.id("btnErrorBoxOk"));
 	            button.click();
-	            
+
 	            Assert.fail("Test case Fail Because -- "+errortext);
 		 }else {
-			 
+
 			 logger.info("Department  Selected successful"+"Test case Pass");
-			
-		 }	
-		
+
+		 }
+
 	}
 }

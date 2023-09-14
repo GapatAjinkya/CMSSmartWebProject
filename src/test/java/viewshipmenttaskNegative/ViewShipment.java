@@ -2,7 +2,7 @@ package viewshipmenttaskNegative;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -14,7 +14,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -67,12 +66,12 @@ public class ViewShipment {
 	}
 	@DataProvider(name="package")
 	public Object[][] getdata(){
-		
-		Object[][] data= {{"On Hold"},{"Return"},{"Shipped"},{"Voided"}};	
+
+		Object[][] data= {{"On Hold"},{"Return"},{"Shipped"},{"Voided"}};
 		return data;
 	}
 	public void PackageType(String visibleText) {
-		
+
 		WebElement dropdown = driver.findElement(By.id("cmbPackType"));
 		Select select = new Select(dropdown);
 		 select.selectByVisibleText(visibleText);
@@ -89,7 +88,7 @@ public class ViewShipment {
 		}
 	}
 public void ShipmentId(String id) {
-	
+
 	WebElement shipid=driver.findElement(By.id("txtInvoiceFrom"));
 	shipid.sendKeys(id);
 }
@@ -100,7 +99,7 @@ public void ShipmentId(String id) {
 			Select shipvia = new Select(dropdown);
 			shipvia.selectByVisibleText(data);
 			Thread.sleep(3000);
-			
+
 		} else if (loadShipment.equals("Ship Via")) {
 			driver.findElement(By.id("btnShipViaLoad")).click();
 			Thread.sleep(3000);
@@ -112,11 +111,11 @@ public void ShipmentId(String id) {
 			WebElement dropdown = driver.findElement(By.id("cmbShipVia"));
 			Select shipvia = new Select(dropdown);
 			shipvia.selectByVisibleText(data);
-			
+
 		} else if (loadShipment.equals("Organizations")) {
 			driver.findElement(By.id("btnOrgLoad")).click();
 			Thread.sleep(3000);
-			
+
 		} else if (loadShipment.equals("Carriers")) {
 			driver.findElement(By.id("btnLoadAccount")).click();
 			Thread.sleep(3000);
@@ -164,7 +163,7 @@ public void ShipmentId(String id) {
 				break;
 			}
 		}
-		Thread.sleep(3000);	
+		Thread.sleep(3000);
 	}
 public void ok() {
 	driver.findElement(By.id("SearchCriteriaOkClick")).click();
@@ -177,7 +176,7 @@ public void ok() {
 		driver.findElement(By.id("menu_item_23")).click(); // To click on VS
 		Thread.sleep(3000);
 	}
-	
+
 	@BeforeClass
 	public void setup() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();

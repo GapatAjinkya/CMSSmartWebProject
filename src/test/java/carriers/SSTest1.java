@@ -50,20 +50,20 @@ public class SSTest1 {
 		Thread.sleep(10000);
 	}
 	@Test
-	public void shipVia() throws InterruptedException {	
+	public void shipVia() throws InterruptedException {
 		openProcessShipmentMenu();
 		searchAndSelectShipVia("FEXTest4");
-		addCustomer("CMS");		
-		
+		addCustomer("CMS");
+
 		String[] specialServices = {"AutoPOD","Oversize"}; // Give Special Services
-		
-	    for (String service : specialServices) 
+
+	    for (String service : specialServices)
 	    {
 	        selectSpecialService(service);
 	    }
-	}	
+	}
 	private void openProcessShipmentMenu() throws InterruptedException {
-		
+
 	//	logger.info("Opening Process Shipment Menu");
 		Thread.sleep(5000);
 		WebElement transaction = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("menu_item_2")));
@@ -111,21 +111,21 @@ public class SSTest1 {
 		Thread.sleep(5000);
 		//logger.info("Customer Added");
 	}
-	private void EnterWeight() throws InterruptedException {	
+	private void EnterWeight() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='txtManual']"))).sendKeys("1.00");
-	//	logger.info("Manual Weight is fill ");	
+	//	logger.info("Manual Weight is fill ");
 	}
-	private void clickRate() throws InterruptedException {		
+	private void clickRate() throws InterruptedException {
 	WebElement Rate=wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cmdRate")));
-	wait.until(ExpectedConditions.elementToBeClickable(Rate));	
+	wait.until(ExpectedConditions.elementToBeClickable(Rate));
 	Rate.click();
 		//logger.info("Click on Rate ");
 	}
 private void Clickship() throws InterruptedException {
-	
+
 	WebElement ship=wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnShipClick")));
-	wait.until(ExpectedConditions.elementToBeClickable(ship));	
-	ship.click();				
+	wait.until(ExpectedConditions.elementToBeClickable(ship));
+	ship.click();
 	}
 	private void selectSpecialService(String service) throws InterruptedException {
 		WebElement buttonSpecialServices = driver.findElement(By.id("btnSpecialServices"));
@@ -235,7 +235,7 @@ private void Clickship() throws InterruptedException {
 			Thread.sleep(10000);
 			driver.findElement(By.xpath("//*[@id='btnPdOk']")).click();
 			Thread.sleep(10000);
-		//	logger.info("Details added");	
+		//	logger.info("Details added");
 			EnterWeight();
 			clickRate();
 			Clickship();
@@ -251,14 +251,14 @@ private void Clickship() throws InterruptedException {
 			EnterWeight();
 			clickRate();
 			Clickship();
-		} else if (service.equalsIgnoreCase("COD")) 
+		} else if (service.equalsIgnoreCase("COD"))
 		{
 			WebElement COD = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX8")));
 			COD.click();
 			WebElement cod = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("SL8")));
 			Select codselect = new Select(cod);
 			codselect.selectByVisibleText("Cash");
-			
+
 			Thread.sleep(5000);
 			//logger.info("COD Selected");
 			 WebElement codamout=wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("INSS8")));
@@ -266,7 +266,7 @@ private void Clickship() throws InterruptedException {
 			 Thread.sleep(5000);
 			 codamout.sendKeys("10");
 			 Thread.sleep(5000);
-			 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='btnOk']"))).click(); 
+			 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='btnOk']"))).click();
 			EnterWeight();
 			clickRate();
 			Clickship();

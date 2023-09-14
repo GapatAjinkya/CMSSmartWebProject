@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 import com.cms.Base.BaseClass;
 
 public class SupportTables extends BaseClass{
-	
+
 	public SupportTables(WebDriver rdriver) {
 		driver = rdriver;
 		PageFactory.initElements(rdriver, this);
@@ -29,9 +29,9 @@ public class SupportTables extends BaseClass{
 		click(Configuration);
 		logger.info("clickOnConfiguration successful");
 		return this;
-	
+
 	}
-	
+
 	@FindBy(id="menu_item_45")
 	private WebElement SupportTables;
 	public SupportTables clickonSupportTables() throws InterruptedException {
@@ -64,7 +64,7 @@ public class SupportTables extends BaseClass{
 		logger.info("Searchfor successful");
 		return this;
 	}
-	
+
 	@FindBy(xpath ="//button[@onclick='onCartonSearchOkClick()']")
 	private WebElement OkClick;
 	public SupportTables CartonSearchOkClick() throws InterruptedException {
@@ -76,7 +76,7 @@ public class SupportTables extends BaseClass{
 	@FindBy(id ="CartonAdd")
 	private WebElement CartonAdd;
 	public SupportTables ClickonCartonAdd() throws InterruptedException {
-	
+
 	Thread.sleep(5000);
 	click(CartonAdd);
 	logger.info("ClickonCartonAdd successful");
@@ -91,26 +91,26 @@ public class SupportTables extends BaseClass{
 	logger.info("EntertxtCode successful");
 		return this;
 	}
-	
+
 	@FindBy(id ="CF_txtDescription")
 	private WebElement Description;
 	public SupportTables EnterDescription() throws InterruptedException {
 		Thread.sleep(3000);
 	sendkeys(Description,"CartonAG For Testing ");
 	logger.info("EnterDescription successful");
-	
+
 		return this;
 	}
-	
+
 	@FindBy(id ="CF_txtLength")
 	private WebElement Length;
 	public SupportTables EnterLength() throws InterruptedException {
 		Thread.sleep(3000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		 js.executeScript("arguments[0].value = '10';", Length);
-		
+
 	Thread.sleep(3000);
- 
+
 	//sendkeys(Length,"1");
 	logger.info("EnterLength successful");
 		return this;
@@ -131,7 +131,7 @@ public class SupportTables extends BaseClass{
 	//sendkeys(Height,"1");
 	logger.info("EnterHeight successful");
 		return this;
-		
+
 	}
 	@FindBy(id ="CF_txtWeight")
 	private WebElement Weight;
@@ -141,7 +141,7 @@ public class SupportTables extends BaseClass{
 	logger.info("EnterWeight successful");
 		return this;
 	}
-	
+
 	@FindBy(id ="CF_txtUom")
 	private WebElement UOM;
 	public SupportTables Enteruom() throws InterruptedException {
@@ -150,7 +150,7 @@ public class SupportTables extends BaseClass{
 	logger.info("ClickonCartonOK successful");
 		return this;
 	}
-	
+
 	@FindBy(xpath ="//button[@onclick='Carton_OK()']")
 	private WebElement CartonOK;
 	public SupportTables ClickonCartonOK() throws InterruptedException {
@@ -159,34 +159,34 @@ public class SupportTables extends BaseClass{
 	logger.info("ClickonCartonOK successful");
 		return this;
 	}
-	
+
 	public SupportTables ClearTab() {
 		Length.clear();
 		Width.clear();
 		Height.clear();
-		
+
 			return this;
 		}
-	
-	//----------------------------------------------------------------------------------------	
-	
+
+	//----------------------------------------------------------------------------------------
+
 	@FindBy(id ="CartonEdit")
 	private WebElement CartonEdit;
 	public SupportTables ClickonCartonEdit() throws InterruptedException {
-		
+
 	Thread.sleep(3000);
 	click(CartonEdit);
 	logger.info("ClickonCartonEdit successful");
 		return this;
 	}
-	
+
 	public SupportTables Descriptionedit() throws InterruptedException {
 		Thread.sleep(5000);
 		Description.clear();
 		sendkeys(Description,"EditCartonAG");
 		return this;
 	}
-	
+
 	@FindBy(id ="CartonDelete")
 	private WebElement CartonDelete;
 	public SupportTables ClickonCartonDelete() throws InterruptedException {
@@ -195,9 +195,9 @@ public class SupportTables extends BaseClass{
 	logger.info("ClickonCartonDelete successful");
 		return this;
 	}
-	
+
 	//TO Delete and select the carton
-	
+
 	@FindBy(xpath="//tr[@data-index='0']")
 	private WebElement SelectCarton;
 	public SupportTables SelectCarton() throws InterruptedException {
@@ -214,13 +214,13 @@ public class SupportTables extends BaseClass{
 	logger.info("SelectCarton successful");
 		return this;
 	}
-	
-	
-	
-//-----------------------------------------------------------------------------------------------	
+
+
+
+//-----------------------------------------------------------------------------------------------
 //for The Customer
-	
-	
+
+
 	@FindBy(id ="menu_item_451")
 	private WebElement Customers;
 	public SupportTables ClickonCustomers() throws InterruptedException {
@@ -237,7 +237,7 @@ public class SupportTables extends BaseClass{
 	logger.info("ClickonCustomersCode successful");
 		return this;
 	}
-	
+
 	@FindBy(id ="txtCSTCustSearch")
 	private WebElement CustomersSearch;
 	public SupportTables EnterCustomersSearch() throws InterruptedException {
@@ -259,7 +259,7 @@ public class SupportTables extends BaseClass{
 	public SupportTables selectcustomerfromtable() throws InterruptedException {
 		Thread.sleep(3000);
 		click(selectcustomerfromtable);
-	
+
 		return this;
 	}
 	@FindBy(id ="CSTCustDelete")
@@ -269,7 +269,7 @@ public class SupportTables extends BaseClass{
 		click(Delete);
 		return this;
 	}
-	
+
 	@FindBy(id ="CSTCustEdit")
 	private WebElement CSTCustEdit;
 	public SupportTables clickonEditCustomer() throws InterruptedException {
@@ -277,17 +277,17 @@ public class SupportTables extends BaseClass{
 		click(CSTCustEdit);
 		return this;
 	}
-	
+
 	@FindBy(id ="CSTCustAdd")
 	private WebElement AddCustomer;
 	public SupportTables ClickonAddCustomer() throws InterruptedException {
-	
+
 	Thread.sleep(5000);
 		click(AddCustomer);
 	logger.info("ClickonAddCustomer successful");
 		return this;
 	}
-	
+
 	@FindBy(id ="CFtxtXRef")
 	private WebElement CustomerCode;
 	public SupportTables EnterCustomerCode() {
@@ -295,15 +295,15 @@ public class SupportTables extends BaseClass{
 	logger.info("EnterCustomerCode successful");
 		return this;
 	}
-	
-	
+
+
 	public SupportTables editcustomercode() throws InterruptedException {
 		Thread.sleep(3000);
 		CustomerCode.clear();
 		sendkeys(CustomerCode,"TestCanada");
 		logger.info("EnterCustomerCode successful");
 			return this;
-			
+
 		}
 	@FindBy(id ="CFtxtName")
 	private WebElement Company;
@@ -316,7 +316,7 @@ public class SupportTables extends BaseClass{
 	@FindBy(id ="CFtxtContact")
 	private WebElement Contact;
 	public SupportTables EnterContact() {
-		
+
 	sendkeys(Company,prop.getProperty("Contact"));
 	logger.info("EnterContact successful");
 		return this;
@@ -333,7 +333,7 @@ public class SupportTables extends BaseClass{
 	sendkeys(Address1,prop.getProperty("Address1"));
 	sendkeys(Address2,prop.getProperty("Address2"));
 	sendkeys(Address3,prop.getProperty("Address3"));
-	
+
 	logger.info("EnterAddressall successful");
 		return this;
 	}
@@ -350,19 +350,19 @@ public class SupportTables extends BaseClass{
 		sendkeys(AddZip,prop.getProperty("AddZip"));
 		logger.info("EnterAddCityStateZip successful");
 			return this;
-		}	
-	
+		}
+
 	@FindBy(id ="CFtxtCountry")
 	private WebElement Country;
-	
+
 	public SupportTables SelectCountry() {
-		
+
 		String desiredText =prop.getProperty("Country");
 		WebElement dropdown = driver.findElement(By.id("CFtxtCountry"));
 		Select select = new Select(dropdown);
-		
+
 		select.selectByVisibleText(desiredText);
-		
+
 //		List<WebElement> options = select.getOptions();
 //		   for (WebElement option : options) {
 //	            // Check the visible text of each option
@@ -371,12 +371,12 @@ public class SupportTables extends BaseClass{
 //	                // Select the desired option
 //	                select.selectByVisibleText(visibleText);
 //	                break; // Break out of the loop once the option is selected
-//	            }     
+//	            }
 	//}
 		   logger.info("EnterAddCityStateZip successful");
 		   return this;
 }
-//---------------------------------------------------------------------------------	
+//---------------------------------------------------------------------------------
 	@FindBy(id ="CFtxtAddPhone")
 	private WebElement AddPhone;
 	public SupportTables EnterPhone() {
@@ -405,5 +405,5 @@ public class SupportTables extends BaseClass{
 		logger.info("EnterEmail successful");
 			return this;
 		}
-//-------------------------------------------------------------------------------	
+//-------------------------------------------------------------------------------
 }

@@ -1,7 +1,6 @@
 package carriers;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,7 +18,7 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SearchCarrier {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("SearchCarrier");
@@ -87,16 +86,16 @@ public class SearchCarrier {
 		carriersaccount.click();
 		logger.info("Click on carriers account successful");
 		Thread.sleep(5000);
-	
-		
+
+
 		WebElement Search = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.id("CASFtxtSearch")));
-		
+
 		String Criteria="code";
 	    String code="UPSAP_CS";
 	    String Accountno="";
 	    String Description="FedEx US FSMS";
-	    
+
 	    WebElement Searchbox = driver.findElement(By.xpath("//input[@id='CASFtxtSearch']"));
 		if(Criteria.equalsIgnoreCase("code")) {
 			Thread.sleep(3000);
@@ -106,14 +105,14 @@ public class SearchCarrier {
 			Code.click();
 			logger.info("Code selected");
 			Search.sendKeys(code);                                 //To search customer
-			
+
 		}else if(Criteria.equalsIgnoreCase("Description")) {
 			Thread.sleep(3000);
 			WebElement Dis = driver.findElement(By.xpath("//input[@id='CASFradDescription']"));
 			wait.until(ExpectedConditions.visibilityOf(Dis));
 			wait.until(ExpectedConditions.elementToBeClickable(Dis));
 			Dis.click();
-			Search.sendKeys(Description);    
+			Search.sendKeys(Description);
 			logger.info("CustomerName selected");
 		}
 			else if(Criteria.equalsIgnoreCase("CustomerName")) {
@@ -122,7 +121,7 @@ public class SearchCarrier {
 				wait.until(ExpectedConditions.visibilityOf(ACCOUNTNUMBER));
 				wait.until(ExpectedConditions.elementToBeClickable(ACCOUNTNUMBER));
 				ACCOUNTNUMBER.click();
-				Search.sendKeys(Accountno);    
+				Search.sendKeys(Accountno);
 				logger.info("CustomerName selected");
 }
 		Thread.sleep(5000);

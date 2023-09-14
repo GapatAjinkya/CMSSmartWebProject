@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="archivedmanifestnegative.ArchivedManifest">
+      <class name="archivedmanifesttest.ArchivedManifestsTest">
         <methods>
+          <include name="testcasetwo"/>
+          <include name="testcase"/>
           <include name="setup"/>
-          <include name="TestAMDateTO"/>
-          <include name="TestAMDateFrom"/>
         </methods>
-      </class> <!-- archivedmanifestnegative.ArchivedManifest -->
+      </class> <!-- archivedmanifesttest.ArchivedManifestsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,7 +1,6 @@
 package customersnegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -34,7 +33,7 @@ public class CustomersCode2 {
 	public void addCustomerTest() throws InterruptedException {
 		addcustomer();
 	}
-	
+
 	public void CreateCustomers() throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement Configuration = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_4")));
@@ -70,7 +69,7 @@ public class CustomersCode2 {
 		} else if (actualErrorMessage.equals("undefined")) {
 			System.out.println("Handling  error message." + actualErrorMessage);
 			Assert.assertEquals(actualErrorMessage, "undefined", "Incorrect error message");
-		} 
+		}
 		else if (actualErrorMessage.equals("The Contact field value must be less than 50 characters. Please try again.")) {
 			System.out.println("Handling  error message." + actualErrorMessage);
 			Assert.assertEquals(actualErrorMessage,"The Contact field value must be less than 50 characters. Please try again.", "Incorrect error message");
@@ -90,7 +89,7 @@ public class CustomersCode2 {
 			System.out.println("Handling error message." + actualErrorMessage);
 			Assert.assertEquals(actualErrorMessage,"The Address Line3 field value must be less than 50 characters. Please try again.", "Incorrect error message");
 		}
-		
+
 		else if (actualErrorMessage.equals("The City field value must be less than 50 characters. Please try again.")) {
 			System.out.println("Handling error message." + actualErrorMessage);
 			Assert.assertEquals(actualErrorMessage,"The City field value must be less than 50 characters. Please try again.", "Incorrect error message");

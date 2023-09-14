@@ -10,12 +10,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.cms.Base.BaseClass;
-
 import com.cms.configurations.SupportTables;
 import com.cms.pages.Login;
 
 public class STCartonsTest extends  BaseClass{
-	
+
 	public static WebDriver driver;
 	public static Login login;
 	public static SupportTables st;
@@ -31,7 +30,7 @@ public class STCartonsTest extends  BaseClass{
 		login = new Login(driver);
 		login.LoginPage();
 		st = new SupportTables(driver);
-		
+
 		st.clickonConfiguration();
 		st.clickonSupportTables();
 		st.clickonCartons();
@@ -46,6 +45,6 @@ public class STCartonsTest extends  BaseClass{
 		st.EnterWeight();
 		st.Enteruom();
 		st.ClickonCartonOK();
-		
-}	
+
+}
 }

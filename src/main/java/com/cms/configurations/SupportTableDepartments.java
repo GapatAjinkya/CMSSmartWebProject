@@ -10,15 +10,15 @@ import org.openqa.selenium.support.PageFactory;
 import com.cms.Base.BaseClass;
 
 public class SupportTableDepartments extends BaseClass {
-	
-	
+
+
 	public SupportTableDepartments(WebDriver rdriver) {
 		driver = rdriver;
 		PageFactory.initElements(rdriver, this);
 	}
 	Logger logger = LogManager.getLogger("SupportTableDepartments");
 
-	
+
 	@FindBy(id="menu_item_4")
 	private WebElement Configuration;
 	public SupportTableDepartments clickonConfiguration() throws InterruptedException {
@@ -27,7 +27,7 @@ public class SupportTableDepartments extends BaseClass {
 		logger.info("clickOnConfiguration successful");
 		return this;
 	}
-	
+
 	@FindBy(id="menu_item_45")
 	private WebElement SupportTables;
 	public SupportTableDepartments clickonSupportTables() throws InterruptedException {
@@ -39,12 +39,12 @@ public class SupportTableDepartments extends BaseClass {
 	@FindBy(xpath ="//a[@id='menu_item_452']")
 	private WebElement Departments;
 	public SupportTableDepartments ClickonDepartments() throws InterruptedException {
-		
+
 		Thread.sleep(5000);
 		click(Departments);
 		logger.info("ClickonDepartments successful");
 		return this;
-	
+
 }
 	@FindBy(id="txtCSTDeptSearch")
 	private WebElement 	SearchforDep;
@@ -62,7 +62,7 @@ public class SupportTableDepartments extends BaseClass {
 		logger.info(" Enter Department code  successful");
 		return this;
 }
-	
+
 	@FindBy(id="CSTDeptradCode")
 	private WebElement 	code;
 	public SupportTableDepartments selectcode() throws InterruptedException {
@@ -87,7 +87,7 @@ public class SupportTableDepartments extends BaseClass {
 		logger.info("Clickon selectdepartments successful");
 		return this;
 	}
-	
+
 	@FindBy(id ="CSTDeptEdit")
 	private WebElement 	editbutton;
 	public SupportTableDepartments Clickoneditbutton() throws InterruptedException {
@@ -96,7 +96,7 @@ public class SupportTableDepartments extends BaseClass {
 		logger.info("Clickoneditbutton successful");
 		return this;
 	}
-	
+
 	@FindBy(id ="CSTDeptAdd")
 	private WebElement 	CSTDeptAdd;
 	public SupportTableDepartments ClickonDeptAdd() throws InterruptedException {
@@ -105,11 +105,11 @@ public class SupportTableDepartments extends BaseClass {
 		logger.info("Click on DeptAdd successful");
 		return this;
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	@FindBy(id ="DFtxtDescription")
 	private WebElement 	DFtxtDescription;
 	public SupportTableDepartments enterDescription() throws InterruptedException {
@@ -118,11 +118,11 @@ public class SupportTableDepartments extends BaseClass {
 		logger.info("Send Keys to Description successful");
 		return this;
 	}
-	
+
 	@FindBy(id ="DFtxtDescription")
 	private WebElement 	editDescription;
 	public SupportTableDepartments editDescription() throws InterruptedException {
-		
+
 		Thread.sleep(3000);
 		editDescription.clear();
 		sendkeys(DFtxtDescription,"Test");
@@ -153,5 +153,5 @@ public class SupportTableDepartments extends BaseClass {
 		logger.info("ConfirmBoxOk successful");
 		return this;
 	}
-	
+
 }

@@ -62,14 +62,14 @@ public class Task2 {
 
 		logger.info(" Opening Process Shipment Menu");
 		Thread.sleep(5000);
-		
+
 		WebElement Transaction = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("menu_item_2")));																										// Transaction
 		wait.until(ExpectedConditions.elementToBeClickable(Transaction));
 		Transaction.click();
 		logger.info(" Click on Transaction Menu Successful");
 		Thread.sleep(5000);
 		WebElement Process = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("menu_item_21")));// To click
-																											
+
 		wait.until(ExpectedConditions.elementToBeClickable(Process));
 		Process.click();
 		logger.info(" Click on Process Shipment Menu Successful");
@@ -89,7 +89,7 @@ public class Task2 {
 	   wait.until(ExpectedConditions.visibilityOf(shipviaSearch));
 	    sendcode.sendKeys(shipviacode);
 		logger.info("shipviaSearch Enter Value Successful");
-		
+
 
 		WebElement ok = driver.findElement(By.id("btnSearchOk_PS"));
 		wait.until(ExpectedConditions.visibilityOf(ok));
@@ -132,7 +132,7 @@ public class Task2 {
 		WebElement NonStandardContainer = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX0")));
 		NonStandardContainer.click();
 
-//---------------------------------------------------------			
+//---------------------------------------------------------
 		Thread.sleep(10000);
 		WebElement okbutton = driver.findElement(By.xpath("//*[@id='btnOk']"));
 		okbutton.click();
@@ -181,12 +181,12 @@ public class Task2 {
 		Thread.sleep(5000);
 		WebElement AutoPOD = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX1")));
 		AutoPOD.click();
-		
+
 //*******************************************************
 		WebElement okbutton3 = driver.findElement(By.xpath("//*[@id='btnOk']"));
 		okbutton3.click();
 		logger.info("Click on ok successful");
-		
+
 		driver.findElement(By.xpath("//input[@id='txtManual']")).sendKeys("1.00");
 		logger.info("Manual Weight is fill ");
 
@@ -205,7 +205,7 @@ public class Task2 {
 		driver.findElement(By.xpath("//button[@onclick='AddressesClick()']")).click();// Customers
 		Thread.sleep(3000);
 		driver.findElement(By.id("txtSCSearch")).sendKeys("CMS"); // searchcustomer
-	
+
 		WebElement Lista = driver.findElement(By.id("selCutomerList"));
 		Select CustomerLista = new Select(Lista);
 
@@ -216,7 +216,7 @@ public class Task2 {
 
 		Thread.sleep(5000);
 		logger.info("Customer Searched");
-	
+
 		driver.findElement(By.xpath("//table[@id='tblCustomerList']//td[1][contains(text(), 'CMS')]")).click();
 
 		driver.findElement(By.id("addressformOk")).click(); // Click on OK
@@ -227,7 +227,7 @@ public class Task2 {
 		Thread.sleep(5000);
 		driver.findElement(By.id("btnSpecialServices")).click();
 		Thread.sleep(3000);
-		
+
 		WebElement HoldAtLocation = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX2")));
 		HoldAtLocation.click();
 
@@ -244,13 +244,13 @@ public class Task2 {
 		driver.findElement(By.id("txtStateHoldFedex")).sendKeys("va");
 		driver.findElement(By.id("txtZipHoldFedex")).sendKeys("22079");
 		Thread.sleep(3000);
-		
+
 		WebElement country = driver.findElement(By.id("txtCountryFedexHold"));
 		Select countrys = new Select(country);
 		countrys.selectByVisibleText("UNITED STATES");
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("btnfedexholdAtLocationAddressDataModalOk"))).click();
-		
+
 		Thread.sleep(3000);
 
 		driver.findElement(By.xpath("//*[@id='btnOk']")).click();
@@ -265,7 +265,7 @@ public class Task2 {
 
 		driver.findElement(By.id("btnShipClick")).click(); // Click on ship
 
-//-------------------------------------------------------------------------------------------------------------------------------	
+//-------------------------------------------------------------------------------------------------------------------------------
 		// *******************************************************
 
 		Thread.sleep(5000);
@@ -332,7 +332,7 @@ public class Task2 {
 		Thread.sleep(5000);
 		logger.info("Customer Searched");
 		Thread.sleep(5000);
-		
+
 		wait.until(
 				ExpectedConditions.presenceOfElementLocated(By.xpath("//table[@id='tblCustomerList']//td[1][contains(text(), 'CMS')]")))
 				.click();
@@ -342,7 +342,7 @@ public class Task2 {
 		logger.info("Customer Added");
 		// ------------------------
 
-	
+
 		driver.findElement(By.id("btnSpecialServices")).click();
 		Thread.sleep(6000);
 		WebElement RecipientShipAlert = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX5")));
@@ -387,7 +387,7 @@ public class Task2 {
 		logger.info("Customer Added");
 		// ------------------------
 
-		
+
 		driver.findElement(By.id("btnSpecialServices")).click();
 		Thread.sleep(5000);
 		WebElement HazardousMaterials = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX6")));
@@ -408,7 +408,7 @@ public class Task2 {
 		WebElement SelectProduct = driver.findElement(By.id("btnSelectP"));
 		SelectProduct.click(); // SelectProduct Button
 		Thread.sleep(5000);
-	
+
 		WebElement Productname = driver.findElement(By.id("txtProductSearch"));
 		Productname.sendKeys("Books");
 		logger.info("Books input given ");
@@ -439,7 +439,7 @@ public class Task2 {
 		driver.findElement(By.id("btnShipClick")).click(); // Click on ship
 
 		logger.info("HazardousMaterials ");
-//-----------------------------------------------------------------------------------------	
+//-----------------------------------------------------------------------------------------
 		// ***********************
 
 		Thread.sleep(5000);
@@ -531,7 +531,7 @@ public class Task2 {
 
 		driver.findElement(By.id("btnShipClick")).click(); // Click on ship
 		logger.info("COD Done  ");
-//--------------------------------------------------------------------------------------------------------		
+//--------------------------------------------------------------------------------------------------------
 
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//button[@onclick='AddressesClick()']")).click();// Customers
@@ -562,17 +562,17 @@ public class Task2 {
 
 		WebElement FedExShipAlert = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX9")));
 		FedExShipAlert.click();
-	
-		
+
+
 		driver.findElement(By.xpath("//*[@id='button3']")).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("chkShipperShipAlert"))).click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("btnShipAlertOk"))).click();
 		driver.findElement(By.xpath("//*[@id='btnOk']")).click();
 		Thread.sleep(5000);
-		
+
 		driver.findElement(By.id("btnEmailNotification")).click();
-		
+
 		WebElement email=driver.findElement(By.id("txtSenderEmail"));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtSenderEmail")));
 		Thread.sleep(3000);
@@ -589,9 +589,9 @@ public class Task2 {
 
 		driver.findElement(By.id("btnShipClick")).click(); // Click on ship
 		logger.info("FedEx ShipAlert® Done  ");
-		
-//--------------------------------------------------------------------------------------------		
-		
+
+//--------------------------------------------------------------------------------------------
+
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//button[@onclick='AddressesClick()']")).click();// Customers
 		Thread.sleep(5000);
@@ -634,9 +634,9 @@ public class Task2 {
 		Thread.sleep(5000);
 
 		driver.findElement(By.id("btnShipClick")).click(); // Click on ship
-		logger.info("Tireloss Done  ");		
-//----------------------------------------------------------------------------------		
-		
+		logger.info("Tireloss Done  ");
+//----------------------------------------------------------------------------------
+
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//button[@onclick='AddressesClick()']")).click();// Customers
 		Thread.sleep(5000);
@@ -666,7 +666,7 @@ public class Task2 {
 
 		WebElement FedExDeliverySignatureOptions = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX12")));
 		FedExDeliverySignatureOptions.click();
-		
+
 
 		WebElement selecta =driver.findElement(By.id("SL12"));
 		Select select =new Select (selecta);
@@ -683,9 +683,9 @@ public class Task2 {
 		Thread.sleep(5000);
 
 		driver.findElement(By.id("btnShipClick")).click(); // Click on ship
-		logger.info("FedExDeliverySignatureOptions Done  ");		
-//------------------------------------------------------------------------------------------------------		
-		
+		logger.info("FedExDeliverySignatureOptions Done  ");
+//------------------------------------------------------------------------------------------------------
+
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//button[@onclick='AddressesClick()']")).click();// Customers
 		Thread.sleep(5000);
@@ -722,17 +722,17 @@ public class Task2 {
 		driver.findElement(By.xpath("//*[@id='btnOk']")).click();
 		Thread.sleep(5000);
 
-		
+
 		driver.findElement(By.xpath("//input[@id='txtManual']")).sendKeys("1.00");
 		logger.info("Manual Weight is fill ");
 
 		driver.findElement(By.id("cmdRate")).click();
 
 		logger.info("Click on Rate ");
-		
+
 		driver.findElement(By.id("btnShipClick")).click(); // Click on ship
-		logger.info("Oversize Done  ");		
-//-------------------------------------------------------------------------------------------------------		
+		logger.info("Oversize Done  ");
+//-------------------------------------------------------------------------------------------------------
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//button[@onclick='AddressesClick()']")).click();// Customers
 		Thread.sleep(5000);
@@ -766,19 +766,19 @@ public class Task2 {
 
 		WebElement DV= driver.findElement(By.id("SL15"));
 		Select Declared=new Select(DV);
-		Declared.selectByVisibleText("Declared Value");		
-		
+		Declared.selectByVisibleText("Declared Value");
+
 		driver.findElement(By.xpath("//*[@id='btnOk']")).click();
-		
+
 		driver.findElement(By.xpath("//input[@id='txtManual']")).sendKeys("1.00");
 		logger.info("Manual Weight is fill ");
 
 		driver.findElement(By.id("cmdRate")).click();
 
 		logger.info("Click on Rate ");
-		
+
 		driver.findElement(By.id("btnShipClick")).click(); // Click on ship
-		logger.info("DeclaredValueThirdPartyInsurance Done  ");		
-		
+		logger.info("DeclaredValueThirdPartyInsurance Done  ");
+
 	}
 }

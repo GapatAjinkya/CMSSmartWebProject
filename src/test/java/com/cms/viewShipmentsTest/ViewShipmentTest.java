@@ -2,6 +2,7 @@ package com.cms.viewShipmentsTest;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -32,13 +33,13 @@ public class ViewShipmentTest extends BaseClass {
 		shipViaLoad = new ShipViaLoad(driver);
 		shipViaLoad.clickOnTransaction();
 		shipViaLoad.clickOnViewShipment();
-		shipViaLoad.datepickfrom();                 // To Select the date 
+		shipViaLoad.datepickfrom();                 // To Select the date
 		shipViaLoad.clickOnShipViaLoad();
 		shipViaLoad.clickOnUserGroup();
 		shipViaLoad.clickOnSelectGroupOkClick();
 		shipViaLoad.clickOnSelectShipvia();         // To select loaded shipvia
 		shipViaLoad.clickOnSearchCriteriaOk();
 		shipViaLoad.clickOnselectShipmentid();
-		shipViaLoad.clickOncmdOk();	
+		shipViaLoad.clickOncmdOk();
 	}
 }

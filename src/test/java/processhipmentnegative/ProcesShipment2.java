@@ -1,7 +1,6 @@
 package processhipmentnegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,7 +29,7 @@ public class ProcesShipment2 {
 	        return new Object[][] {
 	            {"UPSGround", "USAG", "0.00"},
 	            {"UPSGround","","1.00"},
-	            {"UPSGround","USAG","1.00"}  
+	            {"UPSGround","USAG","1.00"}
 	        };
 	    }
 
@@ -80,7 +79,7 @@ public class ProcesShipment2 {
 	logger.info("Manual Weight is fill ");
 }
 	public void addCustomer(String Customer) throws InterruptedException {
-		
+
 		WebElement customer = driver.findElement(By.xpath("//button[@onclick='AddressesClick()']"));
 		customer.click();
 		logger.info("Clicked on Customer");
@@ -93,17 +92,17 @@ public class ProcesShipment2 {
 		WebElement List = driver.findElement(By.id("selCutomerList"));
 		Select CustomerList = new Select(List);
 		CustomerList.selectByValue("1"); // To select Global
-		
+
 		driver.findElement(By.xpath("//button[@onclick='onCustomerSearchOkClick()']")).click(); // click on ok
 		Thread.sleep(5000);
 		logger.info("Customer Searched");
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//td[contains(text(),'"+Customer+"')]")).click();
 		WebElement Customerok= driver.findElement(By.id("addressformOk"));
-		Customerok.click();          // Click on OK 
+		Customerok.click();          // Click on OK
 		Thread.sleep(5000);
 		logger.info("Customer Added");
-		
+
 	}
 	public void ShipVia(String ShipViaCode) throws InterruptedException {
 		WebElement shipviaSearch = driver.findElement(By.xpath("//*[@onclick=\"btnSearch_PS()\"]")); // Search the																								// Shipvias list

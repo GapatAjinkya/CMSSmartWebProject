@@ -1,23 +1,18 @@
 package com.cms.archivedmanifests;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import com.cms.Base.BaseClass;
-import org.testng.Assert;
 public class ArchivedManifests extends BaseClass {
 
 	public ArchivedManifests(WebDriver rdriver) {
@@ -94,34 +89,34 @@ public class ArchivedManifests extends BaseClass {
 	public ArchivedManifests Toselectdatefrom() throws InterruptedException {
 
 	Thread.sleep(5000);
-	
-	
+
+
 	String month="June 2023";
 	String day="30";
-	
+
 	WebElement datepicker=driver.findElement(By.id("txtManifestFormDatePicker"));
 	datepicker.click();
-	
-	
+
+
 	while(true){
 	String text=driver.findElement(By.xpath("//th[@class='datepicker-switch']")).getText();
-	
-	if(text.equals(month)) 
+
+	if(text.equals(month))
 	{
 		break;
 	}
-	else 
+	else
 	{
 		driver.findElement(By.xpath("//body[1]/div[103]/div[1]/table[1]/thead[1]/tr[1]/th[3]")).click();
 	}
 	}
 	driver.findElement(By.xpath("//body[1]/div[103]/div[1]/table[1]/tbody[1]/tr/td[contains(text(),"+day+"")).click();
-	
+
 /*
     WebElement Dday=driver.findElement(By.xpath("//table[@class=\" table-condensed\"]/tbody/tr/td[contains(text(),30)]"));
 		while(true) {
 			String text=Monthcheck.getText();
-	
+
 			if(text.equals(month)) {
 				break;
 			}
@@ -134,7 +129,7 @@ public class ArchivedManifests extends BaseClass {
 		System.out.println("corrct date is " +Dday.getText());
 		Dday.click();
 		/*
-	
+
 		WebElement element = driver.findElement(By.id("IWLDatePickerFromAME"));
 	    JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("arguments[0].value ='12/03/2022';", element); // month/date/year
@@ -168,10 +163,10 @@ public class ArchivedManifests extends BaseClass {
 				break;
 			}
 		}
-		
+
 		*/
 	//------------------------------------------------------------------------------------------------------
-	
+
 	//Final------------------****************************
 	/*
 	driver.findElement(By.id("IWLDatePickerFromAME")).click();
@@ -196,7 +191,7 @@ public class ArchivedManifests extends BaseClass {
     int day1 = desiredDate.getDayOfMonth();
     WebElement datePicker = driver.findElement(By.id("IWLDatePickerFromAME"));
     datePicker.click();
-    
+
     while (true) {
         // Extract the displayed month and year from the date picker
         String displayedMonthYear = driver.findElement(By.xpath("//th[@class='datepicker-switch']")).getText();
@@ -223,18 +218,18 @@ public class ArchivedManifests extends BaseClass {
 
     */
 
-	
+
 	// Try this option ****************************************
-		/*	
+		/*
 			  driver.findElement(By.id("IWLDatePickerFromAME")).click();
 	    	  String Expected_Month_Year="March 2023";
-	    	  
+
 	    	  while(true) {
 	    	 String m= driver.findElement(By.xpath("//*[@class='ui-datepicker-title']")).getText();
 	    	 System.out.println(m);
-	    	 
+
 	    	 if(m.equals(Expected_Month_Year)) {
-	    		 break; 
+	    		 break;
 	    	 }
 	    	 else
 	    	 {
@@ -244,7 +239,7 @@ public class ArchivedManifests extends BaseClass {
 	    	  driver.findElement(By.xpath("//*[@data-date='10']")).click();
 	          System.out.println(driver.findElement(By.id("datepeaker")).getText());
 	         */
-		
+
 		return this;
 	}
 	@FindBy(id = "IWLDatePickerToAME")
@@ -265,8 +260,8 @@ public class ArchivedManifests extends BaseClass {
 	private WebElement Selectcarrier;
 
 	public ArchivedManifests Selectcarrierfromtable(String newcode) throws InterruptedException {
-		
-		
+
+
 //		WebElement okclick = driver.findElement(By.xpath("//button[@onclick='CAF_OkClick()']"));
 //		okclick.click();
 		Thread.sleep(6000);
@@ -290,11 +285,11 @@ public class ArchivedManifests extends BaseClass {
 		}
 		Assert.assertTrue(dataStatus, "Carrier  is not edit");
 		logger.info("Carrier edit is successful ");
-		
-		
-		
-		
-		
+
+
+
+
+
 		click(Selectcarrier); // To Select the carrier from table
 		logger.info(" Selectcarrierfromtable successful");
 		return this;
@@ -309,7 +304,7 @@ public class ArchivedManifests extends BaseClass {
 		return this;
 	}
 
-//---------------------------------------------------------------------------------------------------------------	
+//---------------------------------------------------------------------------------------------------------------
 	@FindBy(id = "AMEPrevious")
 	private WebElement AMEPrevious;
 

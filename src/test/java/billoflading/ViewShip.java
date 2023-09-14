@@ -3,6 +3,7 @@ package billoflading;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -26,7 +27,7 @@ public class ViewShip {
 	String shipid="92737";
 	String CustomerCode = "USA";
 	String Carriers = "LTLR_WL -- LTL Rated WorldLink";//Search Carrier
-	
+
 @BeforeClass
 	public void setup() throws InterruptedException {
 
@@ -57,27 +58,27 @@ public class ViewShip {
 		Thread.sleep(10000);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 }
-	
+
 	@Test(priority =0)
 	public void SelectBOLcustomer() throws InterruptedException
-	{		
+	{
 		WebElement Transaction= wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_2"))); 	// To click on Transaction
 		wait.until(ExpectedConditions.elementToBeClickable(Transaction));
 		Transaction.click();
 		WebElement BOL= wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_26"))); 	// To click on Transaction
 		wait.until(ExpectedConditions.elementToBeClickable(BOL));
-		BOL.click();		
+		BOL.click();
 		WebElement dropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//select[@id='BOLddlCarriers']")));
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(Carriers);
 		logger.info("Carriers Selected ");
-		
-//--------------------------		
-	
+
+//--------------------------
+
 		List<WebElement> alldata = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@id='ELtblBOLExplorerList']//tr//td[2]")));
 		boolean dataStatus = false;
 		for (WebElement ele : alldata) {
-			String value = ele.getText();		
+			String value = ele.getText();
 			if (value.equals(CustomerCode))
 			{
 				System.out.println(value);
@@ -86,20 +87,20 @@ public class ViewShip {
 			}
 		}
 		Assert.assertTrue(dataStatus, "CustomerCode not found");
-		if (dataStatus) 
+		if (dataStatus)
 		{
 			Thread.sleep(5000);
 			WebElement Customercode =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='ELtblBOLExplorerList']//td[contains(text(), '" + CustomerCode + "')]")));
-			Customercode.click();			
+			Customercode.click();
 		} else {
 		    System.out.println("CustomerCode not found");
-		}	
-		logger.info("Customer Code Found Selected ");        
+		}
+		logger.info("Customer Code Found Selected ");
 }
 	@Test (priority = 1)
 	public void viewship() throws InterruptedException
 	{
-		
+
 		WebElement viewship= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='BOLViewShips']")));
 	    wait.until(ExpectedConditions.elementToBeClickable(viewship));
 	    viewship.click();
@@ -107,7 +108,7 @@ public class ViewShip {
 	    List<WebElement> alldata = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@id='tblShipmentList']//tr//td[1]")));
 		boolean dataStatus = false;
 		for (WebElement ele : alldata) {
-			String value = ele.getText();		
+			String value = ele.getText();
 			if (value.equals(shipid))
 			{
 				System.out.println(value);
@@ -119,12 +120,12 @@ public class ViewShip {
 		if (dataStatus) {
 			Thread.sleep(5000);
 			WebElement Customercode =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='tblShipmentList']//td[contains(., '" + shipid + "')]")));
-			Customercode.click();		
+			Customercode.click();
 		} else {
 		    System.out.println("shipid not found");
-		}	
+		}
 		logger.info("shipid Code Found Selected ");
-	    
+
 		WebElement ok= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='cmdOk']")));
         wait.until(ExpectedConditions.elementToBeClickable(ok));
         ok.click();
@@ -136,10 +137,10 @@ public class ViewShip {
 		WebElement BOLPrint= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='BOLPrint']")));
 	    wait.until(ExpectedConditions.elementToBeClickable(BOLPrint));
 	    BOLPrint.click();
-	    
+
 		Thread.sleep(5000);
 		WebElement OkButtonRateBOL= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='OkButtonRateBOL']")));
         wait.until(ExpectedConditions.elementToBeClickable(OkButtonRateBOL));
-        OkButtonRateBOL.click();	
+        OkButtonRateBOL.click();
 }
 }

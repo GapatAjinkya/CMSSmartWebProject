@@ -12,7 +12,7 @@ import com.cms.configurations.SupportTableDepartments;
 import com.cms.pages.Login;
 
 public class STDepartmentsTestdelete extends BaseClass{
-	
+
 
 	public static WebDriver driver;
 	public static Login login;

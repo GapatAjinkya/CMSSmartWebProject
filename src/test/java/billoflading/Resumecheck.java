@@ -78,7 +78,7 @@ public class Resumecheck {
 		select.selectByVisibleText(Carriers);
 		logger.info("Carriers Selected ");
 
-//--------------------------		
+//--------------------------
 
 		List<WebElement> alldata = wait.until(ExpectedConditions
 				.visibilityOfAllElementsLocatedBy(By.xpath("//table[@id='ELtblBOLExplorerList']//tr//td[2]")));
@@ -160,7 +160,7 @@ public class Resumecheck {
 			}
 			Assert.assertTrue(dataStatus, "CustomerCode not found");
 			if (dataStatus) {
-				
+
 				Thread.sleep(6000);
 				WebElement SelectElement = wait.until(ExpectedConditions.visibilityOfElementLocated(
 						By.xpath("//table[@id='ELtblBOLExplorerList']//td[contains(text(), '" + newcode + "')]")));

@@ -1,7 +1,6 @@
 package products;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,13 +19,13 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class EditProducts {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("EditProducts");
-	
 
-	
+
+
 	@BeforeMethod
 	public void setup() throws InterruptedException {
 
@@ -68,59 +67,59 @@ public class EditProducts {
 	}
 	@Test(priority = 1)
 	public void edit() throws InterruptedException {
-		
+
 		WebElement Configuration = driver.findElement(By.id("menu_item_4"));
 		wait.until(ExpectedConditions.visibilityOf(Configuration));
 		wait.until(ExpectedConditions.elementToBeClickable(Configuration));
 		Configuration.click();
 		Thread.sleep(5000);
 		logger.info("Clickon Configuration successful");
-		
+
 		WebElement SupportTables = driver.findElement(By.cssSelector("#menu_item_45"));
 		wait.until(ExpectedConditions.visibilityOf(SupportTables));
 		wait.until(ExpectedConditions.elementToBeClickable(SupportTables));
 		SupportTables.click();
 		logger.info(" SupportTables Windo Open  successful");
-		
+
 		WebElement products=driver.findElement(By.xpath("//a[@id='menu_item_455']"));
 		wait.until(ExpectedConditions.visibilityOf(products));
 		wait.until(ExpectedConditions.elementToBeClickable(products));
 		products.click();
 		logger.info(" products Windo Open  successful");
 		Thread.sleep(6000);
-		// To search the code to edit 
-		
-		 String Searchwith="ProductAG";     //To search the product 
-		 
+		// To search the code to edit
+
+		 String Searchwith="ProductAG";     //To search the product
+
 		 WebElement Search=driver.findElement(By.xpath("//input[@id='txtCSTProdSearch']"));
 		 wait.until(ExpectedConditions.visibilityOf(Search));
 		 wait.until(ExpectedConditions.elementToBeClickable(Search));
 		 Search.sendKeys(Searchwith);
 		 logger.info(" Search with   successful");
-		 
+
 		driver.findElement(By.xpath("//button[@onclick='onProductSearchFormOkClick()']")).click();
 		logger.info(" click on ok Search with   successful");
 		Thread.sleep(5000);
-		
+
 		WebElement selectproduct=driver.findElement(By.xpath("//tr[@data-index='0']"));
 		 wait.until(ExpectedConditions.visibilityOf(selectproduct));
 		 wait.until(ExpectedConditions.elementToBeClickable(selectproduct));
-		 selectproduct.click();		
+		 selectproduct.click();
 		logger.info(" Product select  successful");
-		
+
 		Thread.sleep(3000);
 		WebElement editbutton=driver.findElement(By.xpath("//button[@id='CSTProdEdit']"));
 		 wait.until(ExpectedConditions.visibilityOf(editbutton));
 		 wait.until(ExpectedConditions.elementToBeClickable(editbutton));
-		 editbutton.click();	
+		 editbutton.click();
 		logger.info(" Click on edit Button select  successful");
 		Thread.sleep(6000);
-		
-	String editwith="code";	
+
+	String editwith="code";
 	String newcode="ProductAG1";         //To edit the product new code ----------------------------------
 	String Description="ProductAG1";
-	
-	if(editwith.equalsIgnoreCase("code")) 
+
+	if(editwith.equalsIgnoreCase("code"))
 	{
 	Thread.sleep(5000);
 	WebElement codesend=driver.findElement(By.xpath("//input[@id='PFtxtCode']"));
@@ -131,7 +130,7 @@ public class EditProducts {
 	codesend.sendKeys(newcode);
 	logger.info("Code edit successful");
 	}
-	else if(editwith.equalsIgnoreCase("Description")) 
+	else if(editwith.equalsIgnoreCase("Description"))
 	{
 	Thread.sleep(5000);
 	WebElement pDescription=driver.findElement(By.id("PFtxtDescription"));
@@ -140,17 +139,17 @@ public class EditProducts {
 	pDescription.sendKeys(Description);
 	logger.info("Description edit successful");
 	}
-	
+
 	try {
 		Thread.sleep(5000);
 		WebElement prodok=driver.findElement(By.id("btnProdFrmOk"));
 		prodok.click();
 	}catch(Exception e){
-		
+
 		Assert.fail("Failed to click on _ok. Exception: " + e.getMessage());
-	}	
 	}
-	
+	}
+
 	@Test(priority = 2)
 	public void delete() throws InterruptedException {
 		WebElement Configuration = driver.findElement(By.id("menu_item_4"));
@@ -159,45 +158,45 @@ public class EditProducts {
 		Configuration.click();
 		Thread.sleep(5000);
 		logger.info("Clickon Configuration successful");
-		
+
 		WebElement SupportTables = driver.findElement(By.cssSelector("#menu_item_45"));
 		wait.until(ExpectedConditions.visibilityOf(SupportTables));
 		wait.until(ExpectedConditions.elementToBeClickable(SupportTables));
 		SupportTables.click();
 		logger.info(" SupportTables Windo Open  successful");
-		
+
 		WebElement products=driver.findElement(By.xpath("//a[@id='menu_item_455']"));
 		wait.until(ExpectedConditions.visibilityOf(products));
 		wait.until(ExpectedConditions.elementToBeClickable(products));
 		products.click();
 		logger.info(" products Windo Open  successful");
 		Thread.sleep(6000);
-		// To search the code to edit 
-		
+		// To search the code to edit
+
 		 String Searchwith="ProductAG1";     //To search the product to delete----------------------------------
-		 
+
 		 WebElement Search=driver.findElement(By.xpath("//input[@id='txtCSTProdSearch']"));
 		 wait.until(ExpectedConditions.visibilityOf(Search));
 		 wait.until(ExpectedConditions.elementToBeClickable(Search));
 		 Search.sendKeys(Searchwith);
-		 
+
 		 logger.info(" Search with   successful");
 		driver.findElement(By.xpath("//button[@onclick='onProductSearchFormOkClick()']")).click();
 		logger.info(" click on ok Search with   successful");
 		Thread.sleep(3000);
-		
+
 		WebElement selectproduct=driver.findElement(By.xpath("//tr[@data-index='0']"));
 		 wait.until(ExpectedConditions.visibilityOf(selectproduct));
 		 wait.until(ExpectedConditions.elementToBeClickable(selectproduct));
-		 selectproduct.click();		
-		logger.info(" Product select  successful");	
-		
+		 selectproduct.click();
+		logger.info(" Product select  successful");
+
 		 WebElement deletebutton=driver.findElement(By.xpath("//button[@id='CSTProdDelete']"));
 		 wait.until(ExpectedConditions.visibilityOf(deletebutton));
 		 wait.until(ExpectedConditions.elementToBeClickable(deletebutton));
 		 deletebutton.click();
 		 logger.info(" Click on Delete successful");
-		 
+
 		 Thread.sleep(3000);
 		 WebElement Confirmdelete=driver.findElement(By.xpath("//button[@id='btnConfirmBoxOk']"));
 		 wait.until(ExpectedConditions.visibilityOf(Confirmdelete));
@@ -205,5 +204,5 @@ public class EditProducts {
 		 Confirmdelete.click();
 		 logger.info(" Click on Confirm ok  successful");
 	}
-	
+
 }

@@ -1,7 +1,6 @@
 package carriers;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,8 +18,8 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Nextandprevious {
-	
-	
+
+
 
 	public static WebDriver driver;
 	public static WebDriverWait wait;
@@ -89,17 +88,17 @@ public class Nextandprevious {
 		carriersaccount.click();
 		logger.info("Click on carriers account successful");
 		Thread.sleep(5000);
-		
+
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//button[@onclick='CASFOkClick()']")).click();
-		
-		
+
+
 		 String check = "Previous"; // to specify the next or previous value
 			WebElement buttonNext = driver.findElement(By.xpath("//button[@id='CANextbutton']"));
 			WebElement buttonPrevious = driver.findElement(By.xpath("//button[@id='CAPrevbutton']"));
-			
+
 			assert buttonNext.isEnabled() && buttonPrevious.isEnabled() : "Initial state is incorrect.";
-			
+
 			if (check.equals("Next")) {
 				boolean nextEnabled = buttonNext.isEnabled();
 				if (nextEnabled) {

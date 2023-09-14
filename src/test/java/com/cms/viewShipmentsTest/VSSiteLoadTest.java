@@ -31,8 +31,8 @@ public class VSSiteLoadTest extends BaseClass {
 		shipViaLoad = new ShipViaLoad(driver);
 		shipViaLoad.clickOnTransaction();
 		shipViaLoad.clickOnViewShipment();
-		shipViaLoad.datepickfrom();         // Select the date 
-		
+		shipViaLoad.datepickfrom();         // Select the date
+
 		shipViaLoad.clickOnSitesLoad();
 		shipViaLoad.clickOnSite();
 		shipViaLoad.clickOnSearchCriteriaOk();

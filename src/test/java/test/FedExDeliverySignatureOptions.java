@@ -131,12 +131,12 @@ public class FedExDeliverySignatureOptions {
 
 		WebElement FedExDeliverySignatureOptions = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX12")));
 		FedExDeliverySignatureOptions.click();
-		
-		
+
+
 		WebElement selecta =driver.findElement(By.id("SL12"));
 		Select select =new Select (selecta);
 		select.selectByVisibleText("Signature Required");
-		
+
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//*[@id='btnOk']")).click();
 		Thread.sleep(5000);

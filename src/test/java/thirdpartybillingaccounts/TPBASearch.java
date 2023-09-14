@@ -2,7 +2,6 @@ package thirdpartybillingaccounts;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,11 +20,11 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TPBASearch {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("TPBASearch");
-	
+
 	@BeforeMethod
 	public void setup() throws InterruptedException {
 
@@ -39,7 +38,7 @@ public class TPBASearch {
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-		
+
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);
@@ -69,7 +68,7 @@ public class TPBASearch {
 
 	@Test
 	public void Searchaccount() throws InterruptedException {
-		
+
 		WebElement Configuration = driver.findElement(By.id("menu_item_4"));
 		wait.until(ExpectedConditions.visibilityOf(Configuration));
 		wait.until(ExpectedConditions.elementToBeClickable(Configuration));
@@ -83,7 +82,7 @@ public class TPBASearch {
 		SupportTables.click();
 		logger.info(" SupportTables Windo Open  successful");
 		Thread.sleep(6000);
-		
+
 		WebElement tpba = driver.findElement(By.xpath("//a[@id='menu_item_459']"));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@id='menu_item_459']")));
 		wait.until(ExpectedConditions.visibilityOf(tpba));
@@ -91,13 +90,13 @@ public class TPBASearch {
 		tpba.click();
 		Thread.sleep(6000);
 		logger.info("Click on Third Party Billing Accounts successful");
-		
+
 		String Criteria="code";
 	    String code="AccountTest1";
 	    String Customer="";
 	    String CustomerAccount="";
-	 
-	    
+
+
 	    WebElement Search = driver.findElement(By.xpath("//input[@id='txtTPSearch']"));
 		if(Criteria.equalsIgnoreCase("code")) {
 			Thread.sleep(3000);
@@ -107,34 +106,34 @@ public class TPBASearch {
 			Code.click();
 			logger.info("Code selected");
 			Search.sendKeys(code);                                 //To search customer
-			
+
 		}else if(Criteria.equalsIgnoreCase("CustomerName")) {
 			Thread.sleep(3000);
 			WebElement CustomerName = driver.findElement(By.xpath("//input[@id='radCustomerName']"));
 			wait.until(ExpectedConditions.visibilityOf(CustomerName));
 			wait.until(ExpectedConditions.elementToBeClickable(CustomerName));
 			CustomerName.click();
-			Search.sendKeys(Customer);    
+			Search.sendKeys(Customer);
 			logger.info("CustomerName selected");
-			
+
 		}else if(Criteria.equalsIgnoreCase("CustomerAccount")) {
 			Thread.sleep(3000);
 			WebElement Account = driver.findElement(By.xpath("//input[@id='radAccount']"));
 			wait.until(ExpectedConditions.visibilityOf(Account));
 			wait.until(ExpectedConditions.elementToBeClickable(Account));
 			Account.click();
-			Search.sendKeys(CustomerAccount);   
+			Search.sendKeys(CustomerAccount);
 			logger.info("CustomerAccount selected");
 }
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//button[@onclick='ThirdPartiesSearchOkClick()']")).click();
-		
+
 		  List<WebElement> alldata = driver.findElements(By.xpath("//table[@id='ThirdPartiesList']//td"));
 
 			boolean dataStatus = false;
 			for (WebElement ele : alldata) {
 				String value = ele.getText();
-				if (value.equals(code))         // we can change compare string 
+				if (value.equals(code))         // we can change compare string
 				{
 					System.out.println(value);
 					dataStatus = true;

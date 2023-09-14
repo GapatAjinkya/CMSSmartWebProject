@@ -1,7 +1,6 @@
 package localTest;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,12 +19,12 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginTest {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("Departments");
-	
-	
+
+
 	@Test(dataProvider = "Logindata")
 	public void Login (String username,String pass) throws InterruptedException {
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
@@ -46,7 +45,7 @@ public class LoginTest {
 
 	@DataProvider(name="Logindata")
 	public Object[][] getdata(){
-		
+
 		Object[][] data= {{"admin1","password"},
 			            	{"admin","Nilesh@123"},
 			        	{"nilesh","Nilesh@123aa"},
@@ -60,7 +59,7 @@ public class LoginTest {
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@id='errorMsg']")));
 		Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
 	        String actualErrorMessage = errorMessage.getText();
-	       
+
 		if (actualErrorMessage.equals("Invalid username.")) {
             System.out.println("Handling first error message."+actualErrorMessage);
             Assert.assertEquals(actualErrorMessage, "Invalid username.", "Incorrect error message");
@@ -70,11 +69,11 @@ public class LoginTest {
         }  else {
             System.out.println("Unexpected error message: " + actualErrorMessage);
         }
-		
+
 		WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
 		error.click();
 		}
-	
+
 	@BeforeClass
 	public void setup() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();

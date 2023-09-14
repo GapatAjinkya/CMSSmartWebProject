@@ -1,9 +1,11 @@
 package viewshipmenttaskNegative;
 import java.io.IOException;
 import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import com.cms.Base.BaseClass;
 import com.cms.pages.Login;
 import com.cms.viewshipment.ShipViaLoad;
@@ -29,9 +31,9 @@ public class ViewShipmentLoadTest extends BaseClass {
 		shipViaLoad = new ShipViaLoad(driver);
 		shipViaLoad.clickOnTransaction();
 		shipViaLoad.clickOnViewShipment();
-		shipViaLoad.datepickfrom();                        // Select the date 
+		shipViaLoad.datepickfrom();                        // Select the date
 		String loadShipment = prop.getProperty("Load");    //config.prop
-		
+
 		if (loadShipment.equals("Site")) {
 
 			shipViaLoad.clickOnSitesLoad();
@@ -39,35 +41,35 @@ public class ViewShipmentLoadTest extends BaseClass {
 			shipViaLoad.clickOnSearchCriteriaOk();
 			shipViaLoad.clickOnselectShipmentid();
 			shipViaLoad.clickOncmdOk();
-			
+
 		} else if (loadShipment.equals("Ship Via")) {
 			shipViaLoad.clickOnShipViaLoad();
 			shipViaLoad.clickOnUserGroup();
 			shipViaLoad.clickOnSelectGroupOkClick();
 			shipViaLoad.clickOnSelectShipvia();          // To select loaded shipvia
-			shipViaLoad.EnterOnShipmentIdFrom();         // to give specific id to find specific shipment 
+			shipViaLoad.EnterOnShipmentIdFrom();         // to give specific id to find specific shipment
 			shipViaLoad.datepickfrom();              // Date
 			shipViaLoad.clickOnSearchCriteriaOk();
-		
+
 			//shipViaLoad.SvIdSelect();
 			shipViaLoad.clickOnselectShipmentid();
 			shipViaLoad.clickOncmdOk();
 
 		} else if (loadShipment.equals("Organizations")) {
-			
+
 			shipViaLoad.clickOnOrganizationsLoad();
-			shipViaLoad.clickOnSelectOrganizations();        
+			shipViaLoad.clickOnSelectOrganizations();
 			shipViaLoad.clickOnSearchCriteriaOk();
 			shipViaLoad.clickOncmdOk();
-			
+
 		} else if (loadShipment.equals("Carriers")) {
-			
+
 			shipViaLoad.clickOnCarriersLoadAccount();  // TO load Carriers
 			shipViaLoad.clickOnSelectCarriers();
 		//	shipViaLoad.clickOnProship1();
-			shipViaLoad.clickOnSearchCriteriaOk();     // SearchCriteria OK button 
+			shipViaLoad.clickOnSearchCriteriaOk();     // SearchCriteria OK button
 			shipViaLoad.clickOnCarrier();
-			shipViaLoad.clickOncmdOk();                // Carriers OK	
+			shipViaLoad.clickOncmdOk();                // Carriers OK
 		}
 	}
 }

@@ -1,7 +1,6 @@
 package productsNegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,7 +22,7 @@ public class ProductDangerousGoods {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("ProductsCode");
-	
+
     @Test(priority = 0)
 	public void TestHazardClass() throws InterruptedException {
     	productWindo();
@@ -35,8 +34,8 @@ public class ProductDangerousGoods {
     	okproduct();
     	captureError();
 	}
-	
-	
+
+
 	public void HazardClass(String HazardClassText) throws InterruptedException {
 		WebElement  HazardClass =driver.findElement(By.xpath("//select[@id='PFcmbClass']"));
 		Select selectclass=new Select(HazardClass);
@@ -45,10 +44,10 @@ public class ProductDangerousGoods {
 		Thread.sleep(5000);
 	}
 	public void DangerousGoodsCheckBox() throws InterruptedException {
-		
+
 		WebElement DangerousGoods=driver.findElement(By.id("PFchkDG"));
-		
-		if (!DangerousGoods.isSelected()) 
+
+		if (!DangerousGoods.isSelected())
 		{
             // Click on the checkbox
             DangerousGoods.click();
@@ -63,13 +62,13 @@ public class ProductDangerousGoods {
 	        	DangerousGoods.click();
 	        }
 	}
-	
+
 	public void HDivision(String HazardousDivisionText) {
 		WebElement  HazardousDivision =driver.findElement(By.id("PFcmbHazardDivision"));
 		Select selectHD=new Select(HazardousDivision);
 		selectHD.selectByVisibleText(HazardousDivisionText);
 		logger.info(" Hazardous DivisionText Selected  successful");
-		
+
 	}
 	public void addButton() throws InterruptedException {
 		Thread.sleep(3000);
@@ -77,7 +76,7 @@ public class ProductDangerousGoods {
 		addproduct.click();
 		logger.info(" Click on add  successful");
 		}
-	
+
 	public void newproduct(String newcode) throws InterruptedException {
 		String Description="Books Test";
 		String Countryoforigin="UNITED STATES";
@@ -91,14 +90,14 @@ public class ProductDangerousGoods {
 		Weight.clear();
 		Weight.sendKeys("1");
 		WebElement pDescription=driver.findElement(By.id("PFtxtDescription"));
-		pDescription.sendKeys(Description);	
+		pDescription.sendKeys(Description);
 		WebElement uom=driver.findElement(By.id("PFtxtUOM"));
 		uom.sendKeys("Each");
 		WebElement uomwgt=driver.findElement(By.id("PFtxtWeightUOM"));
-		uomwgt.sendKeys("LBS");	
+		uomwgt.sendKeys("LBS");
 		WebElement ECCN=driver.findElement(By.id("PFtxtECCN"));          //ECCN
-		ECCN.sendKeys("001");	
-		WebElement Country=driver.findElement(By.xpath("//select[@id='PFcmbCO']"));        
+		ECCN.sendKeys("001");
+		WebElement Country=driver.findElement(By.xpath("//select[@id='PFcmbCO']"));
 		Select Countryselect=new Select(Country);
 		Countryselect.selectByVisibleText(Countryoforigin);
 		WebElement CommodityCode=driver.findElement(By.id("PFtxtCommodity"));
@@ -106,18 +105,18 @@ public class ProductDangerousGoods {
 		CommodityCode.sendKeys(commodity);
 		String month="August 2023";
 	//	String day="30";
-		
+
 		WebElement datepicker=driver.findElement(By.id("PFtxtLicenseExpiryDate"));
 		datepicker.click();
-		
+
 		//boolean istrue=true;
 		while(true){
 		String text=driver.findElement(By.xpath("//th[@class='datepicker-switch']")).getText();
-		if(text.equals(month)) 
+		if(text.equals(month))
 		{
 			break;
 		}
-		else 
+		else
 		{
 			driver.findElement(By.xpath("//body[1]/div[102]/div[1]/table[1]/thead[1]/tr[1]/th[3]")).click();//Next
 		}
@@ -126,14 +125,14 @@ public class ProductDangerousGoods {
 		Thread.sleep(5000);
 		logger.info("Date  Selected  successful");
 		WebElement SpecialProvision=driver.findElement(By.id("specialProvision"));
-		if (!SpecialProvision.isSelected()) 
+		if (!SpecialProvision.isSelected())
 		{
             // Click on the checkbox
 			SpecialProvision.click();
         }
 		  Assert.assertTrue(SpecialProvision.isSelected());
 		logger.info("Special Provision Selected  successful");
-		
+
 		driver.findElement(By.id("PFtxtAnyText1")).sendKeys("any");
 		driver.findElement(By.id("txtRegistrantId")).sendKeys("52");
 	}

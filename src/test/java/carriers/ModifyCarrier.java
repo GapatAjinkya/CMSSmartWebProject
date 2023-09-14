@@ -89,7 +89,7 @@ public class ModifyCarrier {
 		carriersaccount.click();
 		logger.info("Click on carriers account successful");
 		Thread.sleep(5000);
-		
+
 		String carriercode="UPSPS_Test";
 		WebElement Search = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.id("CASFtxtSearch")));
@@ -100,20 +100,20 @@ public class ModifyCarrier {
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='CASFOkClick()']")));
 		ok.click();
 		Thread.sleep(6000);
-		
+
 		WebElement selectcarrier = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//tr[@data-index='0']")));
 		wait.until(ExpectedConditions.visibilityOf(selectcarrier));
 		wait.until(ExpectedConditions.elementToBeClickable(selectcarrier));
 		selectcarrier.click();
 		logger.info(" Selectcarrier successful");
-		
+
 		Thread.sleep(3000);
 		WebElement editbutton = driver.findElement(By.id("CAEditbutton"));
 		wait.until(ExpectedConditions.visibilityOf(editbutton));
 		wait.until(ExpectedConditions.elementToBeClickable(editbutton));
 		editbutton.click();
 		logger.info(" edit button successful");
-		
+
 		String editwith = "code";
 	 	String newcode = "TestAG1";             // To edit the product new code ----------------------------------
 		String Description = "departments Test";
@@ -137,7 +137,7 @@ public class ModifyCarrier {
 			pDescription.sendKeys(Description);
 			logger.info("Description edit successful");
 		} else if (editwith.equalsIgnoreCase("Carriertype")) {
-			
+
 			WebElement dropdown = driver.findElement(By.id("CAF_cmbType"));
 			dropdown.clear();
 			Thread.sleep(4000);
@@ -145,7 +145,7 @@ public class ModifyCarrier {
 			select.selectByVisibleText(Carriertype);
 			logger.info(" Type Select  successful");
 		}
-		
+
 		WebElement okclick = driver.findElement(By.xpath("//button[@onclick='CAF_OkClick()']"));
 		okclick.click();
 		Thread.sleep(6000);
@@ -167,14 +167,14 @@ public class ModifyCarrier {
 }
 	@Test(priority = 1)
 	public void delete() throws InterruptedException {
-	
+
 		WebElement Configuration = driver.findElement(By.id("menu_item_4"));
 		wait.until(ExpectedConditions.visibilityOf(Configuration));
 		wait.until(ExpectedConditions.elementToBeClickable(Configuration));
 		Configuration.click();
 		Thread.sleep(5000);
 		logger.info("Click on Configuration successful");
-	
+
 		WebElement carriers = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@id='menu_item_44']")));
 
@@ -187,7 +187,7 @@ public class ModifyCarrier {
 		carriersaccount.click();
 		logger.info("Click on carriers account successful");
 		Thread.sleep(5000);
-		
+
 		String carriercode="TestAG1";
 		WebElement Search = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.id("CASFtxtSearch")));
@@ -204,11 +204,11 @@ public class ModifyCarrier {
 		logger.info("Select  successful");
 		WebElement delete = driver.findElement(By.id("CADeletebutton"));
 		delete.click();
-		
+
 		Thread.sleep(5000);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("btnConfirmBoxOk"))).click();
 		Thread.sleep(6000);
-		
+
 		List<WebElement> alldata = driver.findElements(By.xpath("//table[@id='tblCarrierAccountsList']//td"));
 
 		boolean dataStatus = false;
@@ -225,5 +225,5 @@ public class ModifyCarrier {
 		Assert.assertTrue(dataStatus, "Account is  Deleted");
 		logger.info("Delete Account is successful ");
 }
-	
+
 }

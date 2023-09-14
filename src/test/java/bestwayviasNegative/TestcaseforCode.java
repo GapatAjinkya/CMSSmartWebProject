@@ -1,10 +1,7 @@
 package bestwayviasNegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -25,10 +21,10 @@ public class TestcaseforCode {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	//Logger logger = LogManager.getLogger("TestcaseforCode");
-	
+
 	@Test(priority =0)
 	public void testExceedingMaxLengthForCode() throws InterruptedException {
-		
+
 		CreateBestWay();
 		newbestway("asdfghjkloiuytrewqasd11");
 		Okbutton();
@@ -36,29 +32,29 @@ public class TestcaseforCode {
 		captureError();
 		Thread.sleep(5000);
 	}
-	
+
 	@Test(priority =1)
-	public void testBlanck() throws InterruptedException 
+	public void testBlanck() throws InterruptedException
 	{
 		WebElement txtCodeBWF = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.id("txtCodeBWF")));
 		txtCodeBWF.clear();
 		txtCodeBWF.sendKeys("");
-		  Okbutton();		
+		  Okbutton();
 			Thread.sleep(5000);
 		WebElement errorMessage = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@id='errorMsg']")));
 		String ErrorText=errorMessage.getText();
 	//	 logger.error("Expected error message -"+ErrorText);
 		System.out.println("Expected error message"+ErrorText);
-		Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");	 
+		Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
 		 String expectedErrorMessage = "Field value cannot be blank. Please try again.";
 	        String actualErrorMessage = errorMessage.getText();
 	        Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Incorrect error message");
 			WebElement error=driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
 		    error.click();
 	}
-	public void newbestway(String bestwaycode) throws InterruptedException {	
+	public void newbestway(String bestwaycode) throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement add = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='BestWayAdd']")));
@@ -66,10 +62,10 @@ public class TestcaseforCode {
 		Thread.sleep(5000);
 		WebElement txtCodeBWF = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.id("txtCodeBWF")));
-		txtCodeBWF.sendKeys(bestwaycode);	
+		txtCodeBWF.sendKeys(bestwaycode);
 }
 	public void captureError() throws InterruptedException {
-		
+
 		Thread.sleep(5000);
 		WebElement errorMessage = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@id='errorMsg']")));
@@ -77,17 +73,17 @@ public class TestcaseforCode {
 		// logger.error("Expected error message -"+ErrorText);
 		 System.out.println("Expected error message"+ErrorText);
 		Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
-		
+
 		 String expectedErrorMessage = "Value should be 20 characters long. Please try again.";
 	        String actualErrorMessage = errorMessage.getText();
 	        Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Incorrect error message");
 			WebElement error=driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
 		    error.click();
-	        
-	        
+
+
 	}
 public void SearchBestWayCodeNegative(String bestwaycode) throws InterruptedException {
-		
+
 	    Thread.sleep(3000);
 	    WebElement bestWayVias = wait
 	            .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='txtSearchBWSF']")));
@@ -95,7 +91,7 @@ public void SearchBestWayCodeNegative(String bestwaycode) throws InterruptedExce
 	    WebElement ok = wait
 	            .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='BWSFOkClick()']")));
 	    ok.click();
-	    Thread.sleep(10000);  
+	    Thread.sleep(10000);
 	    try {
 	        WebElement error = driver.findElement(By.id("btnErrorBoxOk"));
 	        if (error.isDisplayed()) {
@@ -106,7 +102,7 @@ public void SearchBestWayCodeNegative(String bestwaycode) throws InterruptedExce
 	      //      logger.info("This Code is Not present as expected");
 	        }
 	    } catch (NoSuchElementException e) {
-	
+
 	       // logger.error("Expected error message was not displayed.");
 	        Assert.fail("Expected error message was not displayed.");
 	    }
@@ -129,10 +125,10 @@ public void SearchBestWayCodeNegative(String bestwaycode) throws InterruptedExce
 		 WebElement ok = wait
 		            .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='BWSFOkClick()']")));
 		    ok.click();
-		
+
 	}
 public void Okbutton() throws InterruptedException {
-		
+
 		WebElement okbutton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='OkClickBWF']")));
 		okbutton.click();
 
@@ -165,12 +161,12 @@ public void Okbutton() throws InterruptedException {
 		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
 		System.out.println("Title Matched");
 		Thread.sleep(10000);
-	}	
+	}
 
 	@AfterClass
 	public void teardown() {
-		
+
 		driver.quit();
-		
+
 	}
 	}

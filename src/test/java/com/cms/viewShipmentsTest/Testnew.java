@@ -32,9 +32,9 @@ public class Testnew extends BaseClass{
 		shipViaLoad = new ShipViaLoad(driver);
 		shipViaLoad.clickOnTransaction();
 		shipViaLoad.clickOnViewShipment();
-		//shipViaLoad.datepickfrom();                        // Select the date 
+		//shipViaLoad.datepickfrom();                        // Select the date
 		String loadShipment = prop.getProperty("Load");
-		
+
 		if (loadShipment.equals("Site")) {
 
 			shipViaLoad.clickOnSitesLoad();
@@ -42,7 +42,7 @@ public class Testnew extends BaseClass{
 			shipViaLoad.clickOnSearchCriteriaOk();
 			shipViaLoad.clickOnselectShipmentid();
 			shipViaLoad.clickOncmdOk();
-			
+
 		} else if (loadShipment.equals("Ship Via")) {
 			shipViaLoad.clickOnShipViaLoad();
 			shipViaLoad.clickOnUserGroup();
@@ -54,20 +54,20 @@ public class Testnew extends BaseClass{
 			shipViaLoad.clickOncmdOk();
 
 		} else if (loadShipment.equals("Organizations")) {
-			
+
 			shipViaLoad.clickOnOrganizationsLoad();
-			shipViaLoad.clickOnSelectOrganizations();        
+			shipViaLoad.clickOnSelectOrganizations();
 			shipViaLoad.clickOnSearchCriteriaOk();
 			shipViaLoad.clickOncmdOk();
-			
+
 //		} else if (loadShipment.equals("Carriers")) {
-//			
+//
 //			shipViaLoad.clickOnCarriersLoadAccount();  // TO load Carriers
 //			shipViaLoad.clickOnSelectCarriers();
 //		//	shipViaLoad.clickOnProship1();
-//			shipViaLoad.clickOnSearchCriteriaOk();     // SearchCriteria OK button 
+//			shipViaLoad.clickOnSearchCriteriaOk();     // SearchCriteria OK button
 //			shipViaLoad.clickOnCarrier();
-//			shipViaLoad.clickOncmdOk();                // Carriers OK	
+//			shipViaLoad.clickOncmdOk();                // Carriers OK
 //		}
 
 	}

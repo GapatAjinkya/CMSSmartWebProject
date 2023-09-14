@@ -1,7 +1,6 @@
 package customersnegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -51,7 +50,7 @@ public class CustomersCode {
 	}
 	@Test(priority = 3)
 	public void Testblankcode() throws InterruptedException {
-		CustomerCode("");	
+		CustomerCode("");
 		okclick();
 		captureError();
 	}
@@ -71,7 +70,7 @@ public class CustomersCode {
 		CustomerCode.clear();
 		CustomerCode.sendKeys(CCode);
 	}
-	public void customerdetails() {	
+	public void customerdetails() {
 		WebElement Comp = driver.findElement(By.id("CFtxtName"));
 		wait.until(ExpectedConditions.elementToBeClickable(Comp));
 		Comp.sendKeys("CMS");
@@ -84,13 +83,13 @@ public class CustomersCode {
 		driver.findElement(By.id("CFtxtAddCity")).sendKeys("Toronto");
 		driver.findElement(By.id("CFtxtAddState")).sendKeys("Ontario");
 		driver.findElement(By.id("CFtxtAddZip")).sendKeys("23456");
-		
+
 		String desiredText ="UNITED STATES";
 		WebElement dropdown = driver.findElement(By.id("CFtxtCountry"));
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(desiredText);
 		logger.info(" Customers Address  successful");
-		
+
 		driver.findElement(By.id("CFtxtAddPhone")).sendKeys("8600");
 		driver.findElement(By.id("CFtxtFax")).sendKeys("555");
 		driver.findElement(By.id("CFtxtEmail")).sendKeys("test@gamil.com");
@@ -157,7 +156,7 @@ public class CustomersCode {
 		WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
 		error.click();
 	}
-	
+
 	@BeforeClass
 	public void setup() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();

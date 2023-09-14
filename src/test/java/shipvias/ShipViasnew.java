@@ -88,21 +88,21 @@ public class ShipViasnew {
 		ShipVias.click();
 		logger.info("Click on ShipVias successful");
 		Thread.sleep(8000);
-		
+
 		WebElement ShipViasSearh = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtSearchSVSF")));
 		ShipViasSearh.sendKeys("AbC");
 		logger.info("Search  ShipVias successful");
 		Thread.sleep(5000);
-		
+
 		WebElement ShipViasok = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='SVSFOkClick()']")));
 		ShipViasok.click();
 		logger.info("Click on ShipVias ok  successful");
-		
+
 		Thread.sleep(15000);
-		
+
 		boolean isError = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']")).isDisplayed();
-		 
+
 		 if (isError)
 		 {
 		WebElement text=driver.findElement(By.id("errorMsg"));
@@ -132,7 +132,7 @@ public class ShipViasnew {
 		ca.selectByVisibleText(Carriercode);
 
 		Thread.sleep(5000);
-//To select service 	
+//To select service
 
 		WebElement ShipviaServicet = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cmbServiceSVF")));
 		Select SS = new Select(ShipviaServicet);
@@ -146,7 +146,7 @@ public class ShipViasnew {
 		pay.selectByVisibleText("Shipper");
 		Thread.sleep(5000);
 		logger.info("select Payment  successful");
-//To select bill	
+//To select bill
 		WebElement bill = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cmbBillDutyTaxToSVF")));
 		Select billselect = new Select(bill);
 		billselect.selectByVisibleText("Recipient");
@@ -168,13 +168,13 @@ public class ShipViasnew {
 		Dis.sendKeys(ShipviaDescription);
 		Thread.sleep(5000);
 		logger.info("Send Discription  successful");
-		
+
 //		 boolean SaturdayDelivery = driver.findElement(By.id("BOX2048")).isDisplayed();
 //		 if (SaturdayDelivery)
 //		 {
 //			 WebElement SaturdayDeliveryt= driver.findElement(By.id("BOX2048"));
 //				SaturdayDeliveryt.click();
-//				Thread.sleep(5000);	
+//				Thread.sleep(5000);
 //				logger.info(" Saturday Delivery  successful");
 //		 }
 //		boolean DeclaredInsuredValue = driver.findElement(By.id("BOX8388608")).isDisplayed();
@@ -187,12 +187,12 @@ public class ShipViasnew {
 //			System.out.println("");
 //		}
 
-		
+
 //		driver.findElement(By.xpath("//input[@id='BOX14318']")).click();
-		
+
 		List<WebElement> checkboxes = driver.findElements(By.xpath("//table[@id='xmlTableSVF']//tr"));
 		String desiredText = "Alcohol";
-		
+
 
 		for (WebElement checkbox : checkboxes) {
 		    String checkboxText = checkbox.getText();
@@ -209,7 +209,7 @@ public class ShipViasnew {
 		    }
 		}
 
-		
+
 		Thread.sleep(5000);
 		driver.findElement(By.id("OkClickSVF")).click();
 		logger.info(" Click on ok  successful");

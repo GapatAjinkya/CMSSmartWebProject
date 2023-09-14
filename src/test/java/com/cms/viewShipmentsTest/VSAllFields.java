@@ -2,9 +2,11 @@ package com.cms.viewShipmentsTest;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import com.cms.Base.BaseClass;
 import com.cms.pages.Login;
 import com.cms.viewshipment.ShipViaLoad;
@@ -31,14 +33,14 @@ public class VSAllFields extends BaseClass {
 		shipViaLoad.clickOnTransaction();
 		shipViaLoad.clickOnViewShipment();
 		String SearchShipment = prop.getProperty("Search");
-		
+
 		if (SearchShipment.equals("Shipment Id")) {
 			shipViaLoad.EnterOnShipmentIdFrom();
 			shipViaLoad.clickOnSearchCriteriaOk();
 			shipViaLoad.clickOnSelectShipment();
 			shipViaLoad.clickOncmdOk();
 		}else if (SearchShipment.equals("Package Id")) {
-			
+
 			shipViaLoad.EnterOnPackageIdFrom();
 			shipViaLoad.clickOnSearchCriteriaOk();
 			shipViaLoad.clickOnSelectShipment();
@@ -54,5 +56,5 @@ public class VSAllFields extends BaseClass {
 			shipViaLoad.clickOnSelectShipment();
 			shipViaLoad.clickOncmdOk();
 		}
-	}	
+	}
 }

@@ -1,7 +1,6 @@
 package thirdpartyaccounts;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,7 +22,7 @@ public class TPACityStateZip {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("ThirdPartyAccountadd");
-	
+
 	@Test(priority = 0)
 	public void Testcity() throws InterruptedException {
 		openTPA();
@@ -78,9 +77,9 @@ public class TPACityStateZip {
 		ZipAdd.clear();
 		ZipAdd.sendKeys(zip);
 	}
-		
+
 public void openTPA() throws InterruptedException {
-		
+
 		WebElement Configuration = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_4")));
 		Configuration.click();
 		Thread.sleep(5000);
@@ -89,11 +88,11 @@ public void openTPA() throws InterruptedException {
 		SupportTables.click();
 		logger.info(" SupportTables Windo Open  successful");
 		Thread.sleep(5000);
-		
+
 		WebElement tpba = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='menu_item_459']")));
 		tpba.click();
 		Thread.sleep(5000);
-		logger.info("Click on Third Party Billing Accounts successful");		
+		logger.info("Click on Third Party Billing Accounts successful");
 	}
 public void SearchTest(String code) throws InterruptedException {
 	Thread.sleep(3000);
@@ -112,9 +111,9 @@ public void add() throws InterruptedException {
 		String customercode = "AccountTest1";
 		String Customername = "Test Account";
 		String Accountnumber="12141315";
-		String address="903 b2 san francisco chhava";                                                                                        
+		String address="903 b2 san francisco chhava";
 		String desiredText ="UNITED STATES";
-		
+
 		Thread.sleep(3000);
 		WebElement addcode=wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtXRef")));
 		addcode.sendKeys(customercode);
@@ -133,15 +132,15 @@ public void add() throws InterruptedException {
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(desiredText);
 		logger.info(" Country  successful");
-	
+
 		String ContactName="jon";  //TPtxtContact
 		String EmailAddress="cms@gmail.com";//TPtxtEmail
 		String Phone="1234567890";//TPtxtAddPhone
 		String fax="1225588";//TPtxtFax
-		
+
 		WebElement addcn=wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtContact")));
 		addcn.sendKeys(ContactName);
-		logger.info("add Contact Name successful ");	
+		logger.info("add Contact Name successful ");
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtContact"))).sendKeys(ContactName);
         logger.info("add Contact Name successful ");
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtEmail"))).sendKeys(EmailAddress);
@@ -150,7 +149,7 @@ public void add() throws InterruptedException {
         logger.info("add Phone successful ");
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtFax"))).sendKeys(fax);
         logger.info("add Phone successful ");
- 
+
 	}public void okTPA() throws InterruptedException {
 		Thread.sleep(5000);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='OkClickThirdPartiesForm()']"))).click();
@@ -203,7 +202,7 @@ public void add() throws InterruptedException {
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
 		password.sendKeys("Nilesh@123");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
-		WebElement ok = wait	
+		WebElement ok = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
 		ok.click();
 		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";

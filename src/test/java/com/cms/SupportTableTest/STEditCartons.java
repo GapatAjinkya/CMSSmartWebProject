@@ -12,7 +12,7 @@ import com.cms.configurations.SupportTables;
 import com.cms.pages.Login;
 
 public class STEditCartons extends BaseClass {
-	
+
 	public static WebDriver driver;
 	public static Login login;
 	public static SupportTables st;
@@ -36,7 +36,7 @@ public class STEditCartons extends BaseClass {
 	  //  st.ClickonCartonEdit();
 	   st.Descriptionedit();
 	 //   st.ClickonCartonOK();
-	    
+
 }
-	
+
 }

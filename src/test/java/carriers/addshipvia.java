@@ -1,7 +1,6 @@
 package carriers;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,7 +19,7 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class addshipvia {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("addshipvia");
@@ -69,7 +68,7 @@ public class addshipvia {
 
 	@Test
 	public void newcarriers() throws InterruptedException {
-		
+
 		WebElement Configuration = driver.findElement(By.id("menu_item_4"));
 		wait.until(ExpectedConditions.visibilityOf(Configuration));
 		wait.until(ExpectedConditions.elementToBeClickable(Configuration));
@@ -90,14 +89,14 @@ public class addshipvia {
 		carriersaccount.click();
 		Thread.sleep(5000);
 		logger.info("Click on carriers account successful");
-		
+
 		WebElement ok = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='CASFOkClick()']")));
 		ok.click();
-		
+
 		Thread.sleep(5000);
-		logger.info(" ok click successful");		
-		
+		logger.info(" ok click successful");
+
 
 		WebElement Shipvias = driver.findElement(By.id("CAShipViaButton"));
 		wait.until(ExpectedConditions.visibilityOf(Shipvias));
@@ -129,7 +128,7 @@ public class addshipvia {
 		ca.selectByVisibleText(carriercode);
 
 		Thread.sleep(5000);
-//To select service 				
+//To select service
 		WebElement ShipviaService = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cmbServiceSVF")));
 		Select SS = new Select(ShipviaService);
 		SS.selectByVisibleText("GND -- Ground");
@@ -142,7 +141,7 @@ public class addshipvia {
 		pay.selectByVisibleText("Shipper");
 		Thread.sleep(5000);
 		logger.info("select Payment  successful");
-//To select bill	
+//To select bill
 		WebElement bill = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cmbBillDutyTaxToSVF")));
 		Select billselect = new Select(bill);
 		billselect.selectByVisibleText("Recipient");

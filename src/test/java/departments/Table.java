@@ -2,12 +2,10 @@ package departments;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,8 +16,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import com.fasterxml.jackson.annotation.JsonSetter.Value;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -70,35 +66,35 @@ public class Table {
 
 	@Test
 	public void newDepartments() throws InterruptedException {
-		
+
 		WebElement Configuration = driver.findElement(By.id("menu_item_4"));
 		wait.until(ExpectedConditions.visibilityOf(Configuration));
 		wait.until(ExpectedConditions.elementToBeClickable(Configuration));
 		Configuration.click();
 		Thread.sleep(5000);
 		logger.info("Click on Configuration successful");
-		
+
 		WebElement SupportTables = driver.findElement(By.cssSelector("#menu_item_45"));
 		wait.until(ExpectedConditions.visibilityOf(SupportTables));
 		wait.until(ExpectedConditions.elementToBeClickable(SupportTables));
 		SupportTables.click();
 		logger.info(" SupportTables Windo Open  successful");
-		
+
 		WebElement Departments = driver.findElement(By.id("menu_item_452"));
 		wait.until(ExpectedConditions.visibilityOf(Departments));
 		wait.until(ExpectedConditions.elementToBeClickable(Departments));
 		Departments.click();
 		Thread.sleep(5000);
 		logger.info("Click on Departments successful");
-		
+
 		WebElement okclick = driver.findElement(By.xpath("//button[@onclick='onDepatmentSearchPrivateOkClick()']"));
 		wait.until(ExpectedConditions.visibilityOf(okclick));
 		wait.until(ExpectedConditions.elementToBeClickable(okclick));
 		okclick.click();
 		logger.info("Click on ok successful");
         Thread.sleep(3000);
-        
- /*       
+
+ /*
      // Init table element (in this case by tag name)
         WebElement tableElement = driver.findElement(By.tagName("table"));
 
@@ -124,28 +120,28 @@ public class Table {
         // Perform actions on the desired row if found
         if (desiredRow != null) {
             // Access the columns or perform actions on the row
-        	
+
         	 List<WebElement> columns = desiredRow.findElements(By.tagName("td"));
              String position = columns.get(1).getText(); // Assuming position is in the second column (index 1)
              System.out.println("Employee Position: " + position);
-             
-      
+
+
         } else {
             System.out.println("Desired row not found");
-        }   
-        
- */       
+        }
+
+ */
       //table[@id='tblCSTDepartmentList']
-        //Columns 
+        //Columns
       //table[@id='tblCSTDepartmentList']//th
         //rows
         //table[@id='tblCSTDepartmentList']//tr
         //alldata
         //table[@id='tblCSTDepartmentList']//td
-        
+
         //Columns 1,2
-        //table[@id='tblCSTDepartmentList']//tr//td[1]    
-       
+        //table[@id='tblCSTDepartmentList']//tr//td[1]
+
          List<WebElement> allHeaders = driver.findElements(By.xpath("//table[@id='tblCSTDepartmentList']//th"));
 
          System.out.println(allHeaders.size());
@@ -166,9 +162,9 @@ public class Table {
    List<WebElement> rowsnum= driver.findElements(By.xpath("//table[@id='tblCSTDepartmentList']//tr"));
    System.out.println("Number of rows -"+rowsnum.size());
   // Assert.assertEquals(rowsnum.size(),10 , "column count is not the same");
-        
-   List<WebElement> alldata= driver.findElements(By.xpath("//table[@id='tblCSTDepartmentList']//td"));    
-        
+
+   List<WebElement> alldata= driver.findElements(By.xpath("//table[@id='tblCSTDepartmentList']//td"));
+
    boolean dataStatus=false;
    for (WebElement ele : alldata) {
        String value = ele.getText();
@@ -179,9 +175,9 @@ public class Table {
            break;
        }
    }
-   
+
    Assert.assertTrue(dataStatus,"Record not found ");
-   
+
    if (dataStatus) {
 	    WebElement department1Element = driver.findElement(By.xpath("//table[@id='tblCSTDepartmentList']//td[contains(text(), 'Department1')]"));
 	    department1Element.click();
@@ -194,9 +190,9 @@ public class Table {
    List<WebElement> Discolumns= driver.findElements(By.xpath("//table[@id='tblCSTDepartmentList']//tr"));
    System.out.println("Number of rows"+Discolumns.size());
   // Assert.assertEquals(rowsnum.size(),13 , "column count is not the same");
-        
-      
-        
+
+
+
    boolean DiscolumnsStatus=false;
    for (WebElement ele : Discolumns) {
        String value = ele.getText();
@@ -208,11 +204,11 @@ public class Table {
        }
    }
    Assert.assertTrue(DiscolumnsStatus," Dis Record not found ");
-   
-        //this for to identify the element 
+
+        //this for to identify the element
         driver.findElement(By.xpath("")).click();
-        
-        for(int i=0;i<allHeaders.size();i++) 
+
+        for(int i=0;i<allHeaders.size();i++)
         {
         	WebElement element=allHeaders.get(i);
         	String value=element.getText();

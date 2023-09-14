@@ -1,7 +1,6 @@
 package bestwayvias;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,7 +11,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -38,7 +36,7 @@ public class BestwayEdit {
 		SearchBestWayCode("TestAG1");
 		editbutton();
 		newcode("TestBestway");
-		Okbutton();	
+		Okbutton();
 	}
 	public void editbutton() throws InterruptedException {
 		Thread.sleep(5000);
@@ -46,14 +44,14 @@ public class BestwayEdit {
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='BestWayEdit']")));
 		editbutton.click();
 	}
-	private void newcode(String newcode) throws InterruptedException {	
+	private void newcode(String newcode) throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement bestWayVias = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='txtCodeBWF']")));
 		bestWayVias.clear();
 		bestWayVias.sendKeys(newcode);
 	}
-	
+
 	public void editBestway(String Modify) throws InterruptedException {
 		Thread.sleep(5000);
 		if (Modify.equalsIgnoreCase("DeselectAll")) {
@@ -64,12 +62,12 @@ public class BestwayEdit {
 		else if(Modify.equalsIgnoreCase("SelectAll")){
 			WebElement SelectAll = wait
 					.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='SelectAllBWF']")));
-			SelectAll.click();	
+			SelectAll.click();
 		}
 	}
 
 	public void Okbutton() throws InterruptedException {
-		
+
 		WebElement okbutton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='OkClickBWF']")));
 		okbutton.click();
 		Thread.sleep(3000);
@@ -87,13 +85,13 @@ public class BestwayEdit {
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='BWSFOkClick()']")));
 		ok.click();
 		Thread.sleep(5000);
-		
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(
 				By.xpath("//table[@id='BestWayList']//td[1][contains(text(), '" + bestwaycode + "')]"))).click();
-	 
+
 		}
-  
-	public void OpenBestWay() throws InterruptedException 
+
+	public void OpenBestWay() throws InterruptedException
 	{
 		WebElement Configuration =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_4")));
 		wait.until(ExpectedConditions.elementToBeClickable(Configuration));

@@ -1,6 +1,6 @@
 package manifestexplorernegative;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ForcePost {
@@ -32,12 +33,12 @@ public class ForcePost {
 		OpenManifestExplorer();
 		Carriers("United Parcel Service");
 		post();
-		
+
 	}
 	public void opencheck() throws InterruptedException {
 		WebElement  alldata = driver.findElement(By.xpath("//table[@id='MEtblManifestDetailsList']//tr[1]//td[5]"));
 		  String column5Text = alldata.getText();
-		  
+
 		 if( column5Text.equals("Open")) {
 			 driver.findElement(By.id("MEForcePost")).click();
 				Thread.sleep(3000);
@@ -48,11 +49,11 @@ public class ForcePost {
 			 WebElement errorMessage = wait
 					 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@id='errorMsg']")));
 			 String actualErrorMessage = errorMessage.getText();
-			 
+
 			 if (actualErrorMessage.equals("Field value cannot be blank. Please try again.")) {
-				 System.out.println("Handling first error message."+actualErrorMessage); 
+				 System.out.println("Handling first error message."+actualErrorMessage);
 				 Assert.assertEquals(actualErrorMessage, "Field value cannot be blank. Please try again.", "Incorrect error message");
-				
+
 				 WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
 				 error.click();
 				 driver.findElement(By.id("btnMFPCancel")).click();

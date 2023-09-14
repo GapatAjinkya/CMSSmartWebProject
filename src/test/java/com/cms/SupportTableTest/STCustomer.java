@@ -2,12 +2,12 @@ package com.cms.SupportTableTest;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.cms.Base.BaseClass;
-
 import com.cms.configurations.SupportTables;
 import com.cms.pages.Login;
 
@@ -20,7 +20,7 @@ public class STCustomer extends BaseClass {
 		driver = setUp();
 		System.out.println("******* starting Test" + m.getName() + " *******");
 	}
-	
+
 	@Test
 	public void STCreateCustomer() throws IOException, Exception {
 		login = new Login(driver);
@@ -30,7 +30,7 @@ public class STCustomer extends BaseClass {
 		st.clickonSupportTables();
 		st.ClickonCustomers();
         st.ClickonCustomersCode();
-	//	st.EnterCustomersSearch();          // To search customer from properties file 
+	//	st.EnterCustomersSearch();          // To search customer from properties file
 	    st.CustomerOkClick();
 	    st.ClickonAddCustomer();
 	    st.EnterCustomerCode();
@@ -43,6 +43,6 @@ public class STCustomer extends BaseClass {
 	    st.EnterFax();
 	    st.EnterEmail();
 	    st.ClickCustomerFormOK();
-	    
+
 }
 }

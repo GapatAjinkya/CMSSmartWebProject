@@ -2,7 +2,6 @@ package archivedmanifesttest;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -22,7 +21,7 @@ public class ViewAM {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	// Logger logger = LogManager.getLogger("ViewAM");
-	
+
 	@Test(priority = 0)
 	public void testcase() throws InterruptedException {
 		openAM();
@@ -35,10 +34,10 @@ public class ViewAM {
 	}
 	@Test
 	public void testcasetwo() throws InterruptedException {
-	
-		
+
+
 	}
-	
+
 	public void Previousdays() {
 		WebElement AMEPrevious = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("AMEPrevious")));
 		wait.until(ExpectedConditions.elementToBeClickable(AMEPrevious)).click();
@@ -54,7 +53,7 @@ public class ViewAM {
 		List<WebElement> alldata = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@id='tblArchivedManifestList']//tr//td[1]")));
 		boolean dataStatus = false;
 		for (WebElement ele : alldata) {
-			String value = ele.getText();		
+			String value = ele.getText();
 			if (value.equals(shipcode))
 			{
 				System.out.println(value);
@@ -66,25 +65,25 @@ public class ViewAM {
 		if (dataStatus) {
 			//Thread.sleep(5000);
 			WebElement code =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='tblArchivedManifestList']//td[contains(text(), '" + shipcode + "')]")));
-			code.click();	
-			
+			code.click();
+
 		} else {
 		    System.out.println("Code not found");
-		}	
-		//logger.info("Customer Code Found Selected ");		
-	}	
+		}
+		//logger.info("Customer Code Found Selected ");
+	}
   public void viewAm() throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement View = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='AMEView']")));
-		View.click();	
+		View.click();
 	}
   public void shipmentid(String shipid) throws InterruptedException {
-	 
+
 	  Thread.sleep(5000);
 	  List<WebElement> alldata = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@id='tblShipmentList']//tr//td[1]")));
 		boolean dataStatus = false;
 		for (WebElement ele : alldata) {
-			String value = ele.getText();		
+			String value = ele.getText();
 			if (value.equals(shipid))
 			{
 				System.out.println(value);
@@ -96,15 +95,15 @@ public class ViewAM {
 		if (dataStatus) {
 			//Thread.sleep(5000);
 			WebElement id =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='tblShipmentList']//td[contains(text(), '" + shipid + "')]")));
-			id.click();	
-			
+			id.click();
+
 		} else {
 		    System.out.println("Shipment id not found");
-		}  
+		}
 		WebElement okship =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='cmdOk']")));
 		  okship.click();
   }
-  
+
 	@BeforeClass
 	public void setup() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();

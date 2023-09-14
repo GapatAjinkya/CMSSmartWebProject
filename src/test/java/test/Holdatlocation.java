@@ -17,11 +17,11 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Holdatlocation {
-		
+
 		public static WebDriver driver;
 		public static WebDriverWait wait;
 		Logger logger = LogManager.getLogger("SpecialServicess");
-		
+
 		@Test
 		public void setup() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();
@@ -29,12 +29,12 @@ public class Holdatlocation {
 		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
 		options.addArguments("--remote-allow-origins=*");
 		driver = new ChromeDriver(options);
-		
+
 		 wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-		
+
 		 wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete';"));
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
@@ -54,15 +54,15 @@ public class Holdatlocation {
 		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
 		System.out.println("Title Matched");
 		Thread.sleep(5000);
-		
+
 		}
-		
+
 		@Test
 		public void shipvia() throws InterruptedException {
-			
-			
+
+
 		  String shipviacode="FEXTest4";
-			
+
 			logger.info(" Opening Process Shipment Menu");
 			Thread.sleep(5000);
 			WebElement Transaction= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("menu_item_2"))); 	// To click on Transaction
@@ -74,102 +74,102 @@ public class Holdatlocation {
 			wait.until(ExpectedConditions.elementToBeClickable(Process));
 			Process.click();
 			logger.info(" Click on Process Shipment Menu Successful");
-	
-	
+
+
 			// Select the Shipvia
-			
+
 						Thread.sleep(10000);
-						WebElement shipviaSearch = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(@onclick,'btnSearch_PS()')]"))); // Search the																							
+						WebElement shipviaSearch = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(@onclick,'btnSearch_PS()')]"))); // Search the
 						wait.until(ExpectedConditions.elementToBeClickable(shipviaSearch));
 						shipviaSearch.click();
 						logger.info("Clicked on shipviaSearch");
-						
+
 						Thread.sleep(10000);
 
 						// Search
 						wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtSCSearchSS"))).sendKeys(shipviacode);
 						logger.info("shipviaSearch Enter Value Successful");
 						Thread.sleep(5000);
-						
+
 						WebElement ok=driver.findElement(By.id("btnSearchOk_PS"));
 						wait.until(ExpectedConditions.elementToBeClickable(ok));
 						ok.click();
 						logger.info("Click on Ship Via ok search  Successful");
-					
-						Thread.sleep(5000);		
-			
-			//******************************************************* 			 
-  			
+
+						Thread.sleep(5000);
+
+			//*******************************************************
+
 			 Thread.sleep(5000);
-			driver.findElement(By.xpath("//button[@onclick='AddressesClick()']")).click();//Customers 
+			driver.findElement(By.xpath("//button[@onclick='AddressesClick()']")).click();//Customers
 			 Thread.sleep(5000);
 			driver.findElement(By.id("txtSCSearch")).sendKeys("CMS"); // searchcustomer
 			 Thread.sleep(5000);
 			WebElement Lista = driver.findElement(By.id("selCutomerList"));
-			Select CustomerLista = new Select(Lista);	
-			
+			Select CustomerLista = new Select(Lista);
+
 			CustomerLista.selectByValue("1"); // To select Global
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='onCustomerSearchOkClick()']"))).click();
-			
+
 			Thread.sleep(5000);
 			logger.info("Customer Searched");
 			 Thread.sleep(5000);
 				driver.findElement(By.xpath("//table[@id='tblCustomerList']//td[1][contains(text(), 'CMS')]")).click();
-		
-			driver.findElement(By.id("addressformOk")).click();          // Click on OK 
+
+			driver.findElement(By.id("addressformOk")).click();          // Click on OK
 			Thread.sleep(5000);
 			logger.info("Customer Added");
-			
+
 //------------------------------------------
 			 Thread.sleep(5000);
-	 			driver.findElement(By.id("btnSpecialServices")).click(); 
-	 		
+	 			driver.findElement(By.id("btnSpecialServices")).click();
+
 	 			 WebElement HoldAtLocation=wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX2")));
 	 			HoldAtLocation.click();
-	 			
-	 	
-	 			
+
+
+
 	 			driver.findElement(By.xpath("//input[@onclick='ShowFedExWSHoldAtLocationAddress();']")).click(); //address
 	 			Thread.sleep(5000);
 	 			driver.findElement(By.xpath("//button[@id='btnfedexholdAtLocationAddressDataModalOk']")).click(); //modify
 	 			 Thread.sleep(3000);
 	 			driver.findElement(By.id("txtCompanyNameHoldFedex")).sendKeys("Test");
-	 			
+
 	 			driver.findElement(By.id("txtContactNameHoldFedex")).sendKeys("Test");
 	 			driver.findElement(By.id("txtAddress1HoldFedex")).sendKeys("Testaddress");
 	 			driver.findElement(By.id("txtCityHoldFedex")).sendKeys("lorton");
 	 			driver.findElement(By.id("txtStateHoldFedex")).sendKeys("va");
 	 			driver.findElement(By.id("txtZipHoldFedex")).sendKeys("22079");
-	 			
+
 	 			WebElement country=driver.findElement(By.id("txtCountryFedexHold"));
 	 			Select countrys=new Select(country);
 	 			countrys.selectByVisibleText("UNITED STATES");
-	 			
+
 	 			driver.findElement(By.id("btnfedexholdAtLocationAddressDataModalOk")).click();
 	 			Thread.sleep(3000);
-	 			
+
 	 			 Thread.sleep(5000);
 	 			driver.findElement(By.xpath("//*[@id='btnOk']")).click();
 	 			 Thread.sleep(5000);
-	 			 
-	 			 
-	 			 
+
+
+
 			driver.findElement(By.xpath("//input[@id='txtManual']")).sendKeys("1.00");
 			logger.info("Manual Weight is fill ");
-			
+
 			driver.findElement(By.id("cmdRate")).click();
-		
+
 			logger.info("Click on Rate ");
 			Thread.sleep(5000);
 			WebElement error5 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-default'][1]")));
 			boolean error6 = error5.isDisplayed();
 			 if (error6)
-			 {	
+			 {
 				error5.click();
 			driver.findElement(By.id("btnShipClick")).click(); //Click on ship
           }
-	
-	
+
+
 
 }
 }

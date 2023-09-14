@@ -1,7 +1,6 @@
 package products;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,7 +22,7 @@ public class NextPrevious {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("EditProducts");
-		
+
 	@BeforeMethod
 	public void setup() throws InterruptedException {
 
@@ -65,20 +64,20 @@ public class NextPrevious {
 	}
 	@Test(priority = 1)
 	public void CheckNextPrevious() throws InterruptedException {
-		
+
 		WebElement Configuration = driver.findElement(By.id("menu_item_4"));
 		wait.until(ExpectedConditions.visibilityOf(Configuration));
 		wait.until(ExpectedConditions.elementToBeClickable(Configuration));
 		Configuration.click();
 		Thread.sleep(5000);
 		logger.info("Clickon Configuration successful");
-		
+
 		WebElement SupportTables = driver.findElement(By.cssSelector("#menu_item_45"));
 		wait.until(ExpectedConditions.visibilityOf(SupportTables));
 		wait.until(ExpectedConditions.elementToBeClickable(SupportTables));
 		SupportTables.click();
 		logger.info(" SupportTables Windo Open  successful");
-		
+
 		WebElement products=driver.findElement(By.xpath("//a[@id='menu_item_455']"));
 		wait.until(ExpectedConditions.visibilityOf(products));
 		wait.until(ExpectedConditions.elementToBeClickable(products));
@@ -89,13 +88,13 @@ public class NextPrevious {
 		wait.until(ExpectedConditions.visibilityOf(okclick));
 		wait.until(ExpectedConditions.elementToBeClickable(okclick));
 		okclick.click();
-		
+
 		String check = "Previous"; // to specify the next or previous value
 		WebElement buttonNext = driver.findElement(By.xpath("//button[@id='CSTProdNext']"));
 		WebElement buttonPrevious = driver.findElement(By.xpath("//button[@id='CSTProdPrevious']"));
-		
+
 		assert buttonNext.isEnabled() && buttonPrevious.isEnabled() : "Initial state is incorrect.";
-		
+
 		if (check.equals("Next")) {
 			boolean nextEnabled = buttonNext.isEnabled();
 			if (nextEnabled) {
@@ -119,7 +118,7 @@ public class NextPrevious {
 
 		} else {
 			logger.info("Test Case Fail - Previous button is not enabled");
-		}	
-	
+		}
+
 }
 }

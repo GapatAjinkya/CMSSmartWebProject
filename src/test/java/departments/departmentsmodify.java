@@ -1,10 +1,7 @@
 package departments;
 
-import org.testng.annotations.Test;
-
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,9 +14,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -100,7 +96,7 @@ public class departmentsmodify {
 
 		driver.findElement(By.xpath("//button[@onclick='onDepatmentSearchPrivateOkClick()']")).click();// ok buttton
 		Thread.sleep(3000);
-	
+
 		WebElement selectproduct = wait.until(ExpectedConditions.presenceOfElementLocated(
 				By.xpath("//tr[@data-index='0']")));
 		wait.until(ExpectedConditions.visibilityOf(selectproduct));

@@ -2,7 +2,6 @@ package bestwayvias;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,7 +13,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -38,10 +36,10 @@ public class Bestwayviarate {
 	}
 
 	public void ShipViasthatqualifiedforrating() {
-		
+
 	List<WebElement> Svqfr = driver.findElements(By.xpath("//table[@id='tblBestWayRatesList']//tr//td[1]"));
-	
-	for (WebElement ele : Svqfr) 
+
+	for (WebElement ele : Svqfr)
 	{
 		String value = ele.getText();
 		logger.info("ShipVias that qualified for rating:- "+value);
@@ -51,13 +49,13 @@ public class Bestwayviarate {
 	WebElement ok = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='btnOk_BestWayRatesForm']")));
 	ok.click();
 	}
-	
+
 	public void ShipButton() {
-		
+
 		WebElement SB = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='btnShipClick']")));
 		SB.click();
 	}
-	
+
 	public void shipment() throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement Transaction = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("menu_item_2")));
@@ -66,7 +64,7 @@ public class Bestwayviarate {
 		WebElement ProcessS = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("menu_item_21")));
 		ProcessS.click();
 		Thread.sleep(15000);
-		
+
 		WebElement shipviaSearch = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@onclick='btnSearch_PS()']")));
 		shipviaSearch.click();

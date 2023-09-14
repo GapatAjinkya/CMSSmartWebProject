@@ -1,7 +1,6 @@
 package cartonsnegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,7 +29,7 @@ public class CartonDescription {
 		Createcarriers();
 		CartonSearch("");
 		ClickonCartonAdd();
-		Descriptioncheck("asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?51");	
+		Descriptioncheck("asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?51");
 		Dimensions();
 		CartonOk();
 		captureError();
@@ -107,12 +106,12 @@ public class CartonDescription {
 		EnterDiscription.sendKeys(Description);
 	}
 	public void Dimensions() throws InterruptedException {
-		
+
 		Thread.sleep(5000);
 		WebElement Length = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("CF_txtLength")));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].value = '10';", Length);
-		
+
 		WebElement Width = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("CF_txtWidth")));
 		JavascriptExecutor jsWidth = (JavascriptExecutor) driver;
 		jsWidth.executeScript("arguments[0].value = '10';", Width);
@@ -160,11 +159,11 @@ public class CartonDescription {
 		System.out.println("Title Matched");
 		Thread.sleep(10000);
 	}
-	
+
 	  @AfterClass
 	  public void teardown() {
 	   driver.quit();
-	
+
 	  }
 
 }

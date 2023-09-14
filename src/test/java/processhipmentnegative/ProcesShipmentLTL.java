@@ -1,7 +1,6 @@
 package processhipmentnegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,7 +22,7 @@ public class ProcesShipmentLTL {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("ProcesShipment");
-	
+
 	@Test(priority = 1)
 	public void TestShipMent() throws InterruptedException {
 		OpenPs();
@@ -35,7 +34,7 @@ public class ProcesShipmentLTL {
 		Ship();
 		captureError();
 	}
-	
+
 	public void captureError() throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement errorMessage = wait
@@ -101,14 +100,14 @@ public class ProcesShipmentLTL {
 		WebElement List = driver.findElement(By.id("selCutomerList"));
 		Select CustomerList = new Select(List);
 		CustomerList.selectByValue("1"); // To select Global
-		
+
 		driver.findElement(By.xpath("//button[@onclick='onCustomerSearchOkClick()']")).click(); // click on ok
 		Thread.sleep(5000);
 		logger.info("Customer Searched");
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//td[contains(text(),'"+Customer+"')]")).click();
 		WebElement Customerok= driver.findElement(By.id("addressformOk"));
-		Customerok.click();          // Click on OK 
+		Customerok.click();          // Click on OK
 		Thread.sleep(5000);
 		logger.info("Customer Added");
 	}

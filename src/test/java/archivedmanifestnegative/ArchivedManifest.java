@@ -1,7 +1,6 @@
 package archivedmanifestnegative;
-
-import java.time.Duration;
 import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -21,7 +20,7 @@ public class ArchivedManifest {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("ArchivedManifest");
-	
+
 	@Test(priority = 0)
 	public void TestAMDateFrom() throws InterruptedException {
 		OpenManifestExplorer();
@@ -29,7 +28,6 @@ public class ArchivedManifest {
 		selectDateFu("January 2026", "25");
 		captureError();
 		CancelClick();
-		
 	}
 	@Test(priority = 1)
 	public void TestAMDateTO() throws InterruptedException {
@@ -60,7 +58,7 @@ public class ArchivedManifest {
 		Thread.sleep(5000);
 		WebElement errorMessage = driver.findElement(By.id("errorMsg"));
 		Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
-		String actualErrorMessage = errorMessage.getText();	
+		String actualErrorMessage = errorMessage.getText();
 		if (actualErrorMessage
 				.equals("DateFrom cannot be greater than DateTo. Please try again.")) {
 			System.out.println("Handling error message." + actualErrorMessage);
@@ -103,12 +101,12 @@ public class ArchivedManifest {
 		}
 		Thread.sleep(3000);
 		driver.findElement(By.id("AMDFOkClick")).click();
-	}	
-	
+	}
+
 	public void selectDate(String targetMonth, String targetDay) throws InterruptedException {
 		driver.findElement(By.id("AMEDateSearch")).click();
 		Thread.sleep(5000);
-		
+
 		WebElement dateFrom=driver.findElement(By.id("IWLDatePickerFromAME"));
 		dateFrom.click();
 		WebElement month = driver.findElement(By.xpath("//th[@class='datepicker-switch']"));
@@ -142,12 +140,17 @@ public class ArchivedManifest {
 		driver.findElement(By.id("menu_item_25")).click(); // To click on VS
 		Thread.sleep(3000);
 	}
-	
+
 	@BeforeClass
 	public void setup() throws InterruptedException {
-		ChromeOptions options = new ChromeOptions();
-	    WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver(options);
+
+	    System.setProperty("webdriver.chrome.driver", "E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
+	     ChromeOptions options = new ChromeOptions();
+	   //  options.setBinary("E:\\ChromeTesting\\chrome-win64\\chrome.exe");
+	   // options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
+	  // options.addArguments("--remote-allow-origins=*");
+
+	    driver = new ChromeDriver(options);
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://localhost:8090/SmartWeb/#");

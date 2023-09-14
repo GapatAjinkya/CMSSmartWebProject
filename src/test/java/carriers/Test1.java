@@ -34,7 +34,7 @@ public class Test1 {
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-	
+
 
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
@@ -55,20 +55,20 @@ public class Test1 {
 		logger.info("Title Matched");
 		Thread.sleep(5000);
 	}
-	
+
 	@Test
 	public void shipvia() throws InterruptedException {
-		
+
 		logger.info(" Opening Process Shipment Menu");
 		Thread.sleep(5000);
-		
+
 		WebElement Transaction = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("menu_item_2")));																										// Transaction
 		wait.until(ExpectedConditions.elementToBeClickable(Transaction));
 		Transaction.click();
 		logger.info(" Click on Transaction Menu Successful");
 		Thread.sleep(10000);
 		WebElement Process = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("menu_item_21")));// To click
-																											
+
 		wait.until(ExpectedConditions.elementToBeClickable(Process));
 		Process.click();
 		logger.info(" Click on Process Shipment Menu Successful");
@@ -88,7 +88,7 @@ public class Test1 {
 	   wait.until(ExpectedConditions.visibilityOf(shipviaSearch));
 	    sendcode.sendKeys(shipviacode);
 		logger.info("shipviaSearch Enter Value Successful");
-		
+
 
 		WebElement ok = driver.findElement(By.id("btnSearchOk_PS"));
 		wait.until(ExpectedConditions.visibilityOf(ok));
@@ -119,13 +119,13 @@ public class Test1 {
 		WebElement Customerok = driver.findElement(By.id("addressformOk"));
 		Customerok.click(); // Click on OK
 		Thread.sleep(10000);
-		logger.info("Customer Added");	
-		
+		logger.info("Customer Added");
+
 		WebElement buttonSpecialServices = driver.findElement(By.id("btnSpecialServices"));
 		wait.until(ExpectedConditions.visibilityOf(buttonSpecialServices));
 		wait.until(ExpectedConditions.elementToBeClickable(buttonSpecialServices));
 		buttonSpecialServices.click();
-	
+
 		Thread.sleep(10000);
 		 List<WebElement> checkboxes = driver.findElements(By.xpath("//input[@type='checkbox' and contains(@id,'BOX')]"));
 
@@ -133,12 +133,12 @@ public class Test1 {
 		 for(WebElement check:checkboxes) {
 			String selectcheck=check.getAttribute("id");
 			System.out.println(selectcheck);
-			
+
 			if(selectcheck.equals("BOX2") ||selectcheck.equals("BOX6"))
 			{
 				check.click();
 			}
-			
+
 			WebElement okclick = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='btnOk']")));
 			okclick.click();
@@ -162,7 +162,7 @@ public class Test1 {
 			driver.findElement(By.id("addressformOk")).click(); // Click on OK
 			Thread.sleep(5000);
 			logger.info("Customer Added");
-			
+
 			driver.findElement(By.xpath("//input[@id='txtManual']")).sendKeys("1.00");
 			logger.info("Manual Weight is fill ");
 
@@ -172,8 +172,8 @@ public class Test1 {
 			Thread.sleep(5000);
 
 			driver.findElement(By.id("btnShipClick")).click(); // Click on ship
-					
+
 		 }
 		 }
 		 }
-	
+

@@ -1,7 +1,6 @@
 package carriersNegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -50,7 +49,7 @@ public class TestCaseForDescription {
 		Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
 		String expectedErrorMessage = "DESCRIPTION Field cannot be blank. Please try again.";
 		String actualErrorMessage = errorMessage.getText();
-		
+
 		Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Incorrect error message");
 		WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
 		error.click();
@@ -90,7 +89,7 @@ public class TestCaseForDescription {
 		WebElement Des = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("CAF_txtDescription")));
 		Des.sendKeys(description);
 	}
-	
+
 	public void CarrierAccount() throws InterruptedException {
 		WebElement Configuration = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_4")));
 		wait.until(ExpectedConditions.elementToBeClickable(Configuration));

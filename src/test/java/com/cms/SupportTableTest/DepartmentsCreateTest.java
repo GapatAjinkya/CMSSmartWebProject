@@ -12,7 +12,7 @@ import com.cms.configurations.SupportTableDepartments;
 import com.cms.pages.Login;
 
 public class DepartmentsCreateTest extends BaseClass {
-	
+
 	public static WebDriver driver;
 	public static Login login;
 	public static SupportTableDepartments std;

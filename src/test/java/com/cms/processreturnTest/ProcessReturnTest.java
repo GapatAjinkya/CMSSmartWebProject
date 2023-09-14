@@ -17,12 +17,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ProcessReturnTest {
-	
+
 
 	public static void main(String[] args) throws InterruptedException {
-		
+
 		WebDriver driver;
-		Logger logger = LogManager.getLogger("ProcessReturnTest"); 
+		Logger logger = LogManager.getLogger("ProcessReturnTest");
 		ChromeOptions options = new ChromeOptions();
 		WebDriverManager.chromedriver().setup();
 		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
@@ -30,7 +30,7 @@ public class ProcessReturnTest {
 		logger.info("Browser opened");
 		driver.manage().window().maximize();
 		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-		
+
 		Thread.sleep(10000);
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
@@ -53,17 +53,17 @@ public class ProcessReturnTest {
 		}
 		logger.info("Login successful");
 		Thread.sleep(10000);
-		
-		
+
+
 		Thread.sleep(5000);
 		WebElement Transaction = driver.findElement(By.id("menu_item_2"));// To click on Transaction
 		Transaction.click();
 		logger.info("Transaction menu opned");
-		
-		
+
+
 		WebElement returns =driver.findElement(By.id("menu_item_22"));
 		returns.click();                                                  // To Click on processReturns
-		
+
 		logger.info("processReturns window opned ");
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
@@ -72,7 +72,7 @@ public class ProcessReturnTest {
 		Select returnmethod= new Select (Rmethod);
 		returnmethod.selectByVisibleText("1 Pickup Attempt");
 		logger.info(" Return Method");
-		
+
 		Thread.sleep(5000);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@onclick='btnSearch_PS()']")));
 		WebElement dropdown=driver.findElement(By.xpath("//span[@onclick='btnSearch_PS()']"));
@@ -83,20 +83,20 @@ public class ProcessReturnTest {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[@id='btnSearchOk_PS']")).click();
 		Thread.sleep(5000);
-		
+
 
 //		Select shipvia=new Select(dropdown);
 //		shipvia.selectByValue("305");                      // to select the Shipvia by value
-		
+
 		WebElement element = driver.findElement(By.id("PRIWLDatePicker"));
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("arguments[0].value ='7/03/2023';", element); // month/date/year
-		
-		
+
+
 //		driver.findElement(By.id("PRIWLDatePicker")).click();
 //		Thread.sleep(3000);
 //		driver.findElement(By.xpath("(//td[@class='day'][contains(.,'28')]")).click();
-		
+
 		Thread.sleep(5000);
 		driver.findElement(By.id("PRbtnCustomerSearch")).click();
 		Thread.sleep(5000);
@@ -104,14 +104,14 @@ public class ProcessReturnTest {
 		customercode.click();
 		WebElement searchcustomer = driver.findElement(By.id("txtSCSearch")); // searchcustomer
 		searchcustomer.sendKeys("AdminVA");
-		
+
 		WebElement List = driver.findElement(By.id("selCutomerList"));
 		Select CustomerList = new Select(List);
 		CustomerList.selectByValue("1"); // To select Global
 		driver.findElement(By.xpath("//button[@onclick='onCustomerSearchOkClick()']")).click(); // click on ok
 		Thread.sleep(10000);
-		
-		driver.findElement(By.xpath("//tr[@data-index=\"0\"]")).click();     // to select customer from list 
+
+		driver.findElement(By.xpath("//tr[@data-index=\"0\"]")).click();     // to select customer from list
 		WebElement Customerok = driver.findElement(By.id("addressformOk"));
 		Customerok.click(); // Click on OK
 		Thread.sleep(5000);

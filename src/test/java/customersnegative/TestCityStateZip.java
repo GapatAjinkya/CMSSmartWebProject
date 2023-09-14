@@ -1,7 +1,6 @@
 package customersnegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,7 +29,7 @@ public class TestCityStateZip {
 		CreateCustomers();
 		SearchCustomer("");
 		addcustomer();
-		customerdetails();  
+		customerdetails();
 		SendCity("aasvadjwodvbwbvuwbvibdviwbvoeubvuadobvoboqbvqvquovb");
 		SendState("VA");
 		SendZip("22079");
@@ -104,7 +103,7 @@ public class TestCityStateZip {
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='menu_item_451']")));
 		Customers.click();
 	}
-	public void customerdetails() {	
+	public void customerdetails() {
 		WebElement CustomerCode = driver.findElement(By.id("CFtxtXRef"));
 		wait.until(ExpectedConditions.elementToBeClickable(CustomerCode));
 		CustomerCode.clear();
@@ -120,21 +119,21 @@ public class TestCityStateZip {
 		WebElement Address1	=driver.findElement(By.id("CFtxtAddress1"));
 		Address1.clear();Address1.sendKeys("Testing1");
 		WebElement Address2 =driver.findElement(By.id("CFtxtAddress2"));
-		Address2.clear();Address2.sendKeys("Testing1");	
+		Address2.clear();Address2.sendKeys("Testing1");
 		WebElement Address3=driver.findElement(By.id("CFtxtAddress3"));
 		Address3.sendKeys("Testing1");
-	
+
 		String desiredText ="UNITED STATES";
 		WebElement dropdown = driver.findElement(By.id("CFtxtCountry"));
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(desiredText);
 		logger.info(" Customers Address  successful");
-		
+
 		driver.findElement(By.id("CFtxtAddPhone")).sendKeys("8600");
 		driver.findElement(By.id("CFtxtFax")).sendKeys("555");
 		driver.findElement(By.id("CFtxtEmail")).sendKeys("test@gamil.com");
 	}
-	
+
 	public void SendCity(String city) {
 		WebElement Citycode=driver.findElement(By.id("CFtxtAddCity"));
 		Citycode.clear();
@@ -153,7 +152,7 @@ public class TestCityStateZip {
 	public void okclick() {
 		driver.findElement(By.xpath("//button[@onclick='OkClickCustomerForm()']")).click();
 	}
-	
+
 	public void captureError() throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement errorMessage = wait

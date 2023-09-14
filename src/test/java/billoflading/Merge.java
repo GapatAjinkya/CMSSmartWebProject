@@ -27,7 +27,7 @@ public class Merge {
 	String BOLNumbers="4123456789123834";
 	String CustomerCode = "TestBOL";
 	String Carriers = "LTLR_WL -- LTL Rated WorldLink";//Search Carrier
-	
+
 @BeforeClass
 	public void setup() throws InterruptedException {
 
@@ -59,27 +59,27 @@ public class Merge {
 		Thread.sleep(10000);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 }
-	
+
 	@Test(priority =0)
 	public void SelectBOLcustomer() throws InterruptedException
-	{		
+	{
 		WebElement Transaction= wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_2"))); 	// To click on Transaction
 		wait.until(ExpectedConditions.elementToBeClickable(Transaction));
 		Transaction.click();
 		WebElement BOL= wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_26"))); 	// To click on Transaction
 		wait.until(ExpectedConditions.elementToBeClickable(BOL));
-		BOL.click();		
+		BOL.click();
 		WebElement dropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//select[@id='BOLddlCarriers']")));
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(Carriers);
 		logger.info("Carriers Selected ");
-		
-//--------------------------		
-	
+
+//--------------------------
+
 		List<WebElement> alldata = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@id='ELtblBOLExplorerList']//tr//td[2]")));
 		boolean dataStatus = false;
 		for (WebElement ele : alldata) {
-			String value = ele.getText();		
+			String value = ele.getText();
 			if (value.equals(CustomerCode))
 			{
 				System.out.println(value);
@@ -88,26 +88,26 @@ public class Merge {
 			}
 		}
 		Assert.assertTrue(dataStatus, "CustomerCode not found");
-		if (dataStatus) 
+		if (dataStatus)
 		{
 			Thread.sleep(5000);
 			WebElement Customercode =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='ELtblBOLExplorerList']//td[contains(text(), '" + CustomerCode + "')]")));
-			Customercode.click();			
+			Customercode.click();
 		} else {
 		    System.out.println("CustomerCode not found");
-		}	
-		logger.info("Customer Code Found Selected ");        
+		}
+		logger.info("Customer Code Found Selected ");
 }
-	
+
 	@Test(priority =1)
 	public void Mergebol() throws InterruptedException
-	{		
-			
+	{
+
 		WebElement Mergebol= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='BOLMerge']")));
 	    wait.until(ExpectedConditions.elementToBeClickable(Mergebol));
 	    Mergebol.click();
 	    Thread.sleep(5000);
-	    
+
 		WebElement btnConfirmBoxOk= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='btnConfirmBoxOk']")));
         wait.until(ExpectedConditions.elementToBeClickable(btnConfirmBoxOk));
         btnConfirmBoxOk.click();
@@ -115,7 +115,7 @@ public class Merge {
         List<WebElement> alldata = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@id='tblBOLMergeList']//tr//td")));
 		boolean dataStatus = false;
 		for (WebElement ele : alldata) {
-			String value = ele.getText();		
+			String value = ele.getText();
 			if (value.equals(BOLNumbers))
 			{
 				System.out.println(value);
@@ -124,16 +124,16 @@ public class Merge {
 			}
 		}
 		Assert.assertTrue(dataStatus, "CustomerCode not found");
-		if (dataStatus) 
+		if (dataStatus)
 		{
-		
+
 			WebElement Customercode =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='tblBOLMergeList']//td[contains(., '" + BOLNumbers + "')]")));
-			Customercode.click();			
+			Customercode.click();
 		} else {
 		    System.out.println("CustomerCode not found");
-		}	
-		logger.info("Customer Code Found Selected ");  
-		
+		}
+		logger.info("Customer Code Found Selected ");
+
 		WebElement ok= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='btnMergeBOLOk']")));
 	    wait.until(ExpectedConditions.elementToBeClickable(ok));
 	    ok.click();
@@ -141,7 +141,7 @@ public class Merge {
 	    WebElement errorok= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='btnErrorBoxOk']")));
 	    wait.until(ExpectedConditions.elementToBeClickable(errorok));
 	    errorok.click();
-		
+
 }
 	}
 

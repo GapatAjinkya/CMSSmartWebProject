@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DeclaredValueThirdPartyInsurance {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("DeclaredValueThirdPartyInsurance");
@@ -135,17 +135,17 @@ public class DeclaredValueThirdPartyInsurance {
 
 		WebElement DV= driver.findElement(By.id("SL15"));
 		Select os=new Select(DV);
-		os.selectByVisibleText("Declared Value");		
-		
+		os.selectByVisibleText("Declared Value");
+
 		driver.findElement(By.xpath("//*[@id='btnOk']")).click();
-		
+
 		driver.findElement(By.xpath("//input[@id='txtManual']")).sendKeys("1.00");
 		logger.info("Manual Weight is fill ");
 
 		driver.findElement(By.id("cmdRate")).click();
 
 		logger.info("Click on Rate ");
-		
+
 		driver.findElement(By.id("btnShipClick")).click(); // Click on ship
 		logger.info("DeclaredValueThirdPartyInsurance Done  ");
 

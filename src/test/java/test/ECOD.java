@@ -55,8 +55,8 @@ public class ECOD {
 		System.out.println("Title Matched");
 		Thread.sleep(5000);
 	}
-	
-	
+
+
 	@Test
 	public void shipvia() throws InterruptedException {
 
@@ -135,17 +135,17 @@ public class ECOD {
 		driver.findElement(By.xpath("//*[@id='btnOk']")).click();
 		Thread.sleep(5000);
 
-		
+
 		driver.findElement(By.xpath("//input[@id='txtManual']")).sendKeys("1.00");
 		logger.info("Manual Weight is fill ");
 
 		driver.findElement(By.id("cmdRate")).click();
 
 		logger.info("Click on Rate ");
-		
+
 		driver.findElement(By.id("btnShipClick")).click(); // Click on ship
 		logger.info("Oversize Done  ");
-	
+
 }
 }
 

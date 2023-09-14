@@ -1,7 +1,6 @@
 package departmentsnegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,8 +22,8 @@ public class DepartmentsTestCode {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("CartonsCodeTest");
-	
-	
+
+
 @Test
 	public void SearchTest() throws InterruptedException {
 	searchdepartment();
@@ -41,7 +40,7 @@ private void searchdepartment() throws InterruptedException {
 		wait.until(ExpectedConditions.elementToBeClickable(SupportTables));
 		SupportTables.click();
 		Thread.sleep(3000);
-		logger.info(" SupportTables Windo Open  successful");	
+		logger.info(" SupportTables Windo Open  successful");
 		WebElement Departments = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_452")));
 		wait.until(ExpectedConditions.elementToBeClickable(Departments));
 		Departments.click();
@@ -62,12 +61,12 @@ private void searchdepartment() throws InterruptedException {
 			wait.until(ExpectedConditions.visibilityOf(Description));
 			wait.until(ExpectedConditions.elementToBeClickable(Description));
 			Description.click();
-			Search.sendKeys(DescriptionSearch);    
+			Search.sendKeys(DescriptionSearch);
 			logger.info("Description selected");
-	}	
-		driver.findElement(By.xpath("//button[@onclick='onDepatmentSearchPrivateOkClick()']")).click();	
 	}
-	
+		driver.findElement(By.xpath("//button[@onclick='onDepatmentSearchPrivateOkClick()']")).click();
+	}
+
 public void captureError() throws InterruptedException {
 	Thread.sleep(5000);
 	WebElement errorMessage = wait
@@ -96,7 +95,7 @@ public void captureError() throws InterruptedException {
 		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
 
 		 wait.until(ExpectedConditions.elementToBeClickable(By.id("menu_item_1"))).click(); // To click on LocalConfig Menu
-		 wait.until(ExpectedConditions.elementToBeClickable(By.id("menu_item_15"))).click(); // To click on Login Tab		
+		 wait.until(ExpectedConditions.elementToBeClickable(By.id("menu_item_15"))).click(); // To click on Login Tab
 		 Thread.sleep(3000);
 		 WebElement Userlogin = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtLPUserLogin"))); // Userlogin
 		wait.until(ExpectedConditions.visibilityOf(Userlogin));
@@ -115,6 +114,6 @@ public void captureError() throws InterruptedException {
 	  @AfterClass
 	  public void teardown() {
 	//   driver.quit();
-	
+
 	  }
 }

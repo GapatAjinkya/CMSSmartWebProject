@@ -1,7 +1,6 @@
 package cartonsnegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,15 +10,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import com.cms.configurations.SupportTables;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -33,12 +29,12 @@ public class CartonsCodeTest {
 		Createcarriers();
 		CartonSearch("");
 		ClickonCartonAdd();
-		Codecheck("asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?51");	
+		Codecheck("asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?51");
 		Dimensions();
 		CartonOk();
 		captureError();
 	}
-	
+
 	@Test(priority = 1)
 	public void testBlanck() throws InterruptedException {
 		Thread.sleep(5000);
@@ -114,7 +110,7 @@ public class CartonsCodeTest {
 		WebElement Length = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("CF_txtLength")));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].value = '10';", Length);
-		
+
 		WebElement Width = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("CF_txtWidth")));
 		JavascriptExecutor jsWidth = (JavascriptExecutor) driver;
 		jsWidth.executeScript("arguments[0].value = '10';", Width);
@@ -133,8 +129,8 @@ public class CartonsCodeTest {
 		WebElement Cancel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='btnSearchCancel']")));
 		Cancel.click();
 	}
-	
-	
+
+
 	@BeforeClass
 	public void setup() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();
@@ -164,10 +160,10 @@ public class CartonsCodeTest {
 		System.out.println("Title Matched");
 		Thread.sleep(10000);
 	}
-	
+
 	  @AfterClass
 	  public void teardown() {
 	   driver.quit();
-	
+
 	  }
 }

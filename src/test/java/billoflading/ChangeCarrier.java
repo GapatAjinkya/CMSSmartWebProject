@@ -21,18 +21,18 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ChangeCarrier {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("ModifyBOL");
 	String CustomerCode = "TestBOL";
-	String Carriers = "LTLR_WL -- LTL Rated WorldLink";//Search Carrier 
-	String CarrierAccounts="YRC -- YRC-Yellow Roadway";   //To change the carrier 
+	String Carriers = "LTLR_WL -- LTL Rated WorldLink";//Search Carrier
+	String CarrierAccounts="YRC -- YRC-Yellow Roadway";   //To change the carrier
 	String SelectShipvias="YRC_150 -- YRC_Class 150";
 	String PRO="2222";
 
 	@Test(priority = 0)
-	public void setup() throws InterruptedException 
+	public void setup() throws InterruptedException
 	{
 		ChromeOptions options = new ChromeOptions();
 		WebDriverManager.chromedriver().setup();
@@ -51,7 +51,7 @@ public class ChangeCarrier {
 		Userlogin.sendKeys("nilesh");
 		WebElement password = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtLPPassword"))); // password
 		password.sendKeys("Nilesh@123");
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("chkRememberMe"))).click(); // chkRememberMe	
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("chkRememberMe"))).click(); // chkRememberMe
 		WebElement ok = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
 		ok.click();
@@ -64,15 +64,15 @@ public class ChangeCarrier {
 
 	@Test(priority = 2)
 	public void SelectBOLcustomer() throws InterruptedException
-	{		
+	{
 		WebElement Transaction= wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_2"))); 	// To click on Transaction
 		wait.until(ExpectedConditions.elementToBeClickable(Transaction));
 		Transaction.click();
 		WebElement BOL= wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_26"))); 	// To click on Transaction
 		wait.until(ExpectedConditions.elementToBeClickable(BOL));
-		BOL.click();		
+		BOL.click();
 		WebElement dropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//select[@id='BOLddlCarriers']")));
-		
+
 		Select select = new Select(dropdown);
 		List<WebElement> options = select.getOptions();
 		for (WebElement option : options) {
@@ -81,17 +81,17 @@ public class ChangeCarrier {
 			if (visibleText.equalsIgnoreCase(Carriers))
 			{
 				select.selectByVisibleText(visibleText);
-				break; 
+				break;
 			}
 		}
 		logger.info("Carriers Selected ");
-		
-//--------------------------		
-	
+
+//--------------------------
+
 		List<WebElement> alldata = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@id='ELtblBOLExplorerList']//tr//td[2]")));
 		boolean dataStatus = false;
 		for (WebElement ele : alldata) {
-			String value = ele.getText();		
+			String value = ele.getText();
 			if (value.equals(CustomerCode))
 			{
 				System.out.println(value);
@@ -100,20 +100,20 @@ public class ChangeCarrier {
 			}
 		}
 		Assert.assertTrue(dataStatus, "CustomerCode not found");
-		if (dataStatus) 
+		if (dataStatus)
 		{
 			Thread.sleep(5000);
 			WebElement Customercode =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='ELtblBOLExplorerList']//td[contains(text(), '" + CustomerCode + "')]")));
-			Customercode.click();			
+			Customercode.click();
 		} else {
 		    System.out.println("CustomerCode not found");
-		}	
+		}
 		logger.info("Customer Code Found Selected ");
 
 		WebElement ChangeCarrierButton= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='BOLChangeCarrier']")));
 	    wait.until(ExpectedConditions.elementToBeClickable(ChangeCarrierButton));
 	    ChangeCarrierButton.click();
-	    
+
 		Thread.sleep(5000);
 		WebElement Yes= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='btnConfirmBoxOk']")));
         wait.until(ExpectedConditions.elementToBeClickable(Yes));
@@ -122,34 +122,34 @@ public class ChangeCarrier {
 
 @Test(priority =3 )
 public void ChangeCarr() throws InterruptedException
-{    
+{
 	Thread.sleep(5000);
-    WebElement Carrier= wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@id='cmbAccount']"))); 	
+    WebElement Carrier= wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@id='cmbAccount']")));
 	Select Accounts=new Select(Carrier);
 	Accounts.selectByVisibleText(CarrierAccounts);
 	logger.info("country selected Succesful");
-	
-	  WebElement Shipvias= wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@id='cmbShipVia']"))); 	
+
+	  WebElement Shipvias= wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@id='cmbShipVia']")));
 		Select SelectS=new Select(Shipvias);
 		SelectS.selectByVisibleText(SelectShipvias);
-		logger.info("Shipvias selected Succesful");		
+		logger.info("Shipvias selected Succesful");
 		WebElement pro= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='txtPro']")));
-        pro.sendKeys(PRO);		
-    	logger.info("pro selected Succesful");	
+        pro.sendKeys(PRO);
+    	logger.info("pro selected Succesful");
 		WebElement OkButtonChangeCarrierBOL= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='OkButtonChangeCarrierBOL']")));
         wait.until(ExpectedConditions.elementToBeClickable(OkButtonChangeCarrierBOL));
-        OkButtonChangeCarrierBOL.click();  
+        OkButtonChangeCarrierBOL.click();
     	Thread.sleep(5000);
         WebElement btnErrorBoxOk= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='btnErrorBoxOk']")));
-        boolean ok =btnErrorBoxOk.isDisplayed();		
+        boolean ok =btnErrorBoxOk.isDisplayed();
 		assert ok;
-		if(ok) 
-		{			
+		if(ok)
+		{
 			btnErrorBoxOk.click();
-			logger.info("click on confirmation box  Succesful");			
+			logger.info("click on confirmation box  Succesful");
 		}
-		
-		
+
+
 		WebElement dropdownSelect = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//select[@id='BOLddlCarriers']")));
 		Select selectcarrier = new Select(dropdownSelect);
 		selectcarrier.selectByVisibleText(CarrierAccounts);
@@ -157,7 +157,7 @@ public void ChangeCarr() throws InterruptedException
 		List<WebElement> alldata = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@id='ELtblBOLExplorerList']//tr//td[2]")));
 		boolean dataStatus = false;
 		for (WebElement ele : alldata) {
-			String value = ele.getText();		
+			String value = ele.getText();
 			if (value.equals(CustomerCode))
 			{
 				System.out.println(value);
@@ -169,16 +169,16 @@ public void ChangeCarr() throws InterruptedException
 		if (dataStatus) {
 			//Thread.sleep(5000);
 			WebElement Customercode =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='ELtblBOLExplorerList']//td[contains(text(), '" + CustomerCode + "')]")));
-			Customercode.click();	
-			
+			Customercode.click();
+
 		} else {
 		    System.out.println("CustomerCode not found");
-		}	
-		logger.info("Customer Code Found Selected ");	
+		}
+		logger.info("Customer Code Found Selected ");
 } catch (StaleElementReferenceException e)
-  {    
-	
-}		
+  {
+
+}
 }
 }
 

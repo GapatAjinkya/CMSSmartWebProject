@@ -1,7 +1,6 @@
 package carriersNegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -42,11 +41,11 @@ public class CarriersSearch {
 		Thread.sleep(10000);
 			Thread.sleep(5000);
 			WebElement errorMessage = wait
-					.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='errorMsg']")));	
+					.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='errorMsg']")));
 			Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
 			String expectedErrorMessage = "No records found!";
 			String actualErrorMessage = errorMessage.getText();
-			logger.info("Expected error message -" + actualErrorMessage);	
+			logger.info("Expected error message -" + actualErrorMessage);
 			Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Incorrect error message");
 
 			WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));

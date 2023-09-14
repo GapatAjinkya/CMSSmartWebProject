@@ -2,9 +2,11 @@ package com.cms.ManifestExplorerTest;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import com.cms.Base.BaseClass;
 import com.cms.ManifestExplorer.ManifestExplorer;
 import com.cms.ProcessShipment.ProcessShipment;
@@ -43,7 +45,7 @@ public class MEcreateShipClosePostTest extends BaseClass {
 		ps.AddCustomerProcess();
 		ps.EnterWeight();
 		ps.ClickonShipbutton();
-		
+
 		Thread.sleep(3000);
 		Me.clickOnTransaction();
 		Me.ClickonManifestExplorer();

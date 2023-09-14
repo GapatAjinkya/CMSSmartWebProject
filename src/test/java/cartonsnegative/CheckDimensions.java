@@ -1,12 +1,10 @@
 package cartonsnegative;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -53,7 +51,7 @@ public class CheckDimensions {
 		Thread.sleep(5000);
 		WebElement Height = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("CF_txtHeight")));
 		Height.sendKeys("HHHHHH");
-		captureError();		
+		captureError();
 	}
 	public void captureError() throws InterruptedException {
 		Thread.sleep(5000);
@@ -70,7 +68,7 @@ public class CheckDimensions {
 		}
 		WebElement error = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='btnErrorBoxOk']")));
-		error.click();	
+		error.click();
 	}
 	public void Createcarriers() throws InterruptedException {
 		Thread.sleep(5000);
@@ -153,11 +151,11 @@ public class CheckDimensions {
 		System.out.println("Title Matched");
 		Thread.sleep(10000);
 	}
-	
-	  @AfterClass 
-	 public void teardown() { 
+
+	  @AfterClass
+	 public void teardown() {
 		  driver.quit();
-	 
+
 	 }
-	
+
 }

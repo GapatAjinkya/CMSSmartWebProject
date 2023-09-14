@@ -1,5 +1,6 @@
 package com.cms.ProcessShipment;
 import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -12,20 +13,20 @@ import org.openqa.selenium.support.ui.Select;
 import com.cms.Base.BaseClass;
 
 public class ProcessShipment extends BaseClass{
-	
+
 	public ProcessShipment(WebDriver rdriver) {
 		driver = rdriver;
 		PageFactory.initElements(rdriver, this);
 	}
 
 	Logger logger = LogManager.getLogger("ProcessShipment");
-	
+
 	@FindBy(id = "menu_item_2")
 	private WebElement Transaction;
 
 	@FindBy(id = "menu_item_21")
 	private WebElement processshipment;
-	
+
 	public ProcessShipment clickOnTransaction() throws InterruptedException  {
 		Thread.sleep(3000);
 		click(Transaction);
@@ -38,7 +39,7 @@ public class ProcessShipment extends BaseClass{
 		logger.info("processshipment Explorer Window opened ");
 		return this;
 	}
-//---------------------------------------------------------------------------------	
+//---------------------------------------------------------------------------------
 	@FindBy(xpath ="//span[@onclick='btnSearch_PS()']")
 	private WebElement ShipViaSearch;
 	public ProcessShipment ClickonShipViaSearch() throws InterruptedException {
@@ -47,21 +48,21 @@ public class ProcessShipment extends BaseClass{
 		logger.info("clickOnShipViaSearch successful");
 		return this;
 	}
-//------------------------------------------------------------------------------------------	
+//------------------------------------------------------------------------------------------
 	@FindBy(xpath ="//select[@id='txtShipVia']")
 	private WebElement ShipViaDropdownid;
 //	public ProcessShipment ShipViaDropdownid() throws InterruptedException {
 //		String abc=prop.getProperty("SelectShipvia");
 //		//click(ShipViaDropdownid);
-//		Thread.sleep(10000);	
+//		Thread.sleep(10000);
 //		WebElement dropdown = driver.findElement(By.xpath("//select[@id='txtShipVia']"));
 //		Select select = new Select(dropdown);
 //		select.selectByValue(abc);
-//		
-//		logger.info("Shipvia Select  successful");	
+//
+//		logger.info("Shipvia Select  successful");
 //		return this;
 //	}
-	
+
 	@FindBy(xpath = "//input[@id='radCodeSS']")
 	private WebElement radio;
 	public ProcessShipment codeselect() throws InterruptedException {
@@ -80,7 +81,7 @@ public class ProcessShipment extends BaseClass{
 		sendkeys(Searchfor,prop.getProperty("SelectShipvia"));
 		logger.info("Sent Search for");
 		return this;
-		
+
 	}
 	@FindBy(xpath ="//button[@id='btnSearchOk_PS']")
 	private WebElement ClickonOk;
@@ -103,7 +104,7 @@ public class ProcessShipment extends BaseClass{
 		logger.info("clicked on AddCustomer");
 		return this;
 	}
-	
+
 	@FindBy(id = "txtSCSearch")
 	private WebElement CustomerSearch;
 	public ProcessShipment EnterCustomerSearch() {
@@ -111,7 +112,7 @@ public class ProcessShipment extends BaseClass{
 		logger.info("EnterCustomerSearch");
 		return this;
 	}
-	
+
 	@FindBy(id = "selCutomerList")
 	private WebElement CustomerList;
 	public ProcessShipment SelectCustomerList() {
@@ -126,7 +127,7 @@ public class ProcessShipment extends BaseClass{
 				// Select the desired option
 				select.selectByVisibleText(visibleText);
 				break; // Break out of the loop once the option is selected
-			}		
+			}
 	}
 		logger.info("SelectCustomerList");
 		return this;
@@ -166,9 +167,9 @@ public class ProcessShipment extends BaseClass{
 		logger.info("Shipbutton");
 		return this;
 	}
-	
+
 	public ProcessShipment AddCustomerProcess() throws InterruptedException {
-		
+
 		Thread.sleep(5000);
 		click(AddCustomer);
 		logger.info("Click on add Customer");
@@ -184,7 +185,7 @@ public class ProcessShipment extends BaseClass{
 				// Select the desired option
 				select.selectByVisibleText(visibleText);
 				break; // Break out of the loop once the option is selected
-			}		
+			}
 	}
 		logger.info("SelectCustomerList");
 		Thread.sleep(4000);

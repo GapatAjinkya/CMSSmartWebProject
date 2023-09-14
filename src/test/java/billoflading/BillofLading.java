@@ -2,6 +2,7 @@ package billoflading;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -19,7 +20,8 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class BillofLading 
+public class BillofLading
+
 {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
@@ -27,17 +29,18 @@ public class BillofLading
 	@BeforeMethod
 	public void setup() throws InterruptedException {
 
+	
+	    System.setProperty("webdriver.chrome.driver", "E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
+	    options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
 		options.addArguments("--remote-allow-origins=*");
 		driver = new ChromeDriver(options);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	     wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-		
+
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);
@@ -68,7 +71,7 @@ public class BillofLading
 
 	@Test
 	public void Bolcreate() throws InterruptedException
-	
+
 	{
 		WebElement Transaction= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("menu_item_2"))); 	// To click on Transaction
 		Transaction.click();
@@ -87,117 +90,111 @@ public class BillofLading
 			if (visibleText.equalsIgnoreCase(Carriers))
 			{
 				select.selectByVisibleText(visibleText);
-				break; 
+				break;
 			}
 		}
 		WebElement Create= wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='BOLCreate']"))); 	// To click on Transaction
 		Create.click();
 		Thread.sleep(5000);
 		logger.info("Click on  Transaction");
-		WebElement confirmbutton= wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='btnConfirmBoxOk']"))); 	
+		WebElement confirmbutton= wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='btnConfirmBoxOk']")));
 		confirmbutton.click();
 		Thread.sleep(5000);
 		logger.info("Click on  confirm button");
-		
-		String code="TestBOL";              // New Code 
+
+		String code="TestBOL";              // New Code
 		String Comapny="TestBOL";
 		String Contact="AG";
 		String Address1="123",Address2="123";
 		String  City="lorton",State="VA",Zip="22079";
 		String Country="UNITED STATES",FreightTerms="C&F/CPT - Cost/Freight",
 				Department="Test--VA Shipping department",
-		ShipVia="LTLR_WL_100--LTLR_WL_Class 100";   // This Shipvia is changed when we select Rated/non rated 
+		ShipVia="LTLR_WL_100--LTLR_WL_Class 100";   // This Shipvia is changed when we select Rated/non rated
 		String payment="Prepaid";
 		String Countrypayment="UNITED STATES";
-		
+
 	String	Instructions="Explosive22";
-		
-		WebElement CodeBol= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtCode"))); 	
+		WebElement CodeBol= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtCode")));
 		CodeBol.sendKeys(code);
 		Thread.sleep(5000);
 		logger.info("Enter Code Succesful");
-		
-		WebElement CompanyBol= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtCompany"))); 	
+		WebElement CompanyBol= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtCompany")));
 		CompanyBol.sendKeys(Comapny);
-		
 		logger.info("Comapny Succesful");
-		
-		WebElement Contactbol= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtContact"))); 	
+		WebElement Contactbol= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtContact")));
 		Contactbol.sendKeys(Contact);
-	
 		logger.info("Comapny Succesful");
-		
-		WebElement address1= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtAddress1"))); 	
+		WebElement address1= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtAddress1")));
 		address1.sendKeys(Address1);
-	
+
 		logger.info("Address1 Succesful");
-		
-		WebElement address2= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtAddress2"))); 	
+
+		WebElement address2= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtAddress2")));
 		address2.sendKeys(Address2);
 
 		logger.info("Address2 Succesful");
-		
-		WebElement city= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtCity"))); 	
+
+		WebElement city= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtCity")));
 		city.sendKeys(City);
-	
+
 		logger.info("City Succesful");
-		
-		WebElement state= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtState"))); 	
+
+		WebElement state= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtState")));
 		state.sendKeys(State);
-	
+
 		logger.info("state Succesful");
-		
-		WebElement zip= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtZip"))); 	
+
+		WebElement zip= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtZip")));
 		zip.sendKeys(Zip);
 		Thread.sleep(3000);
 		logger.info("state Succesful");
-		
-		WebElement country= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("CDBOLCountry"))); 	
+
+		WebElement country= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("CDBOLCountry")));
 		Select selectcountry=new Select(country);
 		selectcountry.selectByVisibleText(Country);
 		logger.info("country selected Succesful");
-		
-		WebElement freightTerms= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ddlFreightTerms"))); 	
+
+		WebElement freightTerms= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ddlFreightTerms")));
 		Select selectFreightTerms=new Select(freightTerms);
 		selectFreightTerms.selectByVisibleText(FreightTerms);
 		logger.info("freight Terms selected Succesful");
-		
-		WebElement department= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ddlDepartment"))); 	
+
+		WebElement department= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ddlDepartment")));
 		Select selectdepartment=new Select(department);
 		selectdepartment.selectByVisibleText(Department);
 		logger.info("department selected Succesful");
-		
+
 		Thread.sleep(3000);
-		WebElement shipVias= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ddlShipVia"))); 	
+		WebElement shipVias= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ddlShipVia")));
 		Select selectShipVia=new Select(shipVias);
 		selectShipVia.selectByVisibleText(ShipVia);
 		logger.info("ShipVia selected Succesful");
-		
-		WebElement Payment= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ddlPayment"))); 	
+
+		WebElement Payment= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ddlPayment")));
 		Select selectpayment=new Select(Payment);
 		selectpayment.selectByVisibleText(payment);
 		logger.info("Payment selected Succesful");
-		
-		WebElement countrypayment= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("PIBOLCountry"))); 	
+
+		WebElement countrypayment= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("PIBOLCountry")));
 		Select selectCountrypayment=new Select(countrypayment);
 		selectCountrypayment.selectByVisibleText(Countrypayment);
 		logger.info("Country selected Succesful");
-		
-		WebElement instructions= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("btnInstructions"))); 	
+
+		WebElement instructions= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("btnInstructions")));
 		instructions.click();
 		logger.info("click on instructions selected Succesful");
 		Thread.sleep(5000);
-		
+
 		List<WebElement> alldata = driver.findElements(By.xpath("//table[@id='tblInstructionsList']//td"));
 
 		boolean dataStatus = false;
 		for (WebElement ele : alldata) {
 			String value = ele.getText();
-		
+
 			if (value.equals(Instructions))
 			{
 				System.out.println(value);
-				
+
 				dataStatus = true;
 				break;
 			}
@@ -211,26 +208,24 @@ public class BillofLading
 		} else {
 		    System.out.println("instructions not found");
 		}
-		
+
 		driver.findElement(By.id("btnInstructionsOk")).click();
 		Thread.sleep(6000);
-		
-		WebElement btnCreateBOL= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("btnCreateBOL"))); 	
+
+		WebElement btnCreateBOL= wait.until(ExpectedConditions.presenceOfElementLocated(By.id("btnCreateBOL")));
 		btnCreateBOL.click();
 		logger.info("Create BOL ok selected Succesful");
 		Thread.sleep(10000);
-		
+
 		WebElement Button=driver.findElement(By.xpath("//button[@class='WLButton text-uppercase']"));
 		boolean ok =Button.isDisplayed();
-		
+
 		assert ok;
-		if(ok) 
-		{			
+		if(ok)
+		{
 			Button.click();
 			logger.info("click on confirmation box  Succesful");
-			
+
 		}
 	}
-}	
-		
-		
+}

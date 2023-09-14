@@ -7,14 +7,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class VSManifestandShipvia {
-	
+
 public static void main(String[] args) throws InterruptedException {
-		
-		Logger logger = LogManager.getLogger("Internationalshipment");// object created for logger class and class name is passed 
-		
+
+		Logger logger = LogManager.getLogger("Internationalshipment");// object created for logger class and class name is passed
+
 	//	DOMConfigurator.configure("Log4j.xml");
 		//PropertyConfigurator.configure("");
 		ChromeOptions options = new ChromeOptions();
@@ -45,14 +46,14 @@ public static void main(String[] args) throws InterruptedException {
 			System.out.println("Title didn't match");
 		}
 		logger.info("Login successful");
-		
+
 		WebElement Transaction = driver.findElement(By.cssSelector("#menu_item_2")); // To click on Transaction
 		Transaction.click();
 		logger.info("click on Transaction");
-		
+
 		Thread.sleep(5000);
 		WebElement ViewShipment = driver.findElement(By.id("menu_item_23"));
 		ViewShipment.click();
-		logger.info(" click on View Shipment");	
+		logger.info(" click on View Shipment");
 }
 }

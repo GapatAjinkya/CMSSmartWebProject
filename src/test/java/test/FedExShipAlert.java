@@ -132,18 +132,18 @@ public class FedExShipAlert {
 
 		WebElement FedExShipAlert = wait.until(ExpectedConditions.elementToBeClickable(By.id("BOX9")));
 		FedExShipAlert.click();
-	
+
 		driver.findElement(By.xpath("//*[@id='button3']")).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("chkShipperShipAlert"))).click();
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("btnShipAlertOk"))).click();
 		driver.findElement(By.xpath("//*[@id='btnOk']")).click();
 		Thread.sleep(5000);
-		
+
 		driver.findElement(By.id("btnEmailNotification")).click();
 		Thread.sleep(5000);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtSenderEmail"))).sendKeys("cms@gmail.com");
-	
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("btnModalOk"))).click();
 		driver.findElement(By.xpath("//input[@id='txtManual']")).sendKeys("1.00");
 		logger.info("Manual Weight is fill ");

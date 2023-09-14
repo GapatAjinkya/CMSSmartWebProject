@@ -2,7 +2,7 @@ package viewshipmenttaskNegative;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -22,7 +22,7 @@ public class Vsbuttoncheck {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("Vsbuttoncheck");
-	
+
 	@Test
 	public void ButtonsTest() throws InterruptedException {
 		OpenPs();
@@ -56,7 +56,7 @@ public class Vsbuttoncheck {
 		    }
 		}
 	}
-	
+
 	public void OpenPs() throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement Transaction = driver.findElement(By.id("menu_item_2")); // To click on Transaction
@@ -65,12 +65,12 @@ public class Vsbuttoncheck {
 		driver.findElement(By.id("menu_item_23")).click(); // To click on VS
 		Thread.sleep(3000);
 	}
-	
+
 	public void ShipmentId(String id) {
-		
+
 		WebElement shipid=driver.findElement(By.id("txtInvoiceFrom"));
 		shipid.sendKeys(id);
-	}	
+	}
 	public void ok() {
 		driver.findElement(By.id("SearchCriteriaOkClick")).click();
 	}

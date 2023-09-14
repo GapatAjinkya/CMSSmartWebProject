@@ -20,14 +20,14 @@ import org.testng.annotations.Test;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BOL {
-	
+
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("ModifyBOL");
 	 String CustomerCode = "TestBOL";
 	 String Carriers = "LTLR_WL -- LTL Rated WorldLink";
 	@Test(priority = 0)
-	public void setup() throws InterruptedException 
+	public void setup() throws InterruptedException
 	{
 		ChromeOptions options = new ChromeOptions();
 		WebDriverManager.chromedriver().setup();
@@ -38,7 +38,6 @@ public class BOL {
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(5000);
@@ -46,7 +45,7 @@ public class BOL {
 		Userlogin.sendKeys("nilesh");
 		WebElement password = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtLPPassword"))); // password
 		password.sendKeys("Nilesh@123");
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("chkRememberMe"))).click(); // chkRememberMe	
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("chkRememberMe"))).click(); // chkRememberMe
 		WebElement ok = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
 		ok.click();
@@ -59,15 +58,15 @@ public class BOL {
 
 	@Test(priority = 1)
 	public void voidbol() throws InterruptedException
-	{		
+	{
 		WebElement Transaction= wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_2"))); 	// To click on Transaction
 		wait.until(ExpectedConditions.elementToBeClickable(Transaction));
 		Transaction.click();
 		WebElement BOL= wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_26"))); 	// To click on Transaction
 		wait.until(ExpectedConditions.elementToBeClickable(BOL));
-		BOL.click();		
+		BOL.click();
 		WebElement dropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//select[@id='BOLddlCarriers']")));
-		
+
 		Select select = new Select(dropdown);
 		List<WebElement> options = select.getOptions();
 		for (WebElement option : options) {
@@ -76,17 +75,17 @@ public class BOL {
 			if (visibleText.equalsIgnoreCase(Carriers))
 			{
 				select.selectByVisibleText(visibleText);
-				break; 
+				break;
 			}
 		}
 		logger.info("Carriers Selected ");
-		
-//--------------------------		
-	
+
+//--------------------------
+
 		List<WebElement> alldata = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@id='ELtblBOLExplorerList']//tr//td[2]")));
 		boolean dataStatus = false;
 		for (WebElement ele : alldata) {
-			String value = ele.getText();		
+			String value = ele.getText();
 			if (value.equals(CustomerCode))
 			{
 				System.out.println(value);
@@ -99,14 +98,14 @@ public class BOL {
 			Thread.sleep(5000);
 			WebElement Customercode =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='ELtblBOLExplorerList']//td[contains(text(), '" + CustomerCode + "')]")));
 			Customercode.click();
-			
+
 			WebElement Void= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='BOLVoid']")));
 	        wait.until(ExpectedConditions.elementToBeClickable(Void));
 	        Void.click();
-			
+
 		} else {
 		    System.out.println("CustomerCode not found");
-		}	
+		}
 		logger.info("Customer Code Found Selected ");
 
 		Thread.sleep(5000);
@@ -114,5 +113,4 @@ public class BOL {
         wait.until(ExpectedConditions.elementToBeClickable(Yes));
         Yes.click();
 }
-}	
-	
+}

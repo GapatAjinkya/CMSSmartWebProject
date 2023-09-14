@@ -105,7 +105,7 @@ public class Testcasespecialservice {
 		By checkBoxLocator = By.xpath("//input[@type='checkbox' and contains(@id,'BOX')]");
 		int numberOfIterations = 16;
 		// creating an Empty Integer List
-		List<Integer> arr = new ArrayList<Integer>();
+		List<Integer> arr = new ArrayList<>();
 		arr.add(1);
 	arr.add(2);
 	arr.add(11);
@@ -183,6 +183,6 @@ public class Testcasespecialservice {
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='btnShipClick']")));
 		wait.until(ExpectedConditions.elementToBeClickable(ship));
 		ship.click();
-	}	
-	
+	}
+
 }

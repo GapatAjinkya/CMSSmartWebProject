@@ -1,7 +1,6 @@
 package thirdpartyaccounts;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,7 +22,7 @@ public class ThirdPartyAccountadd {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("ThirdPartyAccountadd");
-	
+
 	@Test(priority = 0)
 	public void TPASearchTest() throws InterruptedException {
 		openTPA();
@@ -42,7 +41,7 @@ public class ThirdPartyAccountadd {
 	}
 	@Test(priority = 2)
 	public void CodeCheck() throws InterruptedException {
-		
+
 		Code("asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?/asdf2@%.?/1");
 		okTPA();
 		captureError();
@@ -81,7 +80,7 @@ public class ThirdPartyAccountadd {
 		accountNumber("");
 		okTPA();
 		captureError();
-	}	
+	}
 	public void CustomerName(String name) {
 		WebElement addname=wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtName")));
 		addname.clear();
@@ -96,12 +95,12 @@ public class ThirdPartyAccountadd {
 	public void newtpacreate() throws InterruptedException {
 		String address="903 b2 san francisco chhava";
 		String city="san francisco";
-		String states="california";                                                                                        
+		String states="california";
 		String zip="94016";
 		String desiredText ="UNITED STATES";
 		Thread.sleep(5000);
-		
-		
+
+
 		WebElement addaddress=wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtAddress1")));
 		addaddress.sendKeys(address);
 		logger.info("add address successful ");
@@ -111,10 +110,10 @@ public class ThirdPartyAccountadd {
 		WebElement addstate=wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtAddState")));
 		addstate.sendKeys(states);
 		logger.info("add state successful ");
-		
+
 		 wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtAddZip"))).sendKeys(zip);
 	     logger.info("add Zip successful ");
-	     
+
 		WebElement dropdown = driver.findElement(By.id("TPtxtCountry"));
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(desiredText);
@@ -123,11 +122,11 @@ public class ThirdPartyAccountadd {
 		String EmailAddress="cms@gmail.com";//TPtxtEmail
 		String Phone="1234567890";//TPtxtAddPhone
 		String fax="1225588";//TPtxtFax
-		
+
 		WebElement addcn=wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtContact")));
 		addcn.sendKeys(ContactName);
 		logger.info("add Contact Name successful ");
-		
+
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtContact"))).sendKeys(ContactName);
         logger.info("add Contact Name successful ");
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TPtxtEmail"))).sendKeys(EmailAddress);
@@ -160,9 +159,9 @@ public class ThirdPartyAccountadd {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[@onclick='ThirdPartiesSearchOkClick()']")).click();// ok buttton
 	}
-	
+
 	public void openTPA() throws InterruptedException {
-		
+
 		WebElement Configuration = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_4")));
 		Configuration.click();
 		Thread.sleep(5000);
@@ -171,11 +170,11 @@ public class ThirdPartyAccountadd {
 		SupportTables.click();
 		logger.info(" SupportTables Windo Open  successful");
 		Thread.sleep(5000);
-		
+
 		WebElement tpba = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='menu_item_459']")));
 		tpba.click();
 		Thread.sleep(5000);
-		logger.info("Click on Third Party Billing Accounts successful");		
+		logger.info("Click on Third Party Billing Accounts successful");
 	}
 	public void captureError() throws InterruptedException {
 		Thread.sleep(5000);
@@ -183,7 +182,7 @@ public class ThirdPartyAccountadd {
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@id='errorMsg']")));
 		Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
 	        String actualErrorMessage = errorMessage.getText();
-	       
+
 		if (actualErrorMessage.equals("The Company field value must be less than 50 characters. Please try again.")) {
             System.out.println("Handling first error message."+actualErrorMessage);
             Assert.assertEquals(actualErrorMessage, "The Company field value must be less than 50 characters. Please try again.", "Incorrect error message");
@@ -228,7 +227,7 @@ public class ThirdPartyAccountadd {
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
 		password.sendKeys("password");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
-		WebElement ok = wait	
+		WebElement ok = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
 		ok.click();
 		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";

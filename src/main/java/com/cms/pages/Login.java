@@ -14,11 +14,11 @@ public class Login extends BaseClass {
 		driver = rdriver;
 		PageFactory.initElements(rdriver, this);
 	}
-	
+
 	public String user= "nilesh";
 	public String pass="Nilesh@123";
-	
-	
+
+
 	@FindBy(id = "menu_item_1")
 	private WebElement menuitem1;
 
@@ -36,7 +36,7 @@ public class Login extends BaseClass {
 
 	@FindBy(xpath = "//button[@onclick=\"LoginFormOkClick()\"]")
 	private WebElement clickok;
-	
+
 	public Login clickOnLocalconfig() {
 		click(menuitem1);
 		return this;
@@ -69,7 +69,7 @@ public class Login extends BaseClass {
 		return this;
 	}
 	public Login checkTital() {
-		
+
 		String ActualTitle = driver.getTitle();
 		String ExpectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";
 		assert ActualTitle.equals(ExpectedTitle) : "Title does not match";

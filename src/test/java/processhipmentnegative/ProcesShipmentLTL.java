@@ -27,7 +27,7 @@ public class ProcesShipmentLTL {
 	public void TestShipMent() throws InterruptedException {
 		OpenPs();
 		ShipVia("LTLNR_WL_100");
-		addCustomer("USAG");
+		addCustomer("USAG2");
 		Po("");
 		Rate();
 		captureError();
@@ -56,7 +56,7 @@ public class ProcesShipmentLTL {
 				System.out.println("Handling error message:-  " + actualErrorMessage);
 				Assert.assertEquals(actualErrorMessage, "The following field exceed the maximum allowable characters:", "Incorrect error message");
 			}
-		 else if (actualErrorMessage.equals("'PO Number' is required for LTL carriers.")) {
+		 else if (actualErrorMessage.equalsIgnoreCase("'PO Number' is required for LTL carriers.")) {
 				System.out.println("Handling error message:-  " + actualErrorMessage);
 				Assert.assertEquals(actualErrorMessage, "'PO Number' is required for LTL carriers.", "Incorrect error message");
 			}
@@ -134,26 +134,28 @@ public class ProcesShipmentLTL {
 	}
 	@BeforeClass
 	public void setup() throws InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver",
+				"E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
-		options.addArguments("--remote-allow-origins=*");
+		// options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
+		// options.addArguments("--remote-allow-origins=*");
+
 		driver = new ChromeDriver(options);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://localhost:8090/SmartWeb/#");
+		Thread.sleep(3000);
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
 		Userlogin.sendKeys("admin");
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
 		password.sendKeys("password");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
-		WebElement ok = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
+		WebElement ok = driver.findElement(By.xpath("//button[@onclick='LoginFormOkClick()']"));
 		ok.click();
-		Thread.sleep(5000);
 	}
 }

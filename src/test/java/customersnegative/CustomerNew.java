@@ -17,8 +17,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class CustomerNew {
 
 	public static WebDriver driver;
@@ -28,7 +26,8 @@ public class CustomerNew {
     @Test
 	public void TestCustomer() throws InterruptedException {
     	CreateCustomers();
-    	SearchCustomer("");
+    	SearchCustomer("asfaf");
+    	captureError();
     	addcustomer();
     	CustomerCode("CMS");
     	customerdetails();
@@ -106,7 +105,11 @@ public class CustomerNew {
 		if (actualErrorMessage.equals("An entry already exists in the database with the same 'Customer Code'. Please try again.")) {
 			System.out.println("Handling error message." + actualErrorMessage);
 			Assert.assertEquals(actualErrorMessage, "An entry already exists in the database with the same 'Customer Code'. Please try again.", "Incorrect error message");
-		}  else {
+		} else if (actualErrorMessage.equals("No records found!")) {
+			System.out.println("Handling  error message." + actualErrorMessage);
+			Assert.assertEquals(actualErrorMessage, "No records found!", "Incorrect error message");
+		}
+		else {
 			System.out.println("Unexpected error message: " + actualErrorMessage);
 		}
 		WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
@@ -114,32 +117,28 @@ public class CustomerNew {
 	}
 	@BeforeClass
 	public void setup() throws InterruptedException {
-		ChromeOptions options = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
-		options.addArguments("--remote-allow-origins=*");
-		driver = new ChromeDriver(options);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+	    System.setProperty("webdriver.chrome.driver", "E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
+	     ChromeOptions options = new ChromeOptions();
+	   // options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
+	  // options.addArguments("--remote-allow-origins=*");
+
+	    driver = new ChromeDriver(options);
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
-		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete';"));
+		driver.get("http://localhost:8090/SmartWeb/#");
+		Thread.sleep(3000);
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
-		Userlogin.sendKeys("nilesh");
+		Userlogin.sendKeys("admin");
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
-		password.sendKeys("Nilesh@123");
+		password.sendKeys("password");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
-		WebElement ok = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
+		WebElement ok = driver.findElement(By.xpath("//button[@onclick='LoginFormOkClick()']"));
 		ok.click();
-		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";
-		String actualTitle = driver.getTitle();
-		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
-		System.out.println("Title Matched");
-		Thread.sleep(10000);
 	}
 
 	@AfterClass

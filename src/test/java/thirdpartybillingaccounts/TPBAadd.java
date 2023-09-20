@@ -15,10 +15,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TPBAadd {
 
@@ -26,38 +24,31 @@ public class TPBAadd {
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("TPBAadd");
 
-	@BeforeMethod
+	@BeforeClass
 	public void setup() throws InterruptedException {
 
+		System.setProperty("webdriver.chrome.driver",
+				"E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
-		options.addArguments("--remote-allow-origins=*");
-		driver = new ChromeDriver(options);
-		 wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		// options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
+		// options.addArguments("--remote-allow-origins=*");
 
+		driver = new ChromeDriver(options);
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
-		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-
+		driver.get("http://localhost:8090/SmartWeb/#");
+		Thread.sleep(3000);
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
-		Userlogin.sendKeys("nilesh");
+		Userlogin.sendKeys("admin");
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
-		password.sendKeys("Nilesh@123");
+		password.sendKeys("password");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
-
-		WebElement ok = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
+		WebElement ok = driver.findElement(By.xpath("//button[@onclick='LoginFormOkClick()']"));
 		ok.click();
-
-		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";
-		String actualTitle = driver.getTitle();
-		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
-		System.out.println("Title Matched");
-		Thread.sleep(10000);
 	}
 
 	@AfterMethod
@@ -124,7 +115,7 @@ public class TPBAadd {
 
 		logger.info("Click on add button successful");
 
-		String customercode = "AccountTest1";
+		String customercode = "AccountTest2";
 		String Customername = "Test Account";
 		String Accountnumber="12141315";
 		String address="903 b2 san francisco chhava";

@@ -17,28 +17,27 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class CartonNew {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("CartonNew");
 
-	@Test
+	@Test(priority = 0)
 	public void TestCartons() throws InterruptedException {
 		Createcarriers();
-		CartonSearch("");
+		CartonSearch("asdsdd");
 		captureError();
 		ClickonCartonAdd();
 		Codecheck("Test_21");
 		Dimensions();
 		CartonOk();
-		captureError();
 	}
+
+
 	public void captureError() throws InterruptedException {
 		Thread.sleep(5000);
 		WebElement errorMessage = wait
-				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='col-md-10 my-auto pr-0 mx-auto']")));
+				.until(ExpectedConditions.presenceOfElementLocated(By.id("errorMsg")));
 		Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
 	        String actualErrorMessage = errorMessage.getText();
 		if (actualErrorMessage.equals("Entry already exists in the database. Please try again.")) {
@@ -51,7 +50,7 @@ public class CartonNew {
 
             System.out.println("Unexpected error message: " + actualErrorMessage);
         }
-		WebElement error = driver.findElement(By.xpath("//button[@class='WLButton text-uppercase']"));
+		WebElement error = driver.findElement(By.id("btnErrorBoxOk"));
 		error.click();
 	}
 	public void Createcarriers() throws InterruptedException {
@@ -112,6 +111,7 @@ public class CartonNew {
 		Thread.sleep(5000);
 		WebElement COk = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@onclick='Carton_OK()']")));
 		COk.click();
+
 	}
 	public void CartonCancel() throws InterruptedException {
 		Thread.sleep(5000);
@@ -122,37 +122,33 @@ public class CartonNew {
 
 	@BeforeClass
 	public void setup() throws InterruptedException {
-		ChromeOptions options = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
-		options.addArguments("--remote-allow-origins=*");
-		driver = new ChromeDriver(options);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+	    System.setProperty("webdriver.chrome.driver", "E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
+	     ChromeOptions options = new ChromeOptions();
+	   // options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
+	  // options.addArguments("--remote-allow-origins=*");
+
+	    driver = new ChromeDriver(options);
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://localhost:8090/SmartWeb/#");
-		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete';"));
+		Thread.sleep(3000);
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
 		Userlogin.sendKeys("admin");
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
 		password.sendKeys("password");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
-		WebElement ok = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
+		WebElement ok = driver.findElement(By.xpath("//button[@onclick='LoginFormOkClick()']"));
 		ok.click();
-
-//		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";
-//		String actualTitle = driver.getTitle();
-//		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
-//		System.out.println("Title Matched");
-//		Thread.sleep(10000);
 	}
+
 	  @AfterClass
 	  public void teardown() {
-	   driver.quit();
+	  // driver.quit();
 	  }
 }
 

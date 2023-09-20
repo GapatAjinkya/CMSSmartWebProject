@@ -14,8 +14,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class ArchivedManifest {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
@@ -140,7 +138,10 @@ public class ArchivedManifest {
 		driver.findElement(By.id("menu_item_25")).click(); // To click on VS
 		Thread.sleep(3000);
 	}
-
+	public void Reprint() {
+		WebElement Reprint = driver.findElement(By.id("AMEReprint"));
+		Reprint.click();
+	}
 	@BeforeClass
 	public void setup() throws InterruptedException {
 

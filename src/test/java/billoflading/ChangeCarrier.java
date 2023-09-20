@@ -2,7 +2,6 @@ package billoflading;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,15 +17,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class ChangeCarrier {
 
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("ModifyBOL");
 	String CustomerCode = "TestBOL";
-	String Carriers = "LTLR_WL -- LTL Rated WorldLink";//Search Carrier
+	String Carriers = "LTLNR_WL -- LTLNR_WL";//Search Carrier
 	String CarrierAccounts="YRC -- YRC-Yellow Roadway";   //To change the carrier
 	String SelectShipvias="YRC_150 -- YRC_Class 150";
 	String PRO="2222";
@@ -34,33 +31,30 @@ public class ChangeCarrier {
 	@Test(priority = 0)
 	public void setup() throws InterruptedException
 	{
-		ChromeOptions options = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
-		options.addArguments("--remote-allow-origins=*");
-		driver = new ChromeDriver(options);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		logger.info("Browser opend");
-		driver.manage().window().maximize();
-		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
-		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
-		Thread.sleep(5000);
-		WebElement Userlogin = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtLPUserLogin"))); // Userlogin
-		Userlogin.sendKeys("nilesh");
-		WebElement password = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtLPPassword"))); // password
-		password.sendKeys("Nilesh@123");
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("chkRememberMe"))).click(); // chkRememberMe
-		WebElement ok = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
-		ok.click();
-		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";
-		String actualTitle = driver.getTitle();
-		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
-		System.out.println("Title Matched");
-		Thread.sleep(10000);
-	}
+		    System.setProperty("webdriver.chrome.driver", "E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
+		     ChromeOptions options = new ChromeOptions();
+		//  options.setBinary("E:\\ChromeTesting\\chrome-win64\\chrome.exe");
+		   //  options.setBinary("E:\\ChromeTesting\\chrome-win64\\chrome.exe");
+		   // options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
+		  // options.addArguments("--remote-allow-origins=*");
+
+		    driver = new ChromeDriver(options);
+			logger.info("Browser opend");
+			driver.manage().window().maximize();
+			driver.get("http://localhost:8090/SmartWeb/#");
+			Thread.sleep(3000);
+			driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
+			driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
+			Thread.sleep(3000);
+			wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+			WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
+			Userlogin.sendKeys("admin");
+			WebElement password = driver.findElement(By.id("txtLPPassword")); // password
+			password.sendKeys("password");
+			driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
+			WebElement ok = driver.findElement(By.xpath("//button[@onclick='LoginFormOkClick()']"));
+			ok.click();
+		}
 
 	@Test(priority = 2)
 	public void SelectBOLcustomer() throws InterruptedException

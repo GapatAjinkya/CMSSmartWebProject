@@ -26,8 +26,8 @@ public class InternationalShipmentTestnegative {
 	@Test(priority = 0)
 	public void Fexdexshipment() throws InterruptedException {
 		OpenPs();
-		ShipVia("FEUS_FSMS_IP");
-		addCustomer("CAN");
+		ShipVia("FEUS_WS_ID");
+		addCustomer("AdminCA");
 		addProduct("Books");
 		Manual("1.000");
 		Rate();
@@ -202,26 +202,28 @@ public class InternationalShipmentTestnegative {
 
 	@BeforeClass
 	public void setup() throws InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver",
+				"E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
-		options.addArguments("--remote-allow-origins=*");
+		// options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
+		// options.addArguments("--remote-allow-origins=*");
+
 		driver = new ChromeDriver(options);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://localhost:8090/SmartWeb/#");
+		Thread.sleep(3000);
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
 		Userlogin.sendKeys("admin");
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
 		password.sendKeys("password");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
-		WebElement ok = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
+		WebElement ok = driver.findElement(By.xpath("//button[@onclick='LoginFormOkClick()']"));
 		ok.click();
-		Thread.sleep(5000);
 	}
 }

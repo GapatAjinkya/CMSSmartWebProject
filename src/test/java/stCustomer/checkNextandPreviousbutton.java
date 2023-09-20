@@ -1,7 +1,6 @@
 package stCustomer;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -36,8 +35,6 @@ public class checkNextandPreviousbutton {
 
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
-		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);

@@ -13,49 +13,39 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Carrierstask {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("Carrierstask");
 
-	@BeforeMethod
+	@BeforeClass
 	public void setup() throws InterruptedException {
 
+		System.setProperty("webdriver.chrome.driver",
+				"E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
-		options.addArguments("--remote-allow-origins=*");
-		driver = new ChromeDriver(options);
+		// options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
+		// options.addArguments("--remote-allow-origins=*");
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		driver = new ChromeDriver(options);
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
-		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-
-		 wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete';"));
+		driver.get("http://localhost:8090/SmartWeb/#");
+		Thread.sleep(3000);
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
-		Userlogin.sendKeys("nilesh");
+		Userlogin.sendKeys("admin");
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
-		password.sendKeys("Nilesh@123");
+		password.sendKeys("password");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
-
-		WebElement ok = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
+		WebElement ok = driver.findElement(By.xpath("//button[@onclick='LoginFormOkClick()']"));
 		ok.click();
-
-		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";
-		String actualTitle = driver.getTitle();
-		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
-		System.out.println("Title Matched");
-		Thread.sleep(10000);
 	}
 
 	@AfterMethod
@@ -127,12 +117,12 @@ public class Carrierstask {
 		logger.info("Click on add button successful");
 		Thread.sleep(8000);
 
-	    String carriercode ="FEX_Test_A";
-		String Description = "FedEx US FSMS";
+	    String carriercode ="UPSPS_Test";
+		String Description = "Proshiptestag";
 		String Account="12141315";
 		String SCAC="903";
-		String Type="FEX -- Federal Express";
-		String ServerType="FedEx Ship Manager® Server";
+		String Type="UPS -- United Parcel Service";
+		String ServerType="ProShip";
 		String Organization="ALL";
 		String EODReport="NONE";
 		String Shippercode="DAR";
@@ -318,12 +308,12 @@ boolean Meteradd = driver.findElement(By.id("CAF_cmbFsmsUseMPS")).isDisplayed();
 
 //--------------------------For Ship via--------------------------------------
 
-			String shipviacode="FEXTest_S_A";
-			String ShipviaDescription="FEXGround";
+			String shipviacode="UPSPS_Test";
+			String ShipviaDescription="Proshiptestag";
 	        String ShipviaServiceFex="GN -- Ground®";
 	        String ShipviaServiceUps="GND -- Ground";
 			String Carriercode=carriercode+" -- " +Description;          //FEX_Test1 -- FedEx US FSMS
-			String SpServices1="Dry Ice";
+
 
 	WebElement selectcarrier = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cmbAccountSVF")));
 	Select ca=new Select(selectcarrier);
@@ -332,9 +322,6 @@ boolean Meteradd = driver.findElement(By.id("CAF_cmbFsmsUseMPS")).isDisplayed();
 
 	Thread.sleep(5000);
 //To select service
-
-
-
 	WebElement ShipviaServicet = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cmbServiceSVF")));
 	Select SS=new Select(ShipviaServicet);
 

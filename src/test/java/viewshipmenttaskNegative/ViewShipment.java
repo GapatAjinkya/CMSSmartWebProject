@@ -44,7 +44,7 @@ public class ViewShipment {
 	public void TestwithShipvia() throws InterruptedException {
 		OpenPs();
 		ShipmentId("12121");
-		ViewShipmentMenu("Ship Via","FEUS_FSMS_GN -- FEUS_FSMS_Ground");
+		ViewShipmentMenu("Ship Via","FEX_Test1_GN1 -- Ground");
 		ok();
 		ShipmentsTable();
 	}
@@ -52,7 +52,7 @@ public class ViewShipment {
 	public void TestwithShipviaManifest() throws InterruptedException {
 		OpenPs();
 		ShipmentId("12121");
-		ViewShipmentMenu("Ship Via","FEUS_FSMS_GN -- FEUS_FSMS_Ground");
+		ViewShipmentMenu("Ship Via","FEX_Test1_GN1 -- Ground");
 		selectDate("October 2023", "25");
 		ok();
 		ShipmentsTable();
@@ -179,26 +179,28 @@ public void ok() {
 
 	@BeforeClass
 	public void setup() throws InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver",
+				"E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
-		options.addArguments("--remote-allow-origins=*");
+		// options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
+		// options.addArguments("--remote-allow-origins=*");
+
 		driver = new ChromeDriver(options);
-		 wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://localhost:8090/SmartWeb/#");
-		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete';"));
+		Thread.sleep(3000);
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
 		Userlogin.sendKeys("admin");
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
 		password.sendKeys("password");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
-		WebElement ok = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
+		WebElement ok = driver.findElement(By.xpath("//button[@onclick='LoginFormOkClick()']"));
 		ok.click();
 	}
 }

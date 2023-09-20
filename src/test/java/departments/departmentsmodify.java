@@ -17,8 +17,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class departmentsmodify {
 
 	public static WebDriver driver;
@@ -27,34 +25,32 @@ public class departmentsmodify {
 
 	@BeforeClass
 	public void setup() throws InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver",
+				"E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
-		options.addArguments("--remote-allow-origins=*");
+		// options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
+		// options.addArguments("--remote-allow-origins=*");
+
 		driver = new ChromeDriver(options);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
-		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
+		driver.get("http://localhost:8090/SmartWeb/#");
+		Thread.sleep(3000);
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
-		Userlogin.sendKeys("nilesh");
+		Userlogin.sendKeys("admin");
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
-		password.sendKeys("Nilesh@123");
+		password.sendKeys("password");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
-		WebElement ok = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
+		WebElement ok = driver.findElement(By.xpath("//button[@onclick='LoginFormOkClick()']"));
 		ok.click();
-		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";
-		String actualTitle = driver.getTitle();
-		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
-		System.out.println("Title Matched");
-		Thread.sleep(10000);
 	}
 
-@AfterClass
+	@AfterClass
 	public void teardown() throws InterruptedException {
 
 //		Thread.sleep(10000);
@@ -65,10 +61,12 @@ public class departmentsmodify {
 	public void editTest() throws InterruptedException {
 		edit("Department5");
 	}
+
 	@Test(priority = 2)
 	public void testDelete() throws InterruptedException {
-		delete("TestAG1");  //newcode
+		delete("TestAG1"); // newcode
 	}
+
 	public void edit(String Code) throws InterruptedException {
 
 		WebElement Configuration = driver.findElement(By.id("menu_item_4"));
@@ -97,8 +95,8 @@ public class departmentsmodify {
 		driver.findElement(By.xpath("//button[@onclick='onDepatmentSearchPrivateOkClick()']")).click();// ok buttton
 		Thread.sleep(3000);
 
-		WebElement selectproduct = wait.until(ExpectedConditions.presenceOfElementLocated(
-				By.xpath("//tr[@data-index='0']")));
+		WebElement selectproduct = wait
+				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//tr[@data-index='0']")));
 		wait.until(ExpectedConditions.visibilityOf(selectproduct));
 		selectproduct.click();
 
@@ -168,8 +166,6 @@ public class departmentsmodify {
 		}
 	}
 
-
-
 	public void delete(String newcode) throws InterruptedException {
 
 		WebElement Configuration = driver.findElement(By.id("menu_item_4"));
@@ -194,13 +190,14 @@ public class departmentsmodify {
 		Thread.sleep(8000);
 
 		WebElement Search = driver.findElement(By.xpath("//input[@id='txtCSTDeptSearch']"));
- // To delete this department
+		// To delete this department
 		Search.sendKeys(newcode);
 
 		driver.findElement(By.xpath("//button[@onclick='onDepatmentSearchPrivateOkClick()']")).click();// ok buttton
 		Thread.sleep(8000);
 
-		WebElement selectproduct = driver.findElement(By.xpath("//table[@id='tblCSTCustomerList']//td[contains(text(), '" + newcode + "')]"));
+		WebElement selectproduct = driver
+				.findElement(By.xpath("//table[@id='tblCSTCustomerList']//td[contains(text(), '" + newcode + "')]"));
 		wait.until(ExpectedConditions.visibilityOf(selectproduct));
 		wait.until(ExpectedConditions.elementToBeClickable(selectproduct));
 		selectproduct.click();

@@ -91,10 +91,10 @@ public class ArchivedManifests extends BaseClass {
 	Thread.sleep(5000);
 
 
-	String month="June 2023";
+	String month="August 2023";
 	String day="30";
 
-	WebElement datepicker=driver.findElement(By.id("txtManifestFormDatePicker"));
+	WebElement datepicker=driver.findElement(By.id("IWLDatePickerFromAME"));
 	datepicker.click();
 
 
@@ -256,7 +256,7 @@ public class ArchivedManifests extends BaseClass {
 		return this;
 	}
 
-	@FindBy(xpath = "//table/tbody/tr[3]") // to select the carrier
+	@FindBy(xpath = "//table/tbody/tr[1]") // to select the carrier
 	private WebElement Selectcarrier;
 
 	public ArchivedManifests Selectcarrierfromtable(String newcode) throws InterruptedException {

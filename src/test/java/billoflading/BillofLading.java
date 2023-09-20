@@ -18,8 +18,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class BillofLading
 
 {
@@ -29,7 +27,7 @@ public class BillofLading
 	@BeforeMethod
 	public void setup() throws InterruptedException {
 
-	
+
 	    System.setProperty("webdriver.chrome.driver", "E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 	    options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");

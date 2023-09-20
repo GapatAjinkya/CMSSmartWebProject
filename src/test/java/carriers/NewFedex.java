@@ -14,47 +14,40 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
-public class New {
+public class NewFedex {
 
 	public static WebDriver driver;
 	public static WebDriverWait wait;
-	Logger logger = LogManager.getLogger("Newcarriers");
+	Logger logger = LogManager.getLogger("New");
 
-	@BeforeMethod
+	@BeforeClass
 	public void setup() throws InterruptedException {
 
+		System.setProperty("webdriver.chrome.driver",
+				"E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
-		options.addArguments("--remote-allow-origins=*");
+		// options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
+		// options.addArguments("--remote-allow-origins=*");
+
 		driver = new ChromeDriver(options);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
-		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
+		driver.get("http://localhost:8090/SmartWeb/#");
+		Thread.sleep(3000);
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
-		Userlogin.sendKeys("nilesh");
+		Userlogin.sendKeys("admin");
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
-		password.sendKeys("Nilesh@123");
+		password.sendKeys("password");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
-
-		WebElement ok = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
+		WebElement ok = driver.findElement(By.xpath("//button[@onclick='LoginFormOkClick()']"));
 		ok.click();
-
-		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";
-		String actualTitle = driver.getTitle();
-		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
-		System.out.println("Title Matched");
-		Thread.sleep(10000);
 	}
 
 	@AfterMethod
@@ -140,12 +133,12 @@ public class New {
 		String Services="Test";
 
 		String Label="CMS";
-		String FsmsServer="CMSXIAPP2;2000";
+		String FsmsServer="23.254.204.198;2000";
 		String MPS="No";
 		String Meter="119183328";
 
 
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		WebElement dropdown = driver.findElement(By.id("CAF_cmbType"));
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(Type);
@@ -172,12 +165,12 @@ public class New {
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("CAF_txtAccount")));
 		account.sendKeys(Account);
 		logger.info("Account add  successful");
-		Thread.sleep(3000);
+
 		WebElement scac = driver.findElement(By.id("CAF_txtSCAC"));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("CAF_txtSCAC")));
 		scac.sendKeys(SCAC);
 		logger.info("scac add  successful");
-		Thread.sleep(3000);
+
 
 		WebElement organization = driver.findElement(By.id("CAF_cmbOrgs"));
 		Select organizationselect = new Select(organization);
@@ -194,7 +187,7 @@ public class New {
 		Select EODreport = new Select(EOD);
 		EODreport.selectByVisibleText(EODReport);
 		logger.info(" EOD  Select  successful");
-		Thread.sleep(3000);
+
 
 boolean cmbModule = driver.findElement(By.id("CAF_txtShipperCode")).isDisplayed();
 		 if (cmbModule)
@@ -218,7 +211,7 @@ boolean Shipcode = driver.findElement(By.id("CAF_txtShipperCode")).isDisplayed()
 				logger.info("Shipper code add  successful");
 		 }
 		logger.info(" Service Select  successful");
-		Thread.sleep(3000);
+
 		WebElement checkbox = driver.findElement(By.id("CAF_chkHoliday"));
 		if(checkbox.isSelected())
 		{
@@ -228,7 +221,7 @@ boolean Shipcode = driver.findElement(By.id("CAF_txtShipperCode")).isDisplayed()
 			logger.info(" checkbox is  Selected  ");
 			checkbox.click();
 		}
-		Thread.sleep(3000);
+
 
 		//To Fedex
 
@@ -239,7 +232,7 @@ boolean Shipcode = driver.findElement(By.id("CAF_txtShipperCode")).isDisplayed()
 				Select ls = new Select(SelectLS);
 				ls.selectByVisibleText(Label);
 				logger.info(" lable   Select  successful");
-				Thread.sleep(3000);
+
 		}else {
 			System.out.println("Label Source is not present");
 		}
@@ -262,7 +255,7 @@ boolean use = driver.findElement(By.id("CAF_cmbFsmsUseMPS")).isDisplayed();
 				Select Selectuse = new Select(useselect);
 				Selectuse.selectByVisibleText(MPS);
 				logger.info(" MPS  Select  successful");
-				Thread.sleep(3000);
+
 		 }else {
 			 System.out.println("use not present");
 		 }
@@ -273,21 +266,15 @@ boolean Meteradd = driver.findElement(By.id("CAF_cmbFsmsUseMPS")).isDisplayed();
 				WebElement Meteraddsend = driver.findElement(By.id("CAF_txtMeter"));
 				Meteraddsend.sendKeys(Meter);
 				logger.info(" Meter  add  successful");
-				Thread.sleep(3000);
+
 		 }else {
 			 System.out.println("Meteradd present");
 		 }
-
-
-
-
-
-
 		WebElement okclick = driver.findElement(By.xpath("//button[@onclick='CAF_OkClick()']"));
 		okclick.click();
 		logger.info(" Click on ok successful");
 
-	   Thread.sleep(5000);
+
 	   boolean isButtonVisible = driver.findElement(By.id("btnErrorBoxOk")).isDisplayed();
 
 	 if (isButtonVisible)

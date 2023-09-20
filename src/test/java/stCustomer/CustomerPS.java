@@ -15,88 +15,63 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class CustomerPS {
-
+	public static WebDriver driver;
+	public static WebDriverWait wait;
+	Logger logger = LogManager.getLogger("CreateCustomer");
 	@Test
 	public void Customeradd() throws InterruptedException {
+		    System.setProperty("webdriver.chrome.driver", "E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
+		     ChromeOptions options = new ChromeOptions();
+		   // options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
+		  // options.addArguments("--remote-allow-origins=*");
 
-	Logger logger = LogManager.getLogger("CustomerPS");
-	ChromeOptions options = new ChromeOptions();
-    WebDriverManager.chromedriver().setup();
-    options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
-    options.addArguments("--remote-allow-origins=*");
-    WebDriver driver = new ChromeDriver(options);
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-	logger.info("Browser opend");
-	driver.manage().window().maximize();
-	driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-	driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
-	driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
-	Thread.sleep(3000);
-	WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
-	Userlogin.sendKeys("nilesh");
-	WebElement password = driver.findElement(By.id("txtLPPassword")); // password
-	password.sendKeys("Nilesh@123");
-	driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
+		    driver = new ChromeDriver(options);
+			logger.info("Browser opend");
+			driver.manage().window().maximize();
+			driver.get("http://localhost:8090/SmartWeb/#");
+			Thread.sleep(3000);
+			driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
+			driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
+			Thread.sleep(3000);
+			wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+			WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
+			Userlogin.sendKeys("admin");
+			WebElement password = driver.findElement(By.id("txtLPPassword")); // password
+			password.sendKeys("password");
+			driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
+			WebElement ok = driver.findElement(By.xpath("//button[@onclick='LoginFormOkClick()']"));
+			ok.click();
 
-	WebElement ok = wait
-			.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
-	ok.click();
-
-	String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";
-	String actualTitle = driver.getTitle();
-	assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
-	System.out.println("Title Matched");
 	Thread.sleep(10000);
 
 	WebElement Configuration = driver.findElement(By.xpath("//a[@id='menu_item_4']"));
-	wait.until(ExpectedConditions.visibilityOf(Configuration));
-	wait.until(ExpectedConditions.elementToBeClickable(Configuration));
 	Configuration.click();
 	Thread.sleep(5000);
 	logger.info("Clickon Configuration successful");
 
 	WebElement SupportTables = driver.findElement(By.xpath("//a[@id='menu_item_45']"));
-	wait.until(ExpectedConditions.visibilityOf(SupportTables));
-	wait.until(ExpectedConditions.elementToBeClickable(SupportTables));
 	SupportTables.click();
 	logger.info(" SupportTables Windo Open  successful");
 
 	WebElement Customers = driver.findElement(By.xpath("//a[@id='menu_item_451']"));
-	wait.until(ExpectedConditions.visibilityOf(Customers));
-	wait.until(ExpectedConditions.elementToBeClickable(Customers));
 	Customers.click();
 	logger.info(" Customers Windo Open  successful");
-
-
 	Thread.sleep(6000);
 	WebElement CustomerOkClick = driver.findElement(By.xpath("//button[@onclick='onCustomerSearchPrivateOkClick()']"));
-	wait.until(ExpectedConditions.visibilityOf(CustomerOkClick));
-	wait.until(ExpectedConditions.elementToBeClickable(CustomerOkClick));
 	CustomerOkClick.click();
 	logger.info(" Customers Windo Open  successful");
-
 	Thread.sleep(3000);
 	WebElement AddCustomer = driver.findElement(By.id("CSTCustAdd"));
-	wait.until(ExpectedConditions.visibilityOf(AddCustomer));
-	wait.until(ExpectedConditions.elementToBeClickable(AddCustomer));
 	AddCustomer.click();
 	logger.info(" Click on add Customer ");
 	Thread.sleep(10000);
-
 	String newcode="USAG2";      // Change the code as per Requirement
 	WebElement CustomerCode = driver.findElement(By.id("CFtxtXRef"));
-	wait.until(ExpectedConditions.elementToBeClickable(CustomerCode));
 	CustomerCode.sendKeys(newcode);   //For the new customer code
-
 	WebElement Company = driver.findElement(By.id("CFtxtName"));
-	wait.until(ExpectedConditions.elementToBeClickable(Company));
 	Company.sendKeys("TestAG1");
-
 	WebElement Contact = driver.findElement(By.id("CFtxtContact"));
-	wait.until(ExpectedConditions.elementToBeClickable(Company));
 	Contact.sendKeys("Ajinkya");
 
 	driver.findElement(By.id("CFtxtAddress1")).sendKeys("Testing1");

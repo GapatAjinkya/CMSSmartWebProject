@@ -17,8 +17,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class ArchivedManifestsTest {
 
 	public static WebDriver driver;
@@ -135,7 +133,6 @@ public class ArchivedManifestsTest {
 		    //options.setBinary("E:\\ChromeTesting\\chrome-win64\\chrome.exe");
 		    options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
 		   //options.addArguments("--remote-allow-origins=*");
-
 		    driver = new ChromeDriver(options);
 			logger.info("Browser opend");
 			driver.manage().window().maximize();

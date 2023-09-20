@@ -1,15 +1,22 @@
 package com.cms.pages;
 
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeClass;
 
 import com.cms.Base.BaseClass;
 
 public class Login extends BaseClass {
-
+	public static WebDriverWait wait;
 	public Login(WebDriver rdriver) {
 		driver = rdriver;
 		PageFactory.initElements(rdriver, this);
@@ -77,13 +84,32 @@ public class Login extends BaseClass {
 	}
 
 	public void LoginPage () throws InterruptedException {
-		clickOnLocalconfig();
-		clickOnLoginas();
-		UserLogin();
-		userPassword();
-		clickOnRemember();
-		clickOnOk();
-		checkTital();
-		Thread.sleep(5000);
+		
+
+//			System.setProperty("webdriver.chrome.driver",
+//					"E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
+//			ChromeOptions options = new ChromeOptions();
+//			// options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
+//			// options.addArguments("--remote-allow-origins=*");
+//
+//			driver = new ChromeDriver(options);
+
+			driver.manage().window().maximize();
+		//	driver.get("http://localhost:8090/SmartWeb/#");
+			Thread.sleep(3000);
+			driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
+			driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
+			Thread.sleep(3000);
+			wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+			WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
+			Userlogin.sendKeys("admin");
+			WebElement password = driver.findElement(By.id("txtLPPassword")); // password
+			password.sendKeys("password");
+			driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
+			WebElement ok = driver.findElement(By.xpath("//button[@onclick='LoginFormOkClick()']"));
+			ok.click();
+			Thread.sleep(5000);
+		}
+		
 	}
-}
+

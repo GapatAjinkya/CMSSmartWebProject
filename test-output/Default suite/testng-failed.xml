@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="archivedmanifesttest.ArchivedManifestsTest">
+      <class name="bolnegative.Billoflanding">
         <methods>
-          <include name="testcasetwo"/>
-          <include name="testcase"/>
           <include name="setup"/>
+          <include name="TestRate"/>
+          <include name="MergeTest"/>
         </methods>
-      </class> <!-- archivedmanifesttest.ArchivedManifestsTest -->
+      </class> <!-- bolnegative.Billoflanding -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

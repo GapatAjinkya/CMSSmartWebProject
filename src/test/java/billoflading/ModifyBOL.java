@@ -1,7 +1,6 @@
 package billoflading;
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -33,13 +32,13 @@ public class ModifyBOL {
 		WebDriverManager.chromedriver().setup();
 		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
 		options.addArguments("--remote-allow-origins=*");
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		driver = new ChromeDriver(options);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
 
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
 		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(5000);
@@ -51,10 +50,6 @@ public class ModifyBOL {
 		WebElement ok = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
 		ok.click();
-		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";
-		String actualTitle = driver.getTitle();
-		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
-		System.out.println("Title Matched");
 		Thread.sleep(10000);
 	}
 

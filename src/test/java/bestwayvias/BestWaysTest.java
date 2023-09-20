@@ -26,24 +26,21 @@ public class BestWaysTest {
 	@Test
 	public void bestwaynew() throws InterruptedException {
 		CreateBestWay();
-		SearchBestWayCode("TestAG1");
-		newbestway("TestAG1","TestAG1","VA_UG -- Virginia User Group");
+		SearchBestWayCode("TestAG1Bestway");
+		newbestway("TestAG1","TestAG1","User_Group -- User_Group");
 		Showall();
 		Okbutton();
 	}
 	public void CreateBestWay() throws InterruptedException {
 		WebElement Configuration =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("menu_item_4")));
-		wait.until(ExpectedConditions.elementToBeClickable(Configuration));
 		Configuration.click();
 		logger.info("Clickon Configuration successful");
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		WebElement carriers = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='menu_item_44']")));
-		wait.until(ExpectedConditions.elementToBeClickable(carriers));
 		carriers.click();
 		logger.info("Click on Carriers successful");
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		WebElement bestWayVias = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='menu_item_442']")));
-		wait.until(ExpectedConditions.elementToBeClickable(bestWayVias));
 		bestWayVias.click();
 	}
 
@@ -55,7 +52,7 @@ public class BestWaysTest {
 		WebElement ok = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@onclick='BWSFOkClick()']")));
 		ok.click();
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		WebElement error = driver.findElement(By.id("btnErrorBoxOk"));
 		if (error.isDisplayed()) {
 			WebElement error1 = driver.findElement(By.id("errorMsg"));
@@ -74,7 +71,7 @@ public class BestWaysTest {
 		WebElement add = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='BestWayAdd']")));
 		add.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		WebElement txtCodeBWF = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.id("txtCodeBWF")));
 		txtCodeBWF.sendKeys(bestwaycode);
@@ -86,7 +83,7 @@ public class BestWaysTest {
 		Select select = new Select(OrgSiteGroup);
 		select.selectByVisibleText(org);
 
-		String[] shipvia = { "DHL_PRo12_DX", "ProUPS1_GND","LTLNR_WL_100","FMD-DHLPPGround",""};
+		String[] shipvia = { "ProUPS1_GND", "FEUS_FSMS_GN","LTLNR_WL_100","Holl_XA",""};
 		for (String value : shipvia) {
 	        WebElement checkbox = driver.findElement(By.xpath("//u[contains(.,'" + value + "')]//preceding::td[1]"));
 	       checkbox.click();
@@ -152,32 +149,29 @@ public void Okbutton() throws InterruptedException {
 	}
 	@BeforeClass
 	public void setup() throws InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver",
+				"E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
-		options.addArguments("--remote-allow-origins=*");
+		// options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
+		// options.addArguments("--remote-allow-origins=*");
+
 		driver = new ChromeDriver(options);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		logger.info("Browser opend");
 		driver.manage().window().maximize();
-		driver.get("http://cmsxiapp.cmsglobalsoft.com:2320/Smartweb/#");
-		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete';"));
+		driver.get("http://localhost:8090/SmartWeb/#");
+		Thread.sleep(3000);
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
-		Userlogin.sendKeys("nilesh");
+		Userlogin.sendKeys("admin");
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password
-		password.sendKeys("Nilesh@123");
+		password.sendKeys("password");
 		driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
-		WebElement ok = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@onclick='LoginFormOkClick()']")));
+		WebElement ok = driver.findElement(By.xpath("//button[@onclick='LoginFormOkClick()']"));
 		ok.click();
-		String expectedTitle = "CMS WorldLink Xi 23 (2.0) - XI 23.2.0- SQL - WLDB_XI2320DB";
-		String actualTitle = driver.getTitle();
-		assert actualTitle.equalsIgnoreCase(expectedTitle) : "Title didn't match";
-		System.out.println("Title Matched");
-		Thread.sleep(10000);
 	}
 
 }

@@ -107,7 +107,6 @@ public class addshipvia {
 		}
 
 		WebElement addshipvia = driver.findElement(By.id("ShipViasAdd"));
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ShipViasAdd")));
 		addshipvia.click();
 		logger.info("Click on add Ship vias successful");
 

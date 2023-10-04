@@ -16,8 +16,6 @@ public static void main(String[] args) throws InterruptedException {
 
 		Logger logger = LogManager.getLogger("Internationalshipment");// object created for logger class and class name is passed
 
-	//	DOMConfigurator.configure("Log4j.xml");
-		//PropertyConfigurator.configure("");
 		ChromeOptions options = new ChromeOptions();
 		WebDriverManager.chromedriver().setup();
 		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");

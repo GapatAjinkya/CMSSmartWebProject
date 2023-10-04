@@ -16,8 +16,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class TestCaseForCode {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
@@ -54,13 +52,13 @@ public class TestCaseForCode {
 		Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Incorrect error message");
 		WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
 		error.click();
-		
+
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//button[contains(@tabindex,'46')]")).click();
 	}
-	
+
 	public void type(String Type) throws InterruptedException {
-		
+
 		WebElement dropdown = driver.findElement(By.id("CAF_cmbType"));
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(Type);
@@ -144,7 +142,7 @@ public class TestCaseForCode {
 		String MPS="No";
 		String Meter="119183328";
 		Thread.sleep(15000);
-		
+
 		WebElement dropdown = driver.findElement(By.id("CAF_cmbType"));
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(Type);

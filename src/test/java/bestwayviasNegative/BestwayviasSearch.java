@@ -15,8 +15,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class BestwayviasSearch {
 
 	public static WebDriver driver;
@@ -77,7 +75,7 @@ public class BestwayviasSearch {
 		// options.addArguments("--remote-allow-origins=*");
 
 		driver = new ChromeDriver(options);
-	
+
 		driver.manage().window().maximize();
 		driver.get("http://localhost:8090/SmartWeb/#");
 		Thread.sleep(3000);

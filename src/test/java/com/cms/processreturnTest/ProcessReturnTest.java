@@ -13,9 +13,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeClass;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ProcessReturnTest {
 
@@ -69,7 +66,7 @@ public class ProcessReturnTest {
 		dropdown.click();
 		Thread.sleep(2000);
 		WebElement sendkeys=driver.findElement(By.id("txtSCSearchSS"));
-		sendkeys.sendKeys("FEX_Test1_GN1");
+		sendkeys.sendKeys("FSMS(MPS:YES)_GN");
 		driver.findElement(By.xpath("//button[@id='btnSearchOk_PS']")).click();
 		Thread.sleep(2000);
 
@@ -92,7 +89,7 @@ public class ProcessReturnTest {
 		WebElement customercode = driver.findElement(By.id("radCode")); // customercode
 		customercode.click();
 		WebElement searchcustomer = driver.findElement(By.id("txtSCSearch")); // searchcustomer
-		searchcustomer.sendKeys("AdminVA");
+		searchcustomer.sendKeys("CMS");
 
 		WebElement List = driver.findElement(By.id("selCutomerList"));
 		Select CustomerList = new Select(List);

@@ -16,8 +16,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class TestCaseForDescription {
 
 	public static WebDriver driver;
@@ -61,11 +59,11 @@ public class TestCaseForDescription {
 		Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
 	        String actualErrorMessage = errorMessage.getText();
 		if (actualErrorMessage.equals(" Value should be less than 50 characters. Please try again.")) {
- 
+
             System.out.println("Handling first error message.");
             Assert.assertEquals(actualErrorMessage, "Value should be less than 50 characters. Please try again.", "Incorrect error message");
         } else if (actualErrorMessage.equals("Field value cannot be blank. Please try again.")) {
-       
+
             System.out.println("Handling second error message.");
             Assert.assertEquals(actualErrorMessage, "Field value cannot be blank. Please try again.", "Incorrect error message");
         } else {

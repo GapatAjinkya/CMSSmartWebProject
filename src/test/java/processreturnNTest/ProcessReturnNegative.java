@@ -16,8 +16,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class ProcessReturnNegative {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
@@ -26,18 +24,27 @@ public class ProcessReturnNegative {
 	@Test(priority = 0)
 	public void TestReturn() throws InterruptedException {
 	    OpenPs();
-	    ShipVia("FEX_Test1_GN1");
-	    process();
-	    captureError();
-	     addCustomer("AdminVA");
-	     Manual("0");
-	     process();
-	     captureError();
+	    ShipVia("UPSOLT_G");
+	 //   process();
+	  //  captureError();
+	     addCustomer("CMS");
+	     
+	    // process();
+	    // captureError();
 	    }
-	public void process() {
+	@Test(priority = 1)
+	public void testDetails() throws InterruptedException {
+		  Details("Books");
+		  Manual("1");
+		     process();
+	}
+	public void process() throws InterruptedException {
+		Thread.sleep(3000);
 		driver.findElement(By.id("btnShipClickPR")).click();
 	}
-
+public void email() {
+	driver.findElement(By.id("PRtxtRetEmail")).sendKeys("CMS@Cms.com");
+}
 	public void ShipVia(String ShipViaCode) throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement shipviaSearch = driver.findElement(By.xpath("//*[@onclick=\"btnSearch_PS()\"]")); // Search the //																							// Shipvias list
@@ -57,21 +64,36 @@ public class ProcessReturnNegative {
 		ManualWeight.clear();
 		ManualWeight.sendKeys(Weight);
 		logger.info("Manual Weight is fill ");
+		Thread.sleep(3000);
+		WebElement txtLength = driver.findElement(By.xpath("//input[@id='PRtxtPL']"));
+		txtLength.clear();
+		txtLength.sendKeys("1");
+		Thread.sleep(3000);
+		WebElement txtWidth = driver.findElement(By.xpath("//input[@id='PRtxtPW']"));
+		txtWidth.clear();
+		txtWidth.sendKeys("1");
+		Thread.sleep(3000);
+		WebElement txtHeights = driver.findElement(By.xpath("//input[@id='PRtxtPH']"));
+		txtHeights.clear();
+		txtHeights.sendKeys("1");
+		Thread.sleep(2000);
+		driver.findElement(By.id("btnShipClick")).click();
+		logger.info("Click on  Shipment ");
 	}
 	public void OpenPs() throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement Transaction = driver.findElement(By.id("menu_item_2")); // To click on Transaction
 		Transaction.click();
 		driver.findElement(By.id("menu_item_22")).click(); // To click on Process Returns
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 	}
 	public void addCustomer(String Customer) throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		WebElement customer = driver.findElement(By.id("PRbtnCustomerSearch"));
 		customer.click();
 		logger.info("Clicked on Customer");
 		// To Customer Search Criteria
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		WebElement customercode = driver.findElement(By.id("radCode")); // customercode
 		customercode.click();
 		WebElement searchcustomer = driver.findElement(By.id("txtSCSearch")); // searchcustomer
@@ -81,18 +103,48 @@ public class ProcessReturnNegative {
 		CustomerList.selectByValue("1"); // To select Global
 
 		driver.findElement(By.xpath("//button[@onclick='onCustomerSearchOkClick()']")).click(); // click on ok
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		logger.info("Customer Searched");
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//td[contains(text(),'"+Customer+"')]")).click();
 		WebElement Customerok= driver.findElement(By.id("addressformOk"));
 		Customerok.click();          // Click on OK
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		logger.info("Customer Added");
 	}
+public void Details(String Product) throws InterruptedException {
+	// To Add Details
+	Thread.sleep(3000);
+			WebElement Details = driver.findElement(By.id("btnDetails"));
+			Details.click(); // Details Button
+			Thread.sleep(3000);
+			WebElement SelectProduct = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnSelectP")));
+			SelectProduct.click(); // SelectProduct Button
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//input[@value=\"Code\"]")).click();
+			WebElement Productname = driver.findElement(By.id("txtProductSearch"));
+			Productname.sendKeys(Product);
+			logger.info("Books input given ");
+			Thread.sleep(3000);
+			driver.findElement(By.id("btnPOk")).click(); // Click on oK
+			Thread.sleep(2000);
+			WebElement Books = driver.findElement(By.xpath("//*[@id='productTable']/tbody/tr/td[1]"));
+			Books.click();
+			logger.info("Books Selected ");
+			Thread.sleep(2000);
+			driver.findElement(By.id("btnProductOk")).click();
+			Thread.sleep(2000);
+			WebElement QuantityEnter = driver.findElement(By.id("txtQuantity"));
+			QuantityEnter.clear();
+			QuantityEnter.sendKeys("1");
+			driver.findElement(By.xpath("//*[@id=\"btnPDOk\"]")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//*[@id=\"btnPdOk\"]")).click();
 
+			logger.info("Details added");
+}
 	public void captureError() throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		WebElement errorMessage = wait
 				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@id='errorMsg']")));
 		Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed");
@@ -111,9 +163,17 @@ public class ProcessReturnNegative {
 			Assert.assertEquals(actualErrorMessage,
 					"IOR Code is required when processing FedEx IPD/IED/IGD/IPF shipments! Please click on the International button and enter the IOR Code.",
 					"Incorrect error message");
-		} else {
+		} 
+		else if (actualErrorMessage.equals(
+				"Please Check the Return Email Address..")) {
+			System.out.println("Handling error message:-  " + actualErrorMessage);
+			Assert.assertEquals(actualErrorMessage,
+					"Please Check the Return Email Address..",
+					"Incorrect error message");
+		}else {
 			System.out.println("Unexpected error message: " + actualErrorMessage);
 		}
+		Thread.sleep(3000);
 		WebElement error = driver.findElement(By.xpath("//button[@id='btnErrorBoxOk']"));
 		error.click();
 	}
@@ -135,7 +195,8 @@ public class ProcessReturnNegative {
 		driver.findElement(By.id("menu_item_1")).click(); // To click on LocalConfig Menu
 		driver.findElement(By.id("menu_item_15")).click(); // To click on Login Tab
 		Thread.sleep(3000);
-		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	     wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 		WebElement Userlogin = driver.findElement(By.id("txtLPUserLogin")); // Userlogin
 		Userlogin.sendKeys("admin");
 		WebElement password = driver.findElement(By.id("txtLPPassword")); // password

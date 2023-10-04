@@ -13,8 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 public class ShipViasSearch {
 	public static WebDriver driver;
 	public static WebDriverWait wait;

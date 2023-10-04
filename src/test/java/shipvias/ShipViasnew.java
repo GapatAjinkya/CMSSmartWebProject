@@ -15,12 +15,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ShipViasnew {
 
@@ -108,7 +104,7 @@ public class ShipViasnew {
 		WebElement bill = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cmbBillDutyTaxToSVF")));
 		Select billselect = new Select(bill);
 		billselect.selectByVisibleText("Recipient");
-	
+
 		logger.info("select bill successful");
 
 		WebElement Billas = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cmbBillAsSVF")));
@@ -119,12 +115,12 @@ public class ShipViasnew {
 
 		WebElement Shipviacode = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtCodeSVF")));
 		Shipviacode.sendKeys(shipviacode);
-	
+
 		logger.info("Send ship viacode  successful");
 
 		WebElement Dis = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtDescriptionSVF")));
 		Dis.sendKeys(ShipviaDescription);
-	
+
 		logger.info("Send Discription  successful");
 //		driver.findElement(By.xpath("//input[@id='BOX14318']")).click();
 

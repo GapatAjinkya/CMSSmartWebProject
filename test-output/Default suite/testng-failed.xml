@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="bolnegative.Billoflanding">
+      <class name="processhipmentnegative.SwosWithPackVsScript">
         <methods>
           <include name="setup"/>
-          <include name="TestRate"/>
-          <include name="MergeTest"/>
+          <include name="ViewShipment"/>
+          <include name="TestaddGroups"/>
         </methods>
-      </class> <!-- bolnegative.Billoflanding -->
+      </class> <!-- processhipmentnegative.SwosWithPackVsScript -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

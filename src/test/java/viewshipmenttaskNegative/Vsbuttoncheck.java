@@ -10,13 +10,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Vsbuttoncheck {
 	public static WebDriver driver;
@@ -90,7 +87,7 @@ public class Vsbuttoncheck {
 		Assert.assertTrue(dataStatus, "Expected 'No matching records found' text not found.");
 		driver.findElement(By.id("cmdCancel")).click();
 	}
-	
+
 	@BeforeClass
 	public void setup() throws InterruptedException {
 

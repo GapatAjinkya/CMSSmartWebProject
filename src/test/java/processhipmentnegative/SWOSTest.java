@@ -10,7 +10,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -21,9 +20,9 @@ import io.netty.handler.timeout.TimeoutException;
 public class SWOSTest {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
-	Logger logger = LogManager.getLogger("ProcesShipment");
-	
-	
+	Logger logger = LogManager.getLogger("SWOSTest");
+
+
 	@Test(priority = 0)
 	public void SearchTest() throws InterruptedException {
 		swosGroups();
@@ -60,13 +59,13 @@ public class SWOSTest {
 		captureError();
 	}
 	public void ManifestDate(String dateAsString) {
-		
+
 		WebElement element=driver.findElement(By.id("SWOSFrmtxtManDt"));
 		element.clear();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].value = arguments[1];", element, dateAsString);
     //month/date/year
-		
+
 	}
 	public void swosGroups() throws InterruptedException {
 		Thread.sleep(3000);
@@ -87,18 +86,18 @@ public class SWOSTest {
 		WebElement CartonOk = driver.findElement(By.xpath("//button[@onclick='onSWOSGrSearchOkClick()']"));
 		CartonOk.click();
 	}
-	
+
 	public void ClickonAdd() throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement Add = driver.findElement(By.id("CSTSWOSGroupsAdd"));
 		Add.click();
 	}
-	
+
 	public void code(String code) throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement EntertxtCode = driver.findElement(By.id("SWOSFrmtxtCustomerCode"));
 		EntertxtCode.clear();
-		EntertxtCode.sendKeys(code);		
+		EntertxtCode.sendKeys(code);
 	}
 	public void Discription(String Description) throws InterruptedException {
 		Thread.sleep(3000);
@@ -106,7 +105,7 @@ public class SWOSTest {
 		EnterDiscription.clear();
 			EnterDiscription.sendKeys(Description);
 	}
-	
+
 	public void ok() throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement Add = driver.findElement(By.xpath("//button[contains(@onclick,'OkClickSWOSGroupsForm()')]"));
@@ -128,14 +127,14 @@ public class SWOSTest {
 	                break;
 	            case "Customer Code cannot be more than 30 characters. Please try again.":
 	                Assert.assertEquals(actualErrorMessage, "Customer Code cannot be more than 30 characters. Please try again.", "Incorrect error message");
-	                break;  
+	                break;
 	            case "Description more than 100 characters. Please try again.":
 	                Assert.assertEquals(actualErrorMessage, "Description more than 100 characters. Please try again.", "Incorrect error message");
-	                break;  
+	                break;
 	            case "Date is in the past. Please try again.":
 	                Assert.assertEquals(actualErrorMessage, "Date is in the past. Please try again.", "Incorrect error message");
-	                break;   
-	                
+	                break;
+
 	            default:
 	                // Handle other cases or unexpected errors
 	                System.out.println("Unexpected error message: " + actualErrorMessage);

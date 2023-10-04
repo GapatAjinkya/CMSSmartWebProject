@@ -21,8 +21,8 @@ public class SWOSaddnew {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
 	Logger logger = LogManager.getLogger("SWOSaddnew");
-	
-	
+
+
 	@Test(priority = 0)
 	public void SearchTest() throws InterruptedException {
 		swosGroups();
@@ -34,13 +34,13 @@ public class SWOSaddnew {
 		ok() ;
 		}
 	public void ManifestDate(String dateAsString) {
-		
+
 		WebElement element=driver.findElement(By.id("SWOSFrmtxtManDt"));
 		element.clear();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].value = arguments[1];", element, dateAsString);
     //month/date/year
-		
+
 	}
 	public void swosGroups() throws InterruptedException {
 		Thread.sleep(3000);
@@ -61,18 +61,18 @@ public class SWOSaddnew {
 		WebElement CartonOk = driver.findElement(By.xpath("//button[@onclick='onSWOSGrSearchOkClick()']"));
 		CartonOk.click();
 	}
-	
+
 	public void ClickonAdd() throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement Add = driver.findElement(By.id("CSTSWOSGroupsAdd"));
 		Add.click();
 	}
-	
+
 	public void code(String code) throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement EntertxtCode = driver.findElement(By.id("SWOSFrmtxtCustomerCode"));
 		EntertxtCode.clear();
-		EntertxtCode.sendKeys(code);		
+		EntertxtCode.sendKeys(code);
 	}
 	public void Discription(String Description) throws InterruptedException {
 		Thread.sleep(3000);
@@ -80,7 +80,7 @@ public class SWOSaddnew {
 		EnterDiscription.clear();
 			EnterDiscription.sendKeys(Description);
 	}
-	
+
 	public void ok() throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement Add = driver.findElement(By.xpath("//button[contains(@onclick,'OkClickSWOSGroupsForm()')]"));
@@ -97,7 +97,7 @@ public class SWOSaddnew {
 	            case "No records found!":
 	                Assert.assertEquals(actualErrorMessage, "No records found!", "Incorrect error message");
 	                break;
-	              
+
 	            default:
 	                // Handle other cases or unexpected errors
 	                System.out.println("Unexpected error message: " + actualErrorMessage);

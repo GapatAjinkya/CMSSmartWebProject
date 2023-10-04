@@ -16,9 +16,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeClass;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class InternationalShipmentTest {
 
@@ -52,7 +49,7 @@ public class InternationalShipmentTest {
 			driver.findElement(By.id("chkRememberMe")).click(); // chkRememberMe
 			WebElement ok = driver.findElement(By.xpath("//button[@onclick='LoginFormOkClick()']"));
 			ok.click();
-		
+
 
 		logger.info("Login successful");
 
@@ -154,7 +151,7 @@ public class InternationalShipmentTest {
 //		driver.findElement(By.xpath("//tr[@data-index=\"110\"]")).click();
 //		driver.findElement(By.id("btnFedExIOROKClick")).click();
 //		logger.info("FedEx IOR Codes added");
-		
+
 		Thread.sleep(3000);
 		WebElement packagdropdown=driver.findElement(By.id("cmbAdmissibilityPackageType"));
 		Select Package= new Select(packagdropdown);

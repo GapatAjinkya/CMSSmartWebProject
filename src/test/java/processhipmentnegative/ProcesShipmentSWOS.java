@@ -16,8 +16,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class ProcesShipmentSWOS {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
@@ -104,7 +102,6 @@ public class ProcesShipmentSWOS {
 		Thread.sleep(2000);
 		logger.info("Customer Added");
 	}
-
 	public void Ship() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.id("btnShipClick")).click();

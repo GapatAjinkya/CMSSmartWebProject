@@ -6,12 +6,9 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeClass;
 
 import com.cms.Base.BaseClass;
 
@@ -84,7 +81,7 @@ public class Login extends BaseClass {
 	}
 
 	public void LoginPage () throws InterruptedException {
-		
+
 
 //			System.setProperty("webdriver.chrome.driver",
 //					"E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
@@ -110,6 +107,6 @@ public class Login extends BaseClass {
 			ok.click();
 			Thread.sleep(5000);
 		}
-		
+
 	}
 

@@ -16,8 +16,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class ShipViasCode {
 	public static WebDriver driver;
 	public static WebDriverWait wait;
@@ -59,7 +57,7 @@ public void CheckcodeBlank() throws InterruptedException {
 		WebElement Shipviacode = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtCodeSVF")));
 		Shipviacode.clear();
 		Shipviacode.sendKeys(code);
-		
+
 		logger.info("Send ship viacode  successful");
 
 		WebElement Dis = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtDescriptionSVF")));

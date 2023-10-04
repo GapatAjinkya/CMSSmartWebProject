@@ -28,39 +28,36 @@ public class PsWithSWOSTest {
 	@Test(priority = 0)
 	public void testSwos() throws InterruptedException {
 		ProcesShipment();
-		ShipVia("FEX_Test1_GN1");
+		ShipVia("ProUPS1_GND");
 	}
-
 	@Test(priority = 1,dataProvider = "customer")
 	public void addcustomer(String Customer, String CustomerCode) throws InterruptedException {
 		addCustomer(Customer, CustomerCode);
 		Manual("1.00");
+		Dimensions("1","1","1");
 		Ship();
 		captureError();
 	}
-	
+
 	@Test(priority = 2)
 	public void testGroupsswos() throws InterruptedException {
-		btnGroups("AJ1");
+		btnGroups("SWOS");
 		captureError();
 		Manual("5.00");
+		Dimensions("1","1","1");
 		Ship();
 	}
 	@DataProvider(name = "customer")
 	public Object[][] getdata() {
-
-	//	Object[][] data = { { "CMS", "AG" }, { "AdminVA", "AG" }, { "USAG2", "AG" }, };
-		Object[][] data = { { "CMS", "AJ1" }, { "AdminVA", "AJ1" } };
+		Object[][] data = { { "CMS", "SWOS" }, { "AdminVA", "SWOS" } };
 		return data;
 	}
-
 	public void ProcesShipment() throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement Transaction = driver.findElement(By.id("menu_item_2")); // To click on Transaction
 		Transaction.click();
 		driver.findElement(By.id("menu_item_21")).click(); // To click on Process ShipmentS
 		Thread.sleep(5000);
-
 	}
 
 	public void ShipVia(String ShipViaCode) throws InterruptedException {
@@ -124,6 +121,18 @@ public class PsWithSWOSTest {
 	ManualWeight.sendKeys(Weight);
 	logger.info("Manual Weight is fill ");
 }
+
+	public void Dimensions(String Length,String Width,String Height) throws InterruptedException {
+		WebElement txtLength = driver.findElement(By.xpath("//input[@id='txtLength']"));txtLength.clear();
+		txtLength.sendKeys(Length);
+		Thread.sleep(2000);
+		WebElement txtWidth = driver.findElement(By.xpath("//input[@id='txtWidth']"));txtWidth.clear();
+		txtWidth.sendKeys(Width);
+		Thread.sleep(2000);
+		WebElement txtHeights = driver.findElement(By.xpath("//input[@id='txtHeights']"));txtHeights.clear();
+		txtHeights.sendKeys(Height);
+	}
+
 	public void btnGroups(String SwosGroups) throws InterruptedException {
     	Thread.sleep(5000);
 	WebElement btnGroups = driver.findElement(By.id("btnGroups"));
@@ -132,7 +141,7 @@ public class PsWithSWOSTest {
 	driver.findElement(By.id("txtCSTSWOSGrSearchPS")).sendKeys(SwosGroups);
 	driver.findElement(By.xpath("//button[@onclick='onSWOSGrSearchPSOkClick()']")).click();
 	Thread.sleep(5000);
-	
+
 	List<WebElement> alldatao = driver.findElements(By.xpath("//table[@id='tblSWOSGroupFormListPS']//td[1]"));
 	boolean dataStatuso = false;
 	for (WebElement ele : alldatao) {
@@ -149,7 +158,6 @@ public class PsWithSWOSTest {
 	Thread.sleep(3000);
 	//Click on view
 	driver.findElement(By.id("ViewButtonSGFPS")).click();
-	
 
 	Thread.sleep(3000);
 	List<WebElement> alldata = driver.findElements(By.xpath("//table[@id='SWOSShipmentsList']//td[1]"));
@@ -170,7 +178,7 @@ public class PsWithSWOSTest {
 	Thread.sleep(3000);
 	driver.findElement(By.id("btnOkButtonSGFPS")).click();
 }
-	
+
 	public void captureError() throws InterruptedException {
 		Thread.sleep(3000);
 		try {

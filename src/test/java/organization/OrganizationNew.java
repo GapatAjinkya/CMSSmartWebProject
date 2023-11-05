@@ -164,11 +164,7 @@ public class OrganizationNew {
 		System.setProperty("webdriver.chrome.driver",
 				"E:\\Ajinkyaworkspace\\CMSSmartWebProject\\drivers\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-		// options.setBinary("E:\\ChromeTesting\\chrome-win64\\chrome.exe");
-		// options.setBinary("E:\\ChromeTesting\\chrome-win64\\chrome.exe");
-		// options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
-		// options.addArguments("--remote-allow-origins=*");
-
+		options.addArguments("--disable-features=BlockInsecurePrivateNetworkRequests");
 		driver = new ChromeDriver(options);
 		logger.info("Browser opend");
 		driver.manage().window().maximize();

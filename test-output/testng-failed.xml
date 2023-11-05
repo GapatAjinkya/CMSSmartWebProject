@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="processhipmentnegative.SwosWithPackVsScript">
+      <class name="orgSiteGroups.OrgSiteGroupsTest">
         <methods>
           <include name="setup"/>
-          <include name="ViewShipment"/>
-          <include name="TestaddGroups"/>
+          <include name="Orgadd"/>
+          <include name="usergroup"/>
         </methods>
-      </class> <!-- processhipmentnegative.SwosWithPackVsScript -->
+      </class> <!-- orgSiteGroups.OrgSiteGroupsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

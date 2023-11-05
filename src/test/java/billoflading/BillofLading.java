@@ -98,8 +98,8 @@ public class BillofLading
 		String Address1="123",Address2="123";
 		String  City="lorton",State="VA",Zip="22079";
 		String Country="UNITED STATES",FreightTerms="C&F/CPT - Cost/Freight",
-				Department="Test--VA Shipping department",
-		ShipVia="LTLR_WL_100--LTLR_WL_Class 100";   // This Shipvia is changed when we select Rated/non rated
+				Department="ADMIN--Administration Department",
+		ShipVia="LTLR_Class100--DOM";   // This Shipvia is changed when we select Rated/non rated
 		String payment="Prepaid";
 		String Countrypayment="UNITED STATES";
 

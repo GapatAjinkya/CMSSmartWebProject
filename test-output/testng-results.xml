@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-04T15:37:46 IST" name="Default suite" finished-at="2023-10-04T15:39:30 IST" duration-ms="103027">
+  <suite started-at="2023-11-03T10:21:42 IST" name="Default suite" finished-at="2023-11-03T10:23:03 IST" duration-ms="81132">
     <groups>
     </groups>
-    <test started-at="2023-10-04T15:37:46 IST" name="Default test" finished-at="2023-10-04T15:39:30 IST" duration-ms="103027">
-      <class name="swoswithpacknegative.SwosWithPackNegative">
-        <test-method is-config="true" signature="setup()[pri:0, instance:swoswithpacknegative.SwosWithPackNegative@754777cd]" started-at="2023-10-04T15:37:47 IST" name="setup" finished-at="2023-10-04T15:38:02 IST" duration-ms="15366" status="PASS">
+    <test started-at="2023-11-03T10:21:42 IST" name="Default test" finished-at="2023-11-03T10:23:03 IST" duration-ms="81132">
+      <class name="orgSiteGroups.UserAddingTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:orgSiteGroups.UserAddingTest@21526f6c]" started-at="2023-11-03T10:21:42 IST" name="setup" finished-at="2023-11-03T10:21:55 IST" duration-ms="13219" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="TestaddGroups()[pri:0, instance:swoswithpacknegative.SwosWithPackNegative@754777cd]" started-at="2023-10-04T15:38:02 IST" name="TestaddGroups" finished-at="2023-10-04T15:39:30 IST" duration-ms="87592" status="PASS">
+        <test-method signature="TestUser()[pri:0, instance:orgSiteGroups.UserAddingTest@21526f6c]" started-at="2023-11-03T10:21:55 IST" name="TestUser" finished-at="2023-11-03T10:23:03 IST" duration-ms="67873" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestaddGroups -->
-      </class> <!-- swoswithpacknegative.SwosWithPackNegative -->
+        </test-method> <!-- TestUser -->
+      </class> <!-- orgSiteGroups.UserAddingTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
